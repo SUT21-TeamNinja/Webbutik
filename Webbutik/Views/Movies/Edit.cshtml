@@ -1,0 +1,74 @@
+﻿@model Webbutik.Models.Movie
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReleaseDate" class="control-label"></label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Stars" class="control-label"></label>
+                <input asp-for="Stars" class="form-control" />
+                <span asp-validation-for="Stars" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Writers" class="control-label"></label>
+                <input asp-for="Writers" class="form-control" />
+                <span asp-validation-for="Writers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Directors" class="control-label"></label>
+                <input asp-for="Directors" class="form-control" />
+                <span asp-validation-for="Directors" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsOnSale" class="control-label"></label>
+                <input asp-for="IsOnSale" class="form-control" />
+                <span asp-validation-for="IsOnSale" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discount" class="control-label"></label>
+                <input asp-for="Discount" class="form-control" />
+                <span asp-validation-for="Discount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
