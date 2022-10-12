@@ -16,3 +16,31 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+footer .container {
+    color: white;
+}
+
+/* Start page beginning */
+
+.row{
+    margin: 1em;
+}
+
+.highlight-movie{
+    margin-top: 2em;
+    width: 900px;
+    border-radius: 5px;
+}
+
+.thumbnail {
+    /*margin-top: 2em;*/
+    width: 300px;
+    border-radius: 5px;
+}
+
+/*.btn btn-dark thumbnail{*/
+    /*text-align:left;*/
+    /*width: 50%;
+}*/
+/* Start page end */
