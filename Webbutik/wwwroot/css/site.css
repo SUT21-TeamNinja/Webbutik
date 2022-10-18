@@ -21,6 +21,18 @@ footer .container {
     color: white;
 }
 
+/* Nav bar start */
+.navbar-toggler{
+    color: white;
+}
+
+.navbar-toggler-icon{
+    color: white;
+    padding-top: 4px;
+}
+
+/* Nav bar end*/
+
 /* Start page beginning */
 .row{
     margin: 1em;
