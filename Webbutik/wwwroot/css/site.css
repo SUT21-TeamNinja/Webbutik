@@ -22,7 +22,6 @@ footer .container {
 }
 
 /* Start page beginning */
-
 .row{
     margin: 1em;
 }
@@ -39,8 +38,40 @@ footer .container {
     border-radius: 5px;
 }
 
-/*.btn btn-dark thumbnail{*/
-    /*text-align:left;*/
-    /*width: 50%;
-}*/
+#nav-group{
+    justify-content: space-between;
+}
 /* Start page end */
+
+/* Sidebar start */
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    background-image: linear-gradient(#aec0c3, #1a1b1c);
+    border-right: black solid 2px;
+    padding: 1em;
+    box-shadow: 5px 0px 10px gray;
+}
+
+.adm-container {
+    margin: 0;
+}
+
+li a{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+li a :hover{
+    color: white;
+}
+/* Sidebar end */
