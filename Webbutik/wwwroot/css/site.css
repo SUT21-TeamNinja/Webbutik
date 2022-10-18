@@ -21,6 +21,19 @@ footer .container {
     color: white;
 }
 
+/* Nav bar start */
+
+.navbar-toggler {
+    color: white;
+}
+
+.navbar-toggler-icon{
+    color: white;
+    padding-top: 4px;
+}
+
+/* Nav bar end*/
+
 /* Start page beginning */
 .row{
     margin: 1em;
@@ -54,8 +67,8 @@ footer .container {
     min-width: 250px;
     max-width: 250px;
     min-height: 100vh;
-    background-image: linear-gradient(#aec0c3, #1a1b1c);
-    border-right: black solid 2px;
+    background-image: linear-gradient(#aec0c3, #212529);
+    /*border-right: black solid 2px;*/
     padding: 1em;
     box-shadow: 5px 0px 10px gray;
 }
@@ -71,7 +84,16 @@ li a{
     font-weight: bold;
 }
 
-li a :hover{
-    color: white;
+#content-sidebar{
+    width: 100%;
+    padding: 3em;
+    padding-left: 4em;
 }
 /* Sidebar end */
+
+/* Footer start */
+.border-top {
+    border-top: 2px solid #212529!important;
+}
+
+/* Footer end */
