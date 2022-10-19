@@ -36,4 +36,8 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Movies}/{action=Index}/{id?}");
+
 app.Run();
