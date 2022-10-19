@@ -12,11 +12,17 @@ namespace Webbutik.Models
         public static async Task<List<Movie>> GetMoviesFromApi()
         {
             var movielist = new List<Movie>();
-            var client = new HttpClient()
-            {
-                BaseAddress = new Uri("https://movie-database-alternative.p.rapidapi.com/?r=json&i=tt4154796"),
-
-            };
+            var client = new HttpClient();
+           var request = new HttpRequestMessage
+           {
+               Method = HttpMethod.Get,
+               RequestUri = new Uri("https://movie-database-alternative.p.rapidapi.com/?s=Avengers%20Endgame&r=json&page=1"),
+               Headers =
+    {
+        { "X-RapidAPI-Key", "88b92cb363mshe2438f79d2bce12p1a1a51jsn658d9227cb42" },
+        { "X-RapidAPI-Host", "movie-database-alternative.p.rapidapi.com" },
+    },
+           };
 
             var response = await client.GetAsync(client.BaseAddress);
             if (response.IsSuccessStatusCode)
@@ -49,9 +55,9 @@ namespace Webbutik.Models
                     }
                     tempmovie.Title = string.Join(", ", tempTitleList);
                     tempmovie.Description = string.Join(", ", tempDescriptionList);
-                    tempmovie.ImageUrl = item["imageLinks"]["thumbnail"].ToString();
-                    tempmovie.ReleaseDate = DateTime.Parse(item["releasedate"].ToString());
-                    tempmovie.Stars = item["stars"].ToString();
+                    tempmovie.ImageUrl = item["imageLinks"]["Posters"].ToString();
+                    tempmovie.ReleaseDate = DateTime.Parse(item["Release date"].ToString());
+                    tempmovie.Stars = item["actors"].ToString();
                     tempmovie.Writers = item["writers"].ToString();
                     tempmovie.Directors = item["directors"].ToString();
                     movielist.Add(tempmovie);
