@@ -41,14 +41,18 @@ namespace Webbutik.Models
                     CreatedAt = DateTime.Now,
                     Movie = movie
                 };
-                _context.CartItems.Add(cartItem);
+                await _context.CartItems.AddAsync(cartItem);
             }
             else
                 cartItem.Amount++;
 
             await _context.SaveChangesAsync();
         }
-
-       
+        public async Task<ICollection<CartItem>> GetCartItemsAsync()
+        {
+            return CartItems ??= await _context.CartItems
+            .Where(c => c.CartId == CartSessionKey)
+            .Include(m => m.Movie).ToListAsync();
+        }
     }
 }

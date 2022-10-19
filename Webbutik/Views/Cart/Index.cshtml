@@ -1,0 +1,6 @@
+﻿@model CartViewModel
+
+@foreach (var item in Model.Cart.CartItems)
+{
+    <h1>@item.Movie.Title</h1>
+}
