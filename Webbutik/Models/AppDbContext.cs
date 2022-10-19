@@ -1,4 +1,3 @@
-﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,7 +9,10 @@ namespace Webbutik.Models
 
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
