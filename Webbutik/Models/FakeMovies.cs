@@ -12,11 +12,17 @@ namespace Webbutik.Models
         public static async Task<List<Movie>> GetMoviesFromApi()
         {
             var movielist = new List<Movie>();
-            var client = new HttpClient()
-            {
-                BaseAddress = new Uri("https://movie-database-alternative.p.rapidapi.com/?r=json&i=tt4154796&plot=short"),
-
-            };
+            var client = new HttpClient();
+           var request = new HttpRequestMessage
+           {
+               Method = HttpMethod.Get,
+               RequestUri = new Uri("https://movie-database-alternative.p.rapidapi.com/?s=Avengers%20Endgame&r=json&page=1"),
+               Headers =
+    {
+        { "X-RapidAPI-Key", "88b92cb363mshe2438f79d2bce12p1a1a51jsn658d9227cb42" },
+        { "X-RapidAPI-Host", "movie-database-alternative.p.rapidapi.com" },
+    },
+           };
 
             var response = await client.GetAsync(client.BaseAddress);
             if (response.IsSuccessStatusCode)
