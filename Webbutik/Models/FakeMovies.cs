@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Webbutik.Models
 {
@@ -12,7 +14,7 @@ namespace Webbutik.Models
             var movielist = new List<Movie>();
             var client = new HttpClient()
             {
-                BaseAddress = new Uri("https://imdb8.p.rapidapi.com/auto-complete?q=game%20of%20thr"),
+                BaseAddress = new Uri("https://movie-database-alternative.p.rapidapi.com/?r=json&i=tt4154796"),
 
             };
 
