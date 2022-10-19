@@ -14,7 +14,7 @@ namespace Webbutik.Models
             var movielist = new List<Movie>();
             var client = new HttpClient()
             {
-                BaseAddress = new Uri("https://movie-database-alternative.p.rapidapi.com/?r=json&i=tt4154796"),
+                BaseAddress = new Uri("https://movie-database-alternative.p.rapidapi.com/?r=json&i=tt4154796&plot=short"),
 
             };
 
@@ -49,9 +49,9 @@ namespace Webbutik.Models
                     }
                     tempmovie.Title = string.Join(", ", tempTitleList);
                     tempmovie.Description = string.Join(", ", tempDescriptionList);
-                    tempmovie.ImageUrl = item["imageLinks"]["thumbnail"].ToString();
-                    tempmovie.ReleaseDate = DateTime.Parse(item["releasedate"].ToString());
-                    tempmovie.Stars = item["stars"].ToString();
+                    tempmovie.ImageUrl = item["imageLinks"]["Posters"].ToString();
+                    tempmovie.ReleaseDate = DateTime.Parse(item["Release date"].ToString());
+                    tempmovie.Stars = item["actors"].ToString();
                     tempmovie.Writers = item["writers"].ToString();
                     tempmovie.Directors = item["directors"].ToString();
                     movielist.Add(tempmovie);
