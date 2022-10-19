@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System;
+using Webbutik.Controllers;
 using Webbutik.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
-builder.Services.AddScoped(c => Cart.GetCart(c));
+builder.Services.AddScoped(c => CartController.GetCart(c));
 
 //sessions for shoppingcart
 builder.Services.AddHttpContextAccessor();
