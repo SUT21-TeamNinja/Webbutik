@@ -1,4 +1,6 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Admin";
+}
 <div id="adm-container">
     <div class="wrapper">
         <nav id="sidebar">
@@ -23,27 +25,27 @@
                     </ul>
                 </li>*@
                 <li>
-                    <a href="#">Manage Products</a>
+                    <a asp-action="ManageProducts">Manage Products</a> 
                 </li>
                 <li>
-                    <a href="#">Manage Stock</a>
+                    <a asp-action="ManageStock">Manage Stock</a>
                 </li>
                 <li>
-                    <a href="#">Manage Campaigns</a>
+                    <a asp-action="ManageCampaigns">Manage Campaigns</a>
                 </li>
                 <li>
-                    <a href="#">Statistic Dashboard</a>
+                    <a asp-action="Dashboard">Statistic Dashboard</a>
                 </li>
                 <li>
-                    <a href="#">Customer purchase log</a>
+                    <a asp-action="PurchaseLog" >Customer purchase log</a>
                 </li>
                 <li>
-                    <a href="#">Currency</a>
+                    <a asp-action="Currency" >Currency</a>
                 </li>
             </ul>
         </nav>
         <div id="content-sidebar"> 
-            <p>Add Content here</p>
+            
 
         </div>
     </div>
