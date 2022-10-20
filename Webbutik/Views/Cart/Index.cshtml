@@ -1,6 +1,16 @@
 ﻿@model CartViewModel
 
-@foreach (var item in Model.Cart.CartItems)
-{
-    <h1>@item.Movie.Title</h1>
-}
+<div class="container">
+    <table class="table table-striped">
+        
+        @foreach (var item in Model.Cart.CartItems)
+        {
+            <tr>
+            <td>@item.Movie.Title</td>
+                <td>@item.Amount</td>
+            </tr>
+        }        
+    </table>
+    
+</div>
+

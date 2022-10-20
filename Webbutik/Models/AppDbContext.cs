@@ -17,11 +17,23 @@ namespace Webbutik.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Movie>().HasData(new Movie
+            for (int i = 1; i < 101; i++)
             {
-                Id = 1,
-                Title = "PH"
-            });
+                modelBuilder.Entity<Movie>().HasData(new Movie
+                {
+                    Id = i,
+                    Title = $"Title {i}",
+                    Description = $"Description {i}",
+                    ImageUrl = $"ImageUrl {i}",
+                    ReleaseDate = DateTime.Now,
+                    Stars = $"Stars {i}",
+                    Writers = $"Writers {i}",
+                    Directors = $"Directors {i}",
+                    IsOnSale = true,
+                    Discount = 25,
+                    InStock = 1
+                });
+            }            
         }
     }
 }
