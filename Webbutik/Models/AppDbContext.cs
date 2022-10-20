@@ -16,6 +16,24 @@ namespace Webbutik.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            for (int i = 1; i < 101; i++)
+            {
+                modelBuilder.Entity<Movie>().HasData(new Movie
+                {
+                    Id = i,
+                    Title = $"Title {i}",
+                    Description = $"Description {i}",
+                    ImageUrl = $"ImageUrl {i}",
+                    ReleaseDate = DateTime.Now,
+                    Stars = $"Stars {i}",
+                    Writers = $"Writers {i}",
+                    Directors = $"Directors {i}",
+                    IsOnSale = true,
+                    Discount = 25,
+                    InStock = 1
+                });
+            }            
         }
     }
 }

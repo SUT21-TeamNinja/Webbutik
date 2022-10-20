@@ -11,11 +11,14 @@ namespace Webbutik.Models
         public string? ImageUrl { get; set; }
         public DateTime? ReleaseDate { get; set; }
         public string? Stars { get; set; }
-        public ICollection<Category>? Categories { get; set; }
         public string? Writers { get; set; }
         public string? Directors { get; set; }
         public bool? IsOnSale { get; set; }
         public int? Discount { get; set; }
         public int? InStock { get; set; }
+
+        //navigation prop
+        public ICollection<Category>? Categories { get; set; }
+
     }
 }

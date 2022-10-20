@@ -12,43 +12,13 @@ namespace Webbutik.Models
         public ICollection<CartItem> CartItems { get; set; }
 
 
-        public static Cart GetCart(IServiceProvider service)
+        
+
+        public async Task<ICollection<CartItem>> GetCartItemsAsync()
         {
-            var session = service.GetRequiredService<IHttpContextAccessor>()?
-                .HttpContext.Session;
-            var context = service.GetService<AppDbContext>();
-
-            string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
-
-            session.SetString("CartId", cartId);
-
-            return new Cart(context) { CartSessionKey = cartId };
+            return CartItems ??= await _context.CartItems
+            .Where(c => c.CartId == CartSessionKey)
+            .Include(m => m.Movie).ToListAsync();
         }
-
-        public async void AddToCart(Movie movie, int count)
-        {
-            var cartItem = await _context.CartItems.SingleOrDefaultAsync(
-                c => c.CartId == CartSessionKey
-                && c.MovieId == movie.Id);
-
-            if (cartItem == null)
-            {
-                cartItem = new CartItem
-                {
-                    CartId = CartSessionKey,
-                    MovieId = movie.Id,
-                    Amount = count,
-                    CreatedAt = DateTime.Now,
-                    Movie = movie
-                };
-                _context.CartItems.Add(cartItem);
-            }
-            else
-                cartItem.Amount++;
-
-            await _context.SaveChangesAsync();
-        }
-
-       
     }
 }
