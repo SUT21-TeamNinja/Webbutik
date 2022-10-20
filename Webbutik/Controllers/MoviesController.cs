@@ -185,5 +185,40 @@ namespace Webbutik.Controllers
         {
           return _context.Movies.Any(e => e.Id == id);
         }
+
+        public ViewResult Admin()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> ManageProducts()
+        {
+            return View(await _context.Movies.ToListAsync());
+        }
+
+        public ViewResult ManageCampaigns()
+        {
+            return View();
+        }
+
+        public ViewResult ManageStock()
+        {
+            return View();
+        }
+
+        public ViewResult PurchaseLog()
+        {
+            return View();
+        }
+
+        public ViewResult Dashboard()
+        {
+            return View();
+        }
+
+        public ViewResult Currency()
+        {
+            return View();
+        }
     }
 }

@@ -97,3 +97,10 @@ li a{
 }
 
 /* Footer end */
+
+/* Admin Manage Products */
+#btn-add a{
+    color: white;
+    text-decoration: none;
+}
+/* Admin Manage Products end*/

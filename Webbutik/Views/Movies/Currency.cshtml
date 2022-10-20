@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Currency";
+}
+<div id="adm-container">
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Page
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>*Name*</p>
+                <li>
+                    <a asp-action="ManageProducts">Manage Products</a> 
+                </li>
+                <li>
+                    <a asp-action="ManageStock">Manage Stock</a>
+                </li>
+                <li>
+                    <a asp-action="ManageCampaigns">Manage Campaigns</a>
+                </li>
+                <li>
+                    <a asp-action="Dashboard">Statistic Dashboard</a>
+                </li>
+                <li>
+                    <a asp-action="PurchaseLog" >Customer purchase log</a>
+                </li>
+                <li>
+                    <a asp-action="Currency" >Currency</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content-sidebar"> 
+            <!-- ADD CONTENT HERE -->
+
+        </div>
+    </div>
+</div>
