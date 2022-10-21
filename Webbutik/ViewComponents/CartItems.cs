@@ -8,17 +8,22 @@ namespace Webbutik.ViewComponents
 {
     public class CartItems : ViewComponent
     {
-        private readonly AppDbContext _context;
+        //private readonly AppDbContext _context;
 
-        public CartItems(AppDbContext context) => _context = context;
+        //public CartItems(AppDbContext context) => _context = context;
+        private readonly Cart _cart;
 
-        //public async Task<IActionResult> InvokeAsync()
-        //{
-        //    return View(new CartViewModel
-        //    {
-        //        Cart = 
-        //    })
-        //}
+        public CartItems(Cart cart) => _cart = cart;
+
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            _cart.CartItems = await _cart.GetCartItemsAsync();
+            return View(new CartViewModel
+            {
+                Cart = _cart,
+                Total = await _cart.GetTotalItemsInCartAsync()
+            });
+        }
 
 
     }
