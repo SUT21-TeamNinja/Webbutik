@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Threading.Tasks;
 
 namespace Webbutik.Models
 {
@@ -20,5 +22,9 @@ namespace Webbutik.Models
             .Where(c => c.CartId == CartSessionKey)
             .Include(m => m.Movie).ToListAsync();
         }
+        public async Task<int> GetTotalItemsInCartAsync() =>
+            await _context.CartItems
+            .Where(c => c.CartId == CartSessionKey)
+            .Select(c => c.Amount).SumAsync();
     }
 }
