@@ -1,0 +1,6 @@
+﻿@model CartViewModel
+
+@if (Model.Cart.CartItems.Count > 1)
+{
+    <span>@Model.Cart.GetCartItemsAsync()</span>
+}
