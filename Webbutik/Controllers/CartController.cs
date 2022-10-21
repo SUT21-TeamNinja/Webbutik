@@ -39,11 +39,10 @@ namespace Webbutik.Controllers
         }
         public async Task<IActionResult> AddToCart(int id)
         {
-            var movieToAdd = await _context.Movies.FirstOrDefaultAsync(m=>m.Id == id);       
+            var movieToAdd = await _context.Movies.FirstOrDefaultAsync(m => m.Id == id);
 
             if (movieToAdd != null)
             {
-                //_cart.AddToCart(movieToAdd, 1);
 
                 var cartItem = await _context.CartItems.SingleOrDefaultAsync(
                 c => c.CartId == _cart.CartSessionKey
@@ -68,5 +67,28 @@ namespace Webbutik.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> RemoveFromCart(int id)
+        {
+            var movieToRemove = await _context.Movies.FirstOrDefaultAsync(m => m.Id == id);
+            if (movieToRemove != null)
+            {
+                var cartItem = await _context.CartItems.SingleOrDefaultAsync(
+                c => c.CartId == _cart.CartSessionKey
+                && c.MovieId == movieToRemove.Id);
+
+                if (cartItem != null)
+                {
+                    if (cartItem.Amount > 1)
+                        cartItem.Amount--;
+                    else
+                        _context.CartItems.Remove(cartItem);                    
+                }
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Index));
+
+        }
+
     }
 }

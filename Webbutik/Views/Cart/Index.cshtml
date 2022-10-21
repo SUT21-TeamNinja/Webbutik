@@ -2,15 +2,28 @@
 
 <div class="container">
     <table class="table table-striped">
-        
-        @foreach (var item in Model.Cart.CartItems)
-        {
-            <tr>
+        <tbody>
+            @foreach (var item in Model.Cart.CartItems)
+            {
+                @*<tr>
             <td>@item.Movie.Title</td>
-                <td>@item.Amount</td>
-            </tr>
-        }        
+            <td>@item.Amount</td>
+            </tr>*@
+                <tr>
+                    <td class="text-center">
+                        <a class="btn btn-dark" asp-controller="cart"
+                       asp-action="removefromcart" asp-route-id="@item.Movie.Id"><strong>-</strong></a>
+                        @item.Amount
+                        <a class="btn btn-dark" asp-controller="cart"
+                       asp-action="addtocart"
+                       asp-route-id=@item.Movie.Id><strong>+</strong></a>
+                    </td>
+                    <td>@item.Movie.Title</td>
+                </tr>
+            }
+        </tbody>
+
     </table>
-    
+
 </div>
 
