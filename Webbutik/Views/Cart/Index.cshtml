@@ -1,4 +1,7 @@
 ﻿@model CartViewModel
+@{
+    var currentPage = ViewContext.RouteData.Values["Controller"].ToString().ToLower();
+}
 
 <div class="container">
     <table class="table table-striped">
@@ -16,7 +19,7 @@
                         @item.Amount
                         <a class="btn btn-dark" asp-controller="cart"
                        asp-action="addtocart"
-                       asp-route-id=@item.Movie.Id><strong>+</strong></a>
+                       asp-route-id=@item.Movie.Id asp-route-currentPage="@currentPage"><strong>+</strong></a>
                     </td>
                     <td>@item.Movie.Title</td>
                 </tr>
@@ -24,6 +27,11 @@
         </tbody>
 
     </table>
-
+    <div class="text-center">
+        <a class="btn btn-dark">Checkout</a>
+        <a class="btn btn-dark" asp-controller="cart"
+           asp-action="clearcart">Clear cart</a>
+    </div>
 </div>
+
 
