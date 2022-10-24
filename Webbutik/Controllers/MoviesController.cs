@@ -185,5 +185,81 @@ namespace Webbutik.Controllers
         {
           return _context.Movies.Any(e => e.Id == id);
         }
+
+        public ViewResult Admin()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> ManageProducts()
+        {
+            return View(await _context.Movies.ToListAsync());
+        }
+
+        public ViewResult ManageCampaigns()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> ManageStock()
+        {
+            _context.SaveChanges();
+            return View(await _context.Movies.ToListAsync());
+        }
+
+        public async Task<IActionResult> IncreaseInStock(int id)
+        {
+            var test = await _context.Movies.FirstOrDefaultAsync(i => i.Id == id);
+            if (test == null)
+            {
+                NotFound();
+            }
+            else
+            {
+                test.InStock++;
+            }
+           
+            _context.SaveChanges();
+            return RedirectToAction("ManageStock");
+        }
+
+        public async Task<IActionResult> DecreaseInStock(int id)
+        {
+            var movie = await _context.Movies.FirstOrDefaultAsync(i => i.Id == id);
+            if (movie == null)
+            {
+                NotFound();
+            }
+            else
+            {
+                if (movie.InStock<=0)
+                {
+                    ModelState.AddModelError("","Can not be less than 0");
+                }
+                else
+                {
+                    movie.InStock--;
+                }
+               
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction("ManageStock");
+        }
+
+        public ViewResult PurchaseLog()
+        {
+            return View();
+        }
+
+        public ViewResult Dashboard()
+        {
+            return View();
+        }
+
+        public ViewResult Currency()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Movie>
+@{
+    ViewData["Title"] = "ManageStock";
+}
+<div id="adm-container">
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Page</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>*Name*</p>
+                <li>
+                    <a asp-action="ManageProducts">Manage Products</a> 
+                </li>
+                <li>
+                    <a asp-action="ManageStock">Manage Stock</a>
+                </li>
+                <li>
+                    <a asp-action="ManageCampaigns">Manage Campaigns</a>
+                </li>
+                <li>
+                    <a asp-action="Dashboard">Statistic Dashboard</a>
+                </li>
+                <li>
+                    <a asp-action="PurchaseLog" >Customer purchase log</a>
+                </li>
+                <li>
+                    <a asp-action="Currency" >Currency</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content-sidebar"> 
+           
+            <!-- ADD CONTENT HERE -->
+            <table class="table table-responsive-sm">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InStock)
+                        </th>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>
+                                <a asp-controller="Movies" asp-action="DecreaseInStock" asp-route-id="@item.Id">
+                                   <i class="btn btn-danger">-</i>                               
+                                </a>
+@*                                <form asp-action="ManageStockWithdNumbers">
+                                        <label asp-for="@item.InStock" class="control-label"></label>
+                                        <input asp-for="@item.InStock" class="form-control" />
+                                        <span asp-validation-for="@item.InStock" class="text-danger"></span>
+                                        <div class="form-group">
+                                            <input type="submit" value="Save" class="btn btn-primary" />
+                                        </div>
+                                </form>*@
+                                @item.InStock
+                                <a asp-controller="Movies" asp-action="IncreaseInStock" asp-route-id="@item.Id">
+                                    <i class ="btn btn-primary">+</i>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                    }
+
+                </tbody>
+            </table>
+          
+            
+
+
+        </div>
+    </div>
+</div>
