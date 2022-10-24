@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using Webbutik.Controllers;
 using Webbutik.Models;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,9 @@ builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
+builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddScoped(c => CartController.GetCart(c));
 
 //sessions for shoppingcart
@@ -33,6 +37,7 @@ app.UseStaticFiles();
 app.UseSession();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
 
