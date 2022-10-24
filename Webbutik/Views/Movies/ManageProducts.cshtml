@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Webbutik.Models.Movie>
+
+@{
+    ViewData["Title"] = "ManageProducts";
+}
+<div id="adm-container">
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Page
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>*Name*</p>
+                <li>
+                    <a asp-action="ManageProducts">Manage Products</a> 
+                </li>
+                <li>
+                    <a asp-action="ManageStock">Manage Stock</a>
+                </li>
+                <li>
+                    <a asp-action="ManageCampaigns">Manage Campaigns</a>
+                </li>
+                <li>
+                    <a asp-action="Dashboard">Statistic Dashboard</a>
+                </li>
+                <li>
+                    <a asp-action="PurchaseLog" >Customer purchase log</a>
+                </li>
+                <li>
+                    <a asp-action="Currency" >Currency</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content-sidebar"> 
+
+            <h1>Manage Products</h1>
+
+            <div class="btn btn-primary" id="btn-add">
+                <a asp-action="Create">Add New product</a>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ImageUrl)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ImageUrl)
+                            </td>                            
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square" style="color: darkorange"></i></a> |
+                                <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-eye"></i></a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash" style="color: red"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
