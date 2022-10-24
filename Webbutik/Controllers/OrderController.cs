@@ -46,6 +46,9 @@ namespace Webbutik.Controllers
 
                     });
                 }
+                
+
+                _context.CartItems.RemoveRange(_context.CartItems.Where(c => c.CartId == _cart.CartSessionKey));
                 await _context.SaveChangesAsync();
             }
             return View();
