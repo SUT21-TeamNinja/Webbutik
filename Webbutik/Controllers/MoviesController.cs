@@ -233,25 +233,21 @@ namespace Webbutik.Controllers
             }
             else
             {
-                if (movie.InStock<=0)
+                if (movie.InStock <= 0)
                 {
-                    ModelState.AddModelError("","Can not be less than 0");
+                    ModelState.AddModelError("", "Can not be less than 0");
                 }
                 else
                 {
                     movie.InStock--;
                 }
-               
+
             }
 
             _context.SaveChanges();
             return RedirectToAction("ManageStock");
-
-        public ViewResult ManageStock()
-        {
-            return View();
-
         }
+
 
         public ViewResult PurchaseLog()
         {
