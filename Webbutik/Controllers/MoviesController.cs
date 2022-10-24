@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -201,6 +201,7 @@ namespace Webbutik.Controllers
             return View();
         }
 
+
         public async Task<IActionResult> ManageStock()
         {
             _context.SaveChanges();
@@ -245,6 +246,11 @@ namespace Webbutik.Controllers
 
             _context.SaveChanges();
             return RedirectToAction("ManageStock");
+
+        public ViewResult ManageStock()
+        {
+            return View();
+
         }
 
         public ViewResult PurchaseLog()
