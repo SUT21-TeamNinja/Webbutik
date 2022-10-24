@@ -16,6 +16,7 @@ namespace Webbutik.Models
         public bool? IsOnSale { get; set; }
         public int? Discount { get; set; }
         public int? InStock { get; set; }
+        public int? Price { get; set; }
 
         //navigation prop
         public ICollection<Category>? Categories { get; set; }

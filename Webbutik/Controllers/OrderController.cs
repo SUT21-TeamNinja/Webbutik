@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Webbutik.Models;
 
 namespace Webbutik.Controllers
@@ -12,7 +13,14 @@ namespace Webbutik.Controllers
             _context = context;
             _cart = cart;
         }
+
         public async Task<IActionResult> CheckOutAsync()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CheckOutAsync(Order order)
         {
             _cart.CartItems = await _cart.GetCartItemsAsync();
 
@@ -20,12 +28,29 @@ namespace Webbutik.Controllers
             {
                 return View("Empty");
             }
+            if (ModelState.IsValid)
+            {
+                order.OrderDate = DateTime.Now;
+                order.OrderTotal = await _cart.GetOrderTotalAsync();
+                await _context.Orders.AddAsync(order);
+                await _context.SaveChangesAsync();
+
+                foreach (var item in await _cart.GetCartItemsAsync())
+                {
+                    await _context.OrderDetails.AddAsync(new OrderDetail
+                    {
+                        OrderId = order.Id,
+                        MovieId = item.MovieId,
+                        Quantity = item.Amount,
+                        Price = item.Movie.Price                        
+
+                    });
+                }
+                await _context.SaveChangesAsync();
+            }
             return View();
         }
 
-        public async Task<IActionResult> CheckOutAsync(Order order)
-        {
-            return View();
-        }
+        
     }
 }
