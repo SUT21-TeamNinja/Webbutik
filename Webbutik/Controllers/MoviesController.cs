@@ -274,10 +274,11 @@ namespace Webbutik.Controllers
         }
 
 
-        public ViewResult PurchaseLog()
+        public async Task<IActionResult> PurchaseLog()
         {
-            return View();
+            return View(await _context.Orders.ToListAsync());
         }
+
 
         public ViewResult Dashboard()
         {

@@ -51,5 +51,6 @@ namespace Webbutik.Models
         //navigation
         [ValidateNever]
         public ICollection<OrderDetail> OrderDetails { get; set; }
+
     }
 }

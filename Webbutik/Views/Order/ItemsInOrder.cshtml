@@ -1,0 +1,77 @@
+﻿@model IEnumerable<OrderDetail>
+
+<div id="adm-container">
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Page</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>*Name*</p>
+                <li>
+                    <a asp-action="ManageProducts">Manage Products</a>
+                </li>
+                <li>
+                    <a asp-action="ManageStock">Manage Stock</a>
+                </li>
+                <li>
+                    <a asp-action="ManageCampaigns">Manage Campaigns</a>
+                </li>
+                <li>
+                    <a asp-action="Dashboard">Statistic Dashboard</a>
+                </li>
+                <li>
+                    <a asp-action="PurchaseLog">Customer purchase log</a>
+                </li>
+                <li>
+                    <a asp-action="Currency">Currency</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="content-sidebar">
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(t=>t.Movie.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(t=>t.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(t=>t.Movie.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(t=>t.Movie.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(t=>t.Movie.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(t=>t.Movie.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(t=>t.Movie.Title)
+            </th>
+        </tr>
+    </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.Movie.Title
+            </td>
+            <td>
+                @item.Quantity
+            </td>
+        </tr>
+
+        }
+        </tbody>
+</table>
+    </div>
+
+</div>
