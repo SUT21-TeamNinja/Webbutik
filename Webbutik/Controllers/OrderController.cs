@@ -8,16 +8,7 @@ using Webbutik.Models;
 namespace Webbutik.Controllers
 {
     public class OrderController : Controller
-    {
-
-
-        private readonly AppDbContext _context;
-
-        public OrderController(AppDbContext context)
-        {
-            _context = context;
-        }
-        public IActionResult Index()
+    {      
 
         private readonly AppDbContext _context;
         private readonly Cart _cart;
