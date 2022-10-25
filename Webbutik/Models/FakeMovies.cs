@@ -21,16 +21,16 @@ namespace Webbutik.Models
             if (response.IsSuccessStatusCode)
             {
                 var strResponse = await response.Content.ReadAsStringAsync();
-                var trimlist = JObject.Parse(strResponse)["items"].Children()["volumeInfo"].ToList();
+                var trimlist = JObject.Parse(strResponse)["items"].Children().ToList();
 
                 foreach (var item in trimlist)
                 {
                     var tempmovie = new Movie();
                     var tempTitleList = new List<string>();
 
-                    foreach (var author in item["authors"])
+                    foreach (var title in item["title"])
                     {
-                        tempTitleList.Add(author.ToString());
+                        tempTitleList.Add(title.ToString());
 
                     }
                     try
