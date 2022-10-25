@@ -1,4 +1,6 @@
-﻿@{
+﻿@model DiscountViewModel
+
+@{
     ViewData["Title"] = "ManageCampaigns";
 }
 <div id="adm-container">
@@ -31,7 +33,60 @@
             </ul>
         </nav>
         <div id="content-sidebar"> 
-            <!-- ADD CONTENT HERE -->
+            <h1>Manage Campaigns</h1>
+
+            <div class="btn btn-primary" id="btn-add">
+                <a asp-action="NewCampaign">Add New Campaign</a>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Discount
+                        </th>
+                        @*<th>
+                            Price
+                        </th>
+                        <th>
+                            Discount Start
+                        </th>
+                        <th>
+                            Discount End
+                        </th>*@
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.MoviesOnSale)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Discount)
+                            </td>
+                            @*<td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DiscountStart)
+                            </td>   
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DiscountEnd)
+                            </td> *@                             
+                            <td>
+                                @*<a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square" style="color: darkorange"></i></a> |*@
+                                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash" style="color: red"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
 
         </div>
     </div>
