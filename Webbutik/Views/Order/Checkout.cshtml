@@ -1,0 +1,80 @@
+﻿@model Order
+
+<form asp-action="checkout" method="post">
+    <div class="container">
+        <div class="row text-center">
+            <h3>Delivery information:</h3>
+            <hr />
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <div class="form-floating">
+                    <input asp-for="Email" class="form-control" id="floatEmail">
+                    <label for="floatEmail">Email</label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <div class="form-floating">
+                    <input asp-for="FirstName" class="form-control" id="floatFirstName">
+                    <label for="floatFirstName">First name</label>
+                </div>
+            </div>            
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <div class="form-floating">
+                    <input asp-for="LastName" class="form-control" id="floatLastName">
+                    <label for="floatLastName">Last name</label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <div class="form-floating">
+                    <input asp-for="Address" class="form-control" id="floatAddress">
+                    <label for="floatAddress">Address</label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <div class="form-floating">
+                    <input asp-for="ZipCode" class="form-control" id="floatZip">
+                    <label for="floatZip">Zip code</label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <div class="form-floating">
+                    <input asp-for="City" class="form-control" id="floatCity">
+                    <label for="floatCity">City</label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <div class="form-floating">
+                    <input asp-for="Country" class="form-control" id="floatCountry">
+                    <label for="floatCountry">Country</label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <div class="form-floating">
+                    <input asp-for="Phone" class="form-control" id="floatPhone">
+                    <label for="floatPhone">Phone</label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-centero">
+            <div class="col-sm-4">
+                <input type="submit" class="btn btn-dark" value="Checkout" />
+            </div>
+        </div>
+        
+    </div>
+</form>

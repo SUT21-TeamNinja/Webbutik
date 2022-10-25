@@ -14,17 +14,21 @@ namespace Webbutik.Models
         public ICollection<CartItem> CartItems { get; set; }
 
 
-        
 
-        public async Task<ICollection<CartItem>> GetCartItemsAsync()
-        {
-            return CartItems ??= await _context.CartItems
+
+        public async Task<ICollection<CartItem>> GetCartItemsAsync() => 
+            CartItems ??= await _context.CartItems
             .Where(c => c.CartId == CartSessionKey)
             .Include(m => m.Movie).ToListAsync();
-        }
         public async Task<int> GetTotalItemsInCartAsync() =>
             await _context.CartItems
             .Where(c => c.CartId == CartSessionKey)
             .Select(c => c.Amount).SumAsync();
+
+        public async Task<int?> GetOrderTotalAsync() =>
+            await _context.CartItems
+            .Where(c => c.CartId == CartSessionKey)
+            .Select(c => c.Movie.Price * c.Amount).SumAsync();
+
     }
 }

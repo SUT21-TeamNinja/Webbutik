@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Webbutik.Models;
 
@@ -11,9 +12,10 @@ using Webbutik.Models;
 namespace Webbutik.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221024134530_nullableuserinorder")]
+    partial class nullableuserinorder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -182,13 +184,9 @@ namespace Webbutik.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
@@ -226,13 +224,9 @@ namespace Webbutik.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
@@ -342,7 +336,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 1",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(5795),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1377),
                             Stars = "Stars 1",
                             Title = "Title 1",
@@ -357,7 +350,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 2",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(5917),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1440),
                             Stars = "Stars 2",
                             Title = "Title 2",
@@ -372,7 +364,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 3",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(5961),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1455),
                             Stars = "Stars 3",
                             Title = "Title 3",
@@ -387,7 +378,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 4",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(5998),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1468),
                             Stars = "Stars 4",
                             Title = "Title 4",
@@ -402,7 +392,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 5",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(6039),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1481),
                             Stars = "Stars 5",
                             Title = "Title 5",
@@ -417,7 +406,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 6",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(6094),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1497),
                             Stars = "Stars 6",
                             Title = "Title 6",
@@ -432,7 +420,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 7",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(6144),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1509),
                             Stars = "Stars 7",
                             Title = "Title 7",
@@ -447,7 +434,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 8",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(6199),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1521),
                             Stars = "Stars 8",
                             Title = "Title 8",
@@ -462,7 +448,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 9",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(6244),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1533),
                             Stars = "Stars 9",
                             Title = "Title 9",
@@ -477,7 +462,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 10",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(6632),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1547),
                             Stars = "Stars 10",
                             Title = "Title 10",
@@ -492,7 +476,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 11",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(6858),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1600),
                             Stars = "Stars 11",
                             Title = "Title 11",
@@ -507,7 +490,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 12",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(6898),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1614),
                             Stars = "Stars 12",
                             Title = "Title 12",
@@ -522,7 +504,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 13",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(6928),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1626),
                             Stars = "Stars 13",
                             Title = "Title 13",
@@ -537,7 +518,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 14",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(6956),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1639),
                             Stars = "Stars 14",
                             Title = "Title 14",
@@ -552,7 +532,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 15",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(6983),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1651),
                             Stars = "Stars 15",
                             Title = "Title 15",
@@ -567,7 +546,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 16",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7011),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1663),
                             Stars = "Stars 16",
                             Title = "Title 16",
@@ -582,7 +560,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 17",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7039),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1675),
                             Stars = "Stars 17",
                             Title = "Title 17",
@@ -597,7 +574,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 18",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7079),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1689),
                             Stars = "Stars 18",
                             Title = "Title 18",
@@ -612,7 +588,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 19",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7109),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1701),
                             Stars = "Stars 19",
                             Title = "Title 19",
@@ -627,7 +602,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 20",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7135),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1714),
                             Stars = "Stars 20",
                             Title = "Title 20",
@@ -642,7 +616,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 21",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7161),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1726),
                             Stars = "Stars 21",
                             Title = "Title 21",
@@ -657,7 +630,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 22",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7187),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1738),
                             Stars = "Stars 22",
                             Title = "Title 22",
@@ -672,7 +644,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 23",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7214),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1750),
                             Stars = "Stars 23",
                             Title = "Title 23",
@@ -687,7 +658,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 24",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7386),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1799),
                             Stars = "Stars 24",
                             Title = "Title 24",
@@ -702,7 +672,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 25",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7414),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1812),
                             Stars = "Stars 25",
                             Title = "Title 25",
@@ -717,7 +686,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 26",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7438),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1824),
                             Stars = "Stars 26",
                             Title = "Title 26",
@@ -732,7 +700,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 27",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7463),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1837),
                             Stars = "Stars 27",
                             Title = "Title 27",
@@ -747,7 +714,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 28",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7488),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1849),
                             Stars = "Stars 28",
                             Title = "Title 28",
@@ -762,7 +728,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 29",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7514),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1861),
                             Stars = "Stars 29",
                             Title = "Title 29",
@@ -777,7 +742,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 30",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7541),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1874),
                             Stars = "Stars 30",
                             Title = "Title 30",
@@ -792,7 +756,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 31",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7566),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1886),
                             Stars = "Stars 31",
                             Title = "Title 31",
@@ -807,7 +770,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 32",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7591),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1898),
                             Stars = "Stars 32",
                             Title = "Title 32",
@@ -822,7 +784,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 33",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7618),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1910),
                             Stars = "Stars 33",
                             Title = "Title 33",
@@ -837,7 +798,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 34",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7650),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1924),
                             Stars = "Stars 34",
                             Title = "Title 34",
@@ -852,7 +812,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 35",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7677),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(1937),
                             Stars = "Stars 35",
                             Title = "Title 35",
@@ -867,7 +826,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 36",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7762),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2004),
                             Stars = "Stars 36",
                             Title = "Title 36",
@@ -882,7 +840,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 37",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7794),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2020),
                             Stars = "Stars 37",
                             Title = "Title 37",
@@ -897,7 +854,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 38",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7822),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2033),
                             Stars = "Stars 38",
                             Title = "Title 38",
@@ -912,7 +868,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 39",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7849),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2045),
                             Stars = "Stars 39",
                             Title = "Title 39",
@@ -927,7 +882,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 40",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7876),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2057),
                             Stars = "Stars 40",
                             Title = "Title 40",
@@ -942,7 +896,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 41",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7906),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2069),
                             Stars = "Stars 41",
                             Title = "Title 41",
@@ -957,7 +910,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 42",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7933),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2081),
                             Stars = "Stars 42",
                             Title = "Title 42",
@@ -972,7 +924,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 43",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7961),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2093),
                             Stars = "Stars 43",
                             Title = "Title 43",
@@ -987,7 +938,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 44",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(7988),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2106),
                             Stars = "Stars 44",
                             Title = "Title 44",
@@ -1002,7 +952,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 45",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8015),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2118),
                             Stars = "Stars 45",
                             Title = "Title 45",
@@ -1017,7 +966,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 46",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8041),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2130),
                             Stars = "Stars 46",
                             Title = "Title 46",
@@ -1032,7 +980,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 47",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8068),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2142),
                             Stars = "Stars 47",
                             Title = "Title 47",
@@ -1047,7 +994,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 48",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8094),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2154),
                             Stars = "Stars 48",
                             Title = "Title 48",
@@ -1062,7 +1008,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 49",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8120),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2167),
                             Stars = "Stars 49",
                             Title = "Title 49",
@@ -1077,7 +1022,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 50",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8205),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2214),
                             Stars = "Stars 50",
                             Title = "Title 50",
@@ -1092,7 +1036,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 51",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8236),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2227),
                             Stars = "Stars 51",
                             Title = "Title 51",
@@ -1107,7 +1050,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 52",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8263),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2240),
                             Stars = "Stars 52",
                             Title = "Title 52",
@@ -1122,7 +1064,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 53",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8292),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2252),
                             Stars = "Stars 53",
                             Title = "Title 53",
@@ -1137,7 +1078,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 54",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8321),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2264),
                             Stars = "Stars 54",
                             Title = "Title 54",
@@ -1152,7 +1092,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 55",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8349),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2276),
                             Stars = "Stars 55",
                             Title = "Title 55",
@@ -1167,7 +1106,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 56",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8376),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2288),
                             Stars = "Stars 56",
                             Title = "Title 56",
@@ -1182,7 +1120,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 57",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8403),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2301),
                             Stars = "Stars 57",
                             Title = "Title 57",
@@ -1197,7 +1134,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 58",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8432),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2313),
                             Stars = "Stars 58",
                             Title = "Title 58",
@@ -1212,7 +1148,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 59",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8459),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2325),
                             Stars = "Stars 59",
                             Title = "Title 59",
@@ -1227,7 +1162,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 60",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8485),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2338),
                             Stars = "Stars 60",
                             Title = "Title 60",
@@ -1242,7 +1176,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 61",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8513),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2350),
                             Stars = "Stars 61",
                             Title = "Title 61",
@@ -1257,7 +1190,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 62",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8538),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2362),
                             Stars = "Stars 62",
                             Title = "Title 62",
@@ -1272,7 +1204,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 63",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8567),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2407),
                             Stars = "Stars 63",
                             Title = "Title 63",
@@ -1287,7 +1218,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 64",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8653),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2424),
                             Stars = "Stars 64",
                             Title = "Title 64",
@@ -1302,7 +1232,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 65",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8683),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2436),
                             Stars = "Stars 65",
                             Title = "Title 65",
@@ -1317,7 +1246,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 66",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8714),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2450),
                             Stars = "Stars 66",
                             Title = "Title 66",
@@ -1332,7 +1260,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 67",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8741),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2462),
                             Stars = "Stars 67",
                             Title = "Title 67",
@@ -1347,7 +1274,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 68",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8769),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2475),
                             Stars = "Stars 68",
                             Title = "Title 68",
@@ -1362,7 +1288,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 69",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8795),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2487),
                             Stars = "Stars 69",
                             Title = "Title 69",
@@ -1377,7 +1302,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 70",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8819),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2499),
                             Stars = "Stars 70",
                             Title = "Title 70",
@@ -1392,7 +1316,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 71",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8840),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2512),
                             Stars = "Stars 71",
                             Title = "Title 71",
@@ -1407,7 +1330,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 72",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8862),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2524),
                             Stars = "Stars 72",
                             Title = "Title 72",
@@ -1422,7 +1344,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 73",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8884),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2536),
                             Stars = "Stars 73",
                             Title = "Title 73",
@@ -1437,7 +1358,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 74",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(8905),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2549),
                             Stars = "Stars 74",
                             Title = "Title 74",
@@ -1452,7 +1372,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 75",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9018),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2596),
                             Stars = "Stars 75",
                             Title = "Title 75",
@@ -1467,7 +1386,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 76",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9046),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2610),
                             Stars = "Stars 76",
                             Title = "Title 76",
@@ -1482,7 +1400,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 77",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9068),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2623),
                             Stars = "Stars 77",
                             Title = "Title 77",
@@ -1497,7 +1414,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 78",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9089),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2635),
                             Stars = "Stars 78",
                             Title = "Title 78",
@@ -1512,7 +1428,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 79",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9112),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2647),
                             Stars = "Stars 79",
                             Title = "Title 79",
@@ -1527,7 +1442,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 80",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9135),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2659),
                             Stars = "Stars 80",
                             Title = "Title 80",
@@ -1542,7 +1456,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 81",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9159),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2671),
                             Stars = "Stars 81",
                             Title = "Title 81",
@@ -1557,7 +1470,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 82",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9180),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2684),
                             Stars = "Stars 82",
                             Title = "Title 82",
@@ -1572,7 +1484,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 83",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9202),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2696),
                             Stars = "Stars 83",
                             Title = "Title 83",
@@ -1587,7 +1498,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 84",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9223),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2708),
                             Stars = "Stars 84",
                             Title = "Title 84",
@@ -1602,7 +1512,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 85",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9245),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2720),
                             Stars = "Stars 85",
                             Title = "Title 85",
@@ -1617,7 +1526,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 86",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9265),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2733),
                             Stars = "Stars 86",
                             Title = "Title 86",
@@ -1632,7 +1540,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 87",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9286),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2745),
                             Stars = "Stars 87",
                             Title = "Title 87",
@@ -1647,7 +1554,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 88",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9307),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2790),
                             Stars = "Stars 88",
                             Title = "Title 88",
@@ -1662,7 +1568,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 89",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9390),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2805),
                             Stars = "Stars 89",
                             Title = "Title 89",
@@ -1677,7 +1582,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 90",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9417),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2817),
                             Stars = "Stars 90",
                             Title = "Title 90",
@@ -1692,7 +1596,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 91",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9438),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2829),
                             Stars = "Stars 91",
                             Title = "Title 91",
@@ -1707,7 +1610,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 92",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9459),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2841),
                             Stars = "Stars 92",
                             Title = "Title 92",
@@ -1722,7 +1624,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 93",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9483),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2853),
                             Stars = "Stars 93",
                             Title = "Title 93",
@@ -1737,7 +1638,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 94",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9506),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2866),
                             Stars = "Stars 94",
                             Title = "Title 94",
@@ -1752,7 +1652,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 95",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9528),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2878),
                             Stars = "Stars 95",
                             Title = "Title 95",
@@ -1767,7 +1666,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 96",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9550),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2890),
                             Stars = "Stars 96",
                             Title = "Title 96",
@@ -1782,7 +1680,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 97",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9572),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2902),
                             Stars = "Stars 97",
                             Title = "Title 97",
@@ -1797,7 +1694,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 98",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9595),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2914),
                             Stars = "Stars 98",
                             Title = "Title 98",
@@ -1812,7 +1708,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 99",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9617),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2926),
                             Stars = "Stars 99",
                             Title = "Title 99",
@@ -1827,7 +1722,6 @@ namespace Webbutik.Migrations
                             ImageUrl = "ImageUrl 100",
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 24, 9, 41, 52, 497, DateTimeKind.Local).AddTicks(9645),
                             ReleaseDate = new DateTime(2022, 10, 24, 15, 45, 29, 747, DateTimeKind.Local).AddTicks(2939),
                             Stars = "Stars 100",
                             Title = "Title 100",
@@ -1845,19 +1739,16 @@ namespace Webbutik.Migrations
 
                     b.Property<string>("Address")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("City")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Country")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
@@ -1869,42 +1760,35 @@ namespace Webbutik.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("OrderTotal")
                     b.Property<int?>("OrderTotal")
                         .HasColumnType("int");
 
                     b.Property<string>("Phone")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
                     b.Property<string>("User")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ZipCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
@@ -1915,27 +1799,21 @@ namespace Webbutik.Migrations
 
             modelBuilder.Entity("Webbutik.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("Id")
                     b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"), 1L, 1);
 
-                    b.Property<int>("MovieId")
                     b.Property<int?>("MovieId")
                         .HasColumnType("int");
 
-                    b.Property<int>("OrderId")
                     b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Price")
                     b.Property<int?>("Price")
                         .HasColumnType("int");
 
-                    b.Property<int>("Quantity")
                     b.Property<int?>("Quantity")
                         .HasColumnType("int");
 
@@ -1946,80 +1824,6 @@ namespace Webbutik.Migrations
                     b.HasIndex("OrderId");
 
                     b.ToTable("OrderDetails");
-                });
-
-            modelBuilder.Entity("Webbutik.Models.User", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers", (string)null);
                 });
 
             modelBuilder.Entity("CategoryMovie", b =>
@@ -2048,7 +1852,6 @@ namespace Webbutik.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Webbutik.Models.User", null)
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -2058,7 +1861,6 @@ namespace Webbutik.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Webbutik.Models.User", null)
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -2074,7 +1876,6 @@ namespace Webbutik.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Webbutik.Models.User", null)
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -2084,7 +1885,6 @@ namespace Webbutik.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Webbutik.Models.User", null)
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -2107,16 +1907,10 @@ namespace Webbutik.Migrations
                 {
                     b.HasOne("Webbutik.Models.Movie", "Movie")
                         .WithMany()
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                         .HasForeignKey("MovieId");
 
                     b.HasOne("Webbutik.Models.Order", "Order")
                         .WithMany("OrderDetails")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                         .HasForeignKey("OrderId");
 
                     b.Navigation("Movie");
