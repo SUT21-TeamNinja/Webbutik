@@ -5,48 +5,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.View;
 using Webbutik.Models;
+using Webbutik.ViewModels;
 
 namespace Webbutik.Controllers
 {
     public class MoviesController : Controller
     {
         private readonly AppDbContext _context;
-        private static bool IsUpdated = false;
 
         public MoviesController(AppDbContext context)
         {
             _context = context;
         }
-
-        public async Task<IActionResult> Start()
-        {
-            var list = await FakeMovies.GetMoviesFromApi();
-            if (!IsUpdated)
-            {
-                await Populate(list);
-                IsUpdated = true;
-            }
-            return View();
-        }
-        
-        public async Task Populate(List<Movie> list)
-        {
-            for (int i = 1; i < _context.Movies.Count(); i++)
-            {
-                var movie = await _context.Movies.FirstOrDefaultAsync(x => x.Id == i);
-                movie.Title = list[i].Title;
-                movie.Description = list[i].Description;
-                movie.ImageUrl = list[i].ImageUrl;
-                movie.ReleaseDate = list[i].ReleaseDate;
-                movie.Stars = list[i].Stars;
-                movie.Writers = list[i].Writers;
-                movie.Directors = list[i].Directors;
-                Console.WriteLine("updated");
-            }
-            await _context.SaveChangesAsync();
-        }
-
         // GET: Movies
         public async Task<IActionResult> Index()
         {
@@ -88,7 +60,7 @@ namespace Webbutik.Controllers
             {
                 _context.Add(movie);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ManageProducts));
             }
             return View(movie);
         }
@@ -139,7 +111,7 @@ namespace Webbutik.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ManageProducts));
             }
             return View(movie);
         }
@@ -196,9 +168,62 @@ namespace Webbutik.Controllers
             return View(await _context.Movies.ToListAsync());
         }
 
-        public ViewResult ManageCampaigns()
+        public async Task<IActionResult> ManageCampaigns()
         {
-            return View();
+            var movies = await _context.Movies.Where(m => m.IsOnSale == true).ToListAsync();
+            DiscountViewModel discountViewModel = new DiscountViewModel
+            {
+                MoviesOnSale = movies
+            };
+            return View(discountViewModel);
+        }
+
+        public IActionResult NewCampaign()
+        {
+            DiscountViewModel discountViewModel = new DiscountViewModel
+            {
+                AllMovies = _context.Movies.ToList(),
+                MoviesOnSale = _context.Movies.Where(m => m.IsOnSale == true).ToList()
+            };
+            return View(discountViewModel); 
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddCampaign(Movie movie)
+        {
+            var selectedMovie = await _context.Movies.FindAsync(movie.Id);
+
+            if (selectedMovie == null)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {                    
+                    selectedMovie.IsOnSale = true;
+                    selectedMovie.Discount = movie.Discount;
+                    // TODO: Add price
+
+                    _context.Update(selectedMovie);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!MovieExists(selectedMovie.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(ManageCampaigns));
+            }
+            return View(selectedMovie);
         }
 
 

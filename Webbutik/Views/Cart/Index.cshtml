@@ -7,11 +7,7 @@
     <table class="table table-striped">
         <tbody>
             @foreach (var item in Model.Cart.CartItems)
-            {
-                @*<tr>
-            <td>@item.Movie.Title</td>
-            <td>@item.Amount</td>
-            </tr>*@
+            {                
                 <tr>
                     <td class="text-center">
                         <a class="btn btn-dark" asp-controller="cart"
@@ -28,7 +24,8 @@
 
     </table>
     <div class="text-center">
-        <a class="btn btn-dark">Checkout</a>
+        <a class="btn btn-dark" asp-controller="order"
+           asp-action="checkout">Checkout</a>
         <a class="btn btn-dark" asp-controller="cart"
            asp-action="clearcart">Clear cart</a>
     </div>
