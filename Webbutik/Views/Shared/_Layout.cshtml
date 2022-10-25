@@ -45,13 +45,13 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
-                    <a class="nav-link text-light active" aria-current="page" href="#"><i class="fa-solid fa-user"></i> Login</a>
                     <a class="nav-link text-light" asp-controller="cart" asp-action="index">
                         <i class="fa-solid fa-cart-shopping"></i>
                         @await Component.InvokeAsync("CartItems")
                         </a>
 
                 </div>
+                <partial name="_LoginPartial" />
             </div>
         </nav>
     </header>

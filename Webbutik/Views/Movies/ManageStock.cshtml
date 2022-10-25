@@ -1,11 +1,16 @@
-﻿@{
+
+@model IEnumerable<Movie>
+@{
     ViewData["Title"] = "ManageStock";
 }
 <div id="adm-container">
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Admin Page
+
+                <h3>Admin Page</h3>
+
+
             </div>
 
             <ul class="list-unstyled components">
@@ -31,7 +36,49 @@
             </ul>
         </nav>
         <div id="content-sidebar"> 
+
+           
             <!-- ADD CONTENT HERE -->
+            <table class="table table-responsive-sm">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InStock)
+                        </th>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>
+                                <a asp-controller="Movies" asp-action="DecreaseInStock" asp-route-id="@item.Id">
+                                   <i class="btn btn-danger">-</i>                               
+                                </a>
+                                @item.InStock
+                                <a asp-controller="Movies" asp-action="IncreaseInStock" asp-route-id="@item.Id">
+                                    <i class ="btn btn-primary">+</i>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                    }
+
+                </tbody>
+            </table>
+          
+            
+
+
 
         </div>
     </div>

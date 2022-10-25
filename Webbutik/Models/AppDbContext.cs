@@ -3,10 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Webbutik.Models
 {
-    public class AppDbContext:IdentityDbContext
+    public class AppDbContext : IdentityDbContext<User>
     {
         public AppDbContext(DbContextOptions<AppDbContext> opt) : base(opt){}
 
+        public DbSet<User> Users  { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
