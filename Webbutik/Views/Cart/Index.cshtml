@@ -26,23 +26,36 @@
     <div class="text-center">
         <a class="btn btn-dark" asp-controller="order"
            asp-action="checkout">Checkout</a>
-        <a id="clearcart" class="btn btn-dark" asp-controller="cart"
-           asp-action="clearcart">Clear cart</a>
+        <a id="clearcart" class="btn btn-dark">Clear cart</a>
     </div>
 </div>
-<div class="control-section" style="width:400px;margin:0 auto;">
-    <ejs-toast id="element" title="Matt sent you a friend request" content="You have a new friend request yet to accept"></ejs-toast>
-</div>
-<script type="text/javascript">
-    setTimeout(
-        () => {
-            var toastObj = document.getElementById('element').ej2_instances[0];
-            toastObj.target = document.body;
-        }, 1000);
-    document.getElementById("clearcart").addEventListener('click', function () {
-        var toastObj = document.getElementById('element').ej2_instances[0];
-        toastObj.show();
-    });
-</script>
 
+<style>
+    .e-confirm-dialog.customClass {
+        max-width: 350px;
+        max-height: 200px !important;
+    }
+</style>
+<script>
+    document.getElementById('clearcart').onclick = function () {
+        ej.popups.DialogUtility.confirm({
+            title: "Delete multiple items",
+            content: "Are you sure you want to permanently delete these items?",
+            okButton: { click: confirmOkAction },
+            cancelButton: { click: confirmCancelAction },
+            position: { X: "center", Y: "center" },
+            width : "400px",
+            height: "200px",
+            cssClass: "customClass"      
+            
+        });
+    };
+    function confirmOkAction() {
+        this.hide();
+        window.location.href = "@Url.Action("clearcart", "cart")"        
+    }
+    function confirmCancelAction() {
+        this.hide();       
+    }
+</script>
 
