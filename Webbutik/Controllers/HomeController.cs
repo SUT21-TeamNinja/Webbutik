@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Webbutik.Models;
+using Webbutik.ViewModels;
 
 namespace Webbutik.Controllers
 {
@@ -12,7 +13,12 @@ namespace Webbutik.Controllers
         {
             _context = context;
         }
-        
+
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Movies.ToListAsync());
+        }
+
         public async Task<IActionResult> Start()
         {
             var list = await FakeMovies.GetMoviesFromApi();
@@ -21,7 +27,12 @@ namespace Webbutik.Controllers
                 await Populate(list);
                 IsUpdated = true;
             }
-            return View();
+            var movies = await _context.Movies.ToListAsync();
+            var viewModel = new MovieListViewModel
+            {
+                Movies = movies
+            };
+            return View(viewModel);
         }
 
         public async Task Populate(List<Movie> list)
@@ -41,10 +52,6 @@ namespace Webbutik.Controllers
             await _context.SaveChangesAsync();
         }
 
-
-        public IActionResult Index()
-        {
-            return View();
-        }
+        
     }
 }

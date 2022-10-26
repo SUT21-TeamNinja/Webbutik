@@ -42,9 +42,9 @@ namespace Webbutik.Models
                         Console.WriteLine(e);
                     }
                     tempmovie.Title = string.Join(", ", tempTitleList);
-                    tempmovie.ImageUrl = item["imageLinks"]["image"].ToString();
-                    tempmovie.ReleaseDate = DateTime.Parse(item["year"].ToString());
-                    tempmovie.Stars = item["crew"].ToString();
+                    
+                    
+                  
                     tempmovie.Writers = item["imDbRating"].ToString();
                     tempmovie.Directors = item["crew"].ToString();
                     movielist.Add(tempmovie);
