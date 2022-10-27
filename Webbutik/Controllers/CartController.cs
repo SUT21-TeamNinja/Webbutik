@@ -100,7 +100,7 @@ namespace Webbutik.Controllers
             _context.CartItems.RemoveRange(cartItems);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("index", "home");
 
         }
 
