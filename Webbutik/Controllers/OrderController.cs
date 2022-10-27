@@ -9,7 +9,6 @@ namespace Webbutik.Controllers
 {
     public class OrderController : Controller
     { 
-
         private readonly AppDbContext _context;
         private readonly Cart _cart;
         public OrderController(AppDbContext context, Cart cart)
