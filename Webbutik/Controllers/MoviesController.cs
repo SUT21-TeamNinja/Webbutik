@@ -92,7 +92,7 @@ namespace Webbutik.Controllers
                     break;
             }
 
-            int pageSize = 3;
+            int pageSize = 20;
             int pageNumber = (page ?? 1);
             return View(movies.ToPagedList(pageNumber, pageSize));
         }
