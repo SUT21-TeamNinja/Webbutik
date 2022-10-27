@@ -46,6 +46,9 @@
                             Title
                         </th>
                         <th>
+                            Price
+                        </th>
+                        <th>
                             Discount
                         </th>
                         <th>
@@ -67,11 +70,14 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Title)
                             </td>
+                                <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                                </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Discount)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.DiscountPrice)
+                                @Html.DisplayFor(modelItem => item.DiscountPrice) kr
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.DiscountStart)

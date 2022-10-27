@@ -235,7 +235,8 @@ namespace Webbutik.Controllers
                 {                    
                     selectedMovie.IsOnSale = true;
                     selectedMovie.Discount = movie.Discount;
-                    selectedMovie.DiscountPrice = movie.Price * (selectedMovie.Discount / 100);
+                    decimal discount = Convert.ToDecimal(selectedMovie.Discount) / 100;
+                    selectedMovie.DiscountPrice = selectedMovie.Price - ((selectedMovie.Price * discount));
                     selectedMovie.DiscountStart = movie.DiscountStart;
                     selectedMovie.DiscountEnd = movie.DiscountEnd;
 
