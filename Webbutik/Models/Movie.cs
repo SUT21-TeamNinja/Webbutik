@@ -15,6 +15,9 @@ namespace Webbutik.Models
         public string? Directors { get; set; }
         public bool? IsOnSale { get; set; }
         public int? Discount { get; set; }
+        public decimal? DiscountPrice { get; set; }
+        public DateTime? DiscountStart { get; set; }
+        public DateTime? DiscountEnd { get; set; }
         public int? InStock { get; set; }
         public int? Price { get; set; }
 

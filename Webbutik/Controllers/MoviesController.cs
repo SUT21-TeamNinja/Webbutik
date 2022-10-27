@@ -235,7 +235,9 @@ namespace Webbutik.Controllers
                 {                    
                     selectedMovie.IsOnSale = true;
                     selectedMovie.Discount = movie.Discount;
-                    // TODO: Add price
+                    selectedMovie.DiscountPrice = movie.Price * (selectedMovie.Discount / 100);
+                    selectedMovie.DiscountStart = movie.DiscountStart;
+                    selectedMovie.DiscountEnd = movie.DiscountEnd;
 
                     _context.Update(selectedMovie);
                     await _context.SaveChangesAsync();
