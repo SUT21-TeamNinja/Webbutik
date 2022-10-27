@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.View;
 using Webbutik.Models;
 using Webbutik.ViewModels;
+using X.PagedList;
 
 namespace Webbutik.Controllers
 {
@@ -23,7 +24,7 @@ namespace Webbutik.Controllers
         // GET: Movies
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Movies.ToListAsync());
+            return View(await _context.Movies.ToListAsync());
         }
 
         // GET: Movies/Details/5
@@ -48,6 +49,52 @@ namespace Webbutik.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+
+        public ViewResult AllMovies(string sortOrder, string currentFilter, string searchString, int? page)
+        {
+
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var movieListVM = new MovieListViewModel() { Movies = _context.Movies };
+            var movies = movieListVM.Movies;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(m => m.Title.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    movies = movies.OrderByDescending(m => m.Title);
+                    break;
+                case "Date":
+                    movies = movies.OrderBy(m => m.ReleaseDate);
+                    break;
+                case "date_desc":
+                    movies = movies.OrderByDescending(m => m.ReleaseDate);
+                    break;
+                default:  // Name ascending 
+                    movies = movies.OrderBy(m => m.Title);
+                    break;
+            }
+
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(movies.ToPagedList(pageNumber, pageSize));
         }
 
         // POST: Movies/Create
@@ -149,14 +196,14 @@ namespace Webbutik.Controllers
             {
                 _context.Movies.Remove(movie);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool MovieExists(int id)
         {
-          return _context.Movies.Any(e => e.Id == id);
+            return _context.Movies.Any(e => e.Id == id);
         }
 
         [Authorize(Roles = "Admin")]
@@ -187,7 +234,7 @@ namespace Webbutik.Controllers
                 AllMovies = _context.Movies.ToList(),
                 MoviesOnSale = _context.Movies.Where(m => m.IsOnSale == true).ToList()
             };
-            return View(discountViewModel); 
+            return View(discountViewModel);
         }
 
         [HttpPost]
@@ -204,7 +251,7 @@ namespace Webbutik.Controllers
             if (ModelState.IsValid)
             {
                 try
-                {                    
+                {
                     selectedMovie.IsOnSale = true;
                     selectedMovie.Discount = movie.Discount;
                     // TODO: Add price
@@ -246,7 +293,7 @@ namespace Webbutik.Controllers
             {
                 test.InStock++;
             }
-           
+
             _context.SaveChanges();
             return RedirectToAction("ManageStock");
         }
