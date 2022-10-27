@@ -8,7 +8,6 @@ using Webbutik.Models;
 namespace Webbutik.Controllers
 {
     public class OrderController : Controller
-    {      
 
         private readonly AppDbContext _context;
         private readonly Cart _cart;
@@ -85,7 +84,7 @@ namespace Webbutik.Controllers
 
         public IActionResult ItemsInOrder(int id)
         {
-            var orderDetails = _context.OrderDetails.Where(i => i.OrderId == id).Include(m => m.Movie);
+            var orderDetails = _context.OrderDetails.Where(i => i.OrderId == id).Include(m => m.Movie).Include(o => o.Order);
             return View(orderDetails);
 
         }

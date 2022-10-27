@@ -10,28 +10,29 @@
             <ul class="list-unstyled components">
                 <p>*Name*</p>
                 <li>
-                    <a asp-action="ManageProducts">Manage Products</a>
+                    <a asp-controller="Movies" asp-action="ManageProducts">Manage Products</a>
                 </li>
                 <li>
-                    <a asp-action="ManageStock">Manage Stock</a>
+                    <a asp-controller="Movies" asp-action="ManageStock">Manage Stock</a>
                 </li>
                 <li>
-                    <a asp-action="ManageCampaigns">Manage Campaigns</a>
+                    <a asp-controller="Movies" asp-action="ManageCampaigns">Manage Campaigns</a>
                 </li>
                 <li>
-                    <a asp-action="Dashboard">Statistic Dashboard</a>
+                    <a asp-controller="Movies" asp-action="Dashboard">Statistic Dashboard</a>
                 </li>
                 <li>
-                    <a asp-action="PurchaseLog">Customer purchase log</a>
+                    <a asp-controller="Movies" asp-action="PurchaseLog">Customer purchase log</a>
                 </li>
                 <li>
-                    <a asp-action="Currency">Currency</a>
+                    <a asp-controller="Movies" asp-action="Currency">Currency</a>
                 </li>
             </ul>
         </nav>
-    </div>
+   
     <div id="content-sidebar">
-<table>
+
+<table class="table">
     <thead>
         <tr>
             <th>
@@ -41,20 +42,9 @@
                 @Html.DisplayNameFor(t=>t.Quantity)
             </th>
             <th>
-                @Html.DisplayNameFor(t=>t.Movie.Title)
+                @Html.DisplayNameFor(t=>t.Price)
             </th>
-            <th>
-                @Html.DisplayNameFor(t=>t.Movie.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(t=>t.Movie.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(t=>t.Movie.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(t=>t.Movie.Title)
-            </th>
+
         </tr>
     </thead>
         <tbody>
@@ -67,11 +57,15 @@
             <td>
                 @item.Quantity
             </td>
+            <td>
+                @item.Price
+            </td>
         </tr>
-
+                        
         }
         </tbody>
 </table>
+    </div>
     </div>
 
 </div>
