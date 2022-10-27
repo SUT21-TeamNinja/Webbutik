@@ -237,6 +237,10 @@ namespace Webbutik.Controllers
         public async Task<IActionResult> ManageStockIndividually(int id)
         {
             var movie = await _context.Movies.FirstOrDefaultAsync(i => i.Id == id);
+            if (movie == null)
+            {
+                return NotFound();
+            }
             return View(movie);
         }
 
@@ -253,7 +257,7 @@ namespace Webbutik.Controllers
             }
            
             _context.SaveChanges();
-            return RedirectToAction("ManageStock");
+            return Redirect("ManageStockIndividually/" + movie.Id);
         }
 
         public async Task<IActionResult> DecreaseInStock(int id)
@@ -277,7 +281,7 @@ namespace Webbutik.Controllers
             }
 
             _context.SaveChanges();
-            return RedirectToAction("ManageStock");
+            return Redirect("ManageStockIndividually/" + movie.Id);
         }
 
 
