@@ -12,14 +12,6 @@ namespace Webbutik.Controllers
 
 
         private readonly AppDbContext _context;
-
-        public OrderController(AppDbContext context)
-        {
-            _context = context;
-        }
-        public IActionResult Index()
-
-        private readonly AppDbContext _context;
         private readonly Cart _cart;
         public OrderController(AppDbContext context, Cart cart)
 
@@ -94,7 +86,7 @@ namespace Webbutik.Controllers
 
         public IActionResult ItemsInOrder(int id)
         {
-            var orderDetails = _context.OrderDetails.Where(i => i.OrderId == id).Include(m => m.Movie);
+            var orderDetails = _context.OrderDetails.Where(i => i.OrderId == id).Include(m => m.Movie).Include(o => o.Order);
             return View(orderDetails);
 
         }

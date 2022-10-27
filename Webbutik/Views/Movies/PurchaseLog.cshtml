@@ -82,10 +82,16 @@
                          @item.OrderDate
                     </td>
                     <td>
-                        <a asp-controller="Order" asp-action="Distance" asp-route-id="@item.Id">Distance</a>
-                        <a asp-controller="Order" asp-action="ItemsInOrder" asp-route-id="@item.Id">Movies in the order</a>
+                                <a asp-controller="Order" asp-action="Distance" asp-route-id="@item.Id"><i class="fa-regular fa-map"> Distance</i></a>
+                                
+                    </td>
+                    <td>
+                                <a asp-controller="Order" asp-action="ItemsInOrder" asp-route-id="@item.Id"><i class="fa-solid fa-film"> Movies in this order</i>
+
+                        </a>
                     </td>
                 </tr>
+
             }
             </tbody>    
             </table>
