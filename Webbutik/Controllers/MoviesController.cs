@@ -42,7 +42,7 @@ namespace Webbutik.Controllers
                 return NotFound();
             }
 
-            return View(movie);
+            return PartialView("components//_movieMovieDetails", movie);
         }
 
         // GET: Movies/Create

@@ -8,9 +8,7 @@ namespace Webbutik.ViewComponents
 {
     public class CartItems : ViewComponent
     {
-        //private readonly AppDbContext _context;
-
-        //public CartItems(AppDbContext context) => _context = context;
+        
         private readonly Cart _cart;
 
         public CartItems(Cart cart) => _cart = cart;

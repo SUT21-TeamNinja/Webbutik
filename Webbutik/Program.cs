@@ -30,7 +30,7 @@ builder.Services.AddSession();
 
 
 var app = builder.Build();
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("License Key \t:\tMgo+DSMBPh8sVXJ0S0V+XE9AcVRDX3xKf0x/TGpQb19xflBPallYVBYiSV9jS3xSdkdmWH5ad3VUTmRYVQ==");
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mgo+DSMBMAY9C3t2VVhjQlFac19JXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRd0VhUX9XdXRXTmNeU0M=");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
