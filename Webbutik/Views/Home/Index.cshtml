@@ -38,14 +38,12 @@
 
 <div id='container'>
     <ejs-dialog id='dialog' isModal="true" width="600px" overlayClick="onOverlayClick"
-                target="#container">
+                target="#container" visible="false">
         <e-content-template>
             @*NEED TO CHANGE THE ID TO THE ACTUAL ID FROM DATABASE.*@
             @await Component.InvokeAsync("MovieDetails", new{id=1})
         </e-content-template>
     </ejs-dialog>
-
-
 </div>
 
 <script>
