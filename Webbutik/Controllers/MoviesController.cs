@@ -54,7 +54,7 @@ namespace Webbutik.Controllers
 
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewBag.DateSortParm = sortOrder == "date" ? "date_desc" : "Date";
 
             if (searchString != null)
             {
@@ -72,14 +72,15 @@ namespace Webbutik.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                movies = movies.Where(m => m.Title.Contains(searchString));
+                movies = movies.Where(m => m.Title.ToLower().Contains(searchString.ToLower()));
             }
+
             switch (sortOrder)
             {
                 case "name_desc":
                     movies = movies.OrderByDescending(m => m.Title);
                     break;
-                case "Date":
+                case "date":
                     movies = movies.OrderBy(m => m.ReleaseDate);
                     break;
                 case "date_desc":
