@@ -35,7 +35,7 @@ namespace Webbutik.ViewComponents
 
                 _context.Update(movie);
                 _context.SaveChanges();
-            }            
+            }
 
             return View(movie);
         }

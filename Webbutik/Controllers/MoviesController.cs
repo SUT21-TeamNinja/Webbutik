@@ -232,7 +232,8 @@ namespace Webbutik.Controllers
             if (ModelState.IsValid)
             {
                 try
-                {                 
+                {
+                    selectedMovie.IsOnSale = true;
                     selectedMovie.Discount = movie.Discount;
                     decimal discount = Convert.ToDecimal(selectedMovie.Discount) / 100;
                     selectedMovie.DiscountPrice = selectedMovie.Price - ((selectedMovie.Price * discount));
