@@ -276,12 +276,57 @@ namespace Webbutik.Controllers
             return View(selectedMovie);
         }
 
-        public async Task<IActionResult> Campaigns()
-        {
-            var movies = await _context.Movies.Where(m => m.IsOnSale == true).ToListAsync();
-            return View(movies);
-        }
+        //public async Task<IActionResult> Campaigns()
+        //{
+        //    var movies = await _context.Movies.Where(m => m.IsOnSale == true).ToListAsync();
+        //    return View(movies);
+        //}
 
+        public ViewResult Campaigns(string sortOrder, string currentFilter, string searchString, int? page)
+        {
+
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var movieListVM = new MovieListViewModel() { Movies = _context.Movies };
+            var movies = movieListVM.Movies;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(m => m.Title.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    movies = movies.OrderByDescending(m => m.Title);
+                    break;
+                case "Date":
+                    movies = movies.OrderBy(m => m.ReleaseDate);
+                    break;
+                case "date_desc":
+                    movies = movies.OrderByDescending(m => m.ReleaseDate);
+                    break;
+                default:  // Name ascending 
+                    movies = movies.OrderBy(m => m.Title);
+                    break;
+            }
+
+            int pageSize = 20;
+            int pageNumber = (page ?? 1);
+            return View(movies.ToPagedList(pageNumber, pageSize));
+        }
 
         public async Task<IActionResult> ManageStock()
         {

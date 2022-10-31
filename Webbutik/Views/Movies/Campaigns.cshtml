@@ -1,11 +1,47 @@
-﻿@model IEnumerable<Movie>
+﻿@*@model IEnumerable<Movie>
 
 @foreach(var item in Model){
-	if (item.DiscountStart > DateTime.Now)
+	if (item.IsOnSale == true)
 	{
 		<div>
 			<span>@item.Title</span>
 			<span>@await Component.InvokeAsync("DiscountPrice", new { id = item.Id })</span>
 		</div>
 	}	
+}*@
+
+@model X.PagedList.IPagedList<Webbutik.Models.Movie>
+@using X.PagedList.Mvc.Core
+
+@{
+    ViewData["Title"] = "AllMovies";
 }
+
+<div class="container">
+    <h3 class="header">Movies On Sale</h3>
+
+    <div class="row" style="justify-content: flex-end">
+        @foreach (var item in Model)
+        {
+            @if (item.DiscountStart != null && DateTime.Compare(Convert.ToDateTime(item.DiscountStart), DateTime.Now) < 0)
+            {
+                <partial name="Components//_MovieCard" model="item" />
+
+                <div class="modal" id="exampleModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <partial name="Components//_MovieDetails" model="item" />
+                            @await Component.InvokeAsync("DiscountPrice", new { id = item.Id })
+                        </div>
+                    </div>
+                </div>
+            }            
+        }
+    </div>
+
+    <p class="align-bottom" style="color:gold">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</p>
+
+    @Html.PagedListPager(Model, page => Url.Action("Campaigns",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>
