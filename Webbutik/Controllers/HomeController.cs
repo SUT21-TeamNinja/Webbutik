@@ -38,6 +38,11 @@ namespace Webbutik.Controllers
                 movie.Title = list[i].Title;
                 movie.ImageUrl = list[i].ImageUrl;
                 movie.Directors = list[i].Directors;
+                movie.ImDbRating = list[i].ImDbRating;
+                movie.Genres = list[i].Genres;
+                movie.ContentRating = list[i].ContentRating;
+                movie.Description = list[i].Description;
+                movie.Stars = list[i].Stars;
                 Console.WriteLine("updated");
             }
             await _context.SaveChangesAsync();
