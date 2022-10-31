@@ -35,18 +35,19 @@ namespace Webbutik.Models
                     }
                     try
                     {
-                     
+                       
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine(e);
                     }
-                    tempmovie.Title = string.Join(", ", tempTitleList);
+                    tempmovie.Title = string.Join(", ",tempTitleList);
+
+
+
                     
-                    
-                  
-                    tempmovie.Writers = item["imDbRating"].ToString();
                     tempmovie.Directors = item["crew"].ToString();
+                    tempmovie.ImageUrl = item["image"].ToString();
                     movielist.Add(tempmovie);
                 }
             }
