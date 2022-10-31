@@ -12,6 +12,7 @@
                   
                     <h6 class="card-title" style="max-width: 10rem">@Model.Title</h6>
                     <h5 style="color:darkred">@Model.Price</h5>
+                    @await Component.InvokeAsync("DiscountPrice", new { id = Model.Id })
                     <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.Id">
                         <div class="btn btn-success">PURCHASE</div>
                     </a>

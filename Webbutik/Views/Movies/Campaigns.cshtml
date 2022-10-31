@@ -14,7 +14,7 @@
 @using X.PagedList.Mvc.Core
 
 @{
-    ViewData["Title"] = "AllMovies";
+    ViewData["Title"] = "Campaigns";
 }
 
 <div class="container">
@@ -32,7 +32,6 @@
                         <div class="modal-content">
 
                             <partial name="Components//_MovieDetails" model="item" />
-                            @await Component.InvokeAsync("DiscountPrice", new { id = item.Id })
                         </div>
                     </div>
                 </div>

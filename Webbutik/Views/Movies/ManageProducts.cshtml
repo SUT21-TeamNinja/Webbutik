@@ -48,10 +48,9 @@
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Title)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Description)
-                        </th>                        
+                        </th>                    
+                        <th></th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -60,17 +59,18 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.ImageUrl)
+                                <img src="@item.ImageUrl" class="img-fluid rounded-start" alt="<BILD SAKNAS>" style="height: 100px;">
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Title)
+                            </td>                                                    
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square" style="color: darkorange"></i></a>                              
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Description)
-                            </td>                                                        
+                                <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-eye"></i></a>
+                            </td>
                             <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square" style="color: darkorange"></i></a> |
-                                <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-eye"></i></a> |
                                 <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash" style="color: red"></i></a>
                             </td>
                         </tr>
