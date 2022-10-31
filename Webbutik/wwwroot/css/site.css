@@ -284,3 +284,42 @@ a {
 }
 
 /*MOVIEDETAIL POPUP END*/
+
+/*CAROUSEL START*/
+.control-container {
+    background-color: #adb5bd;
+    height: 600px;
+    margin: 0 auto;
+    width: 600px;
+}
+
+.e-carousel .slide-content {
+    align-items: center;
+    display: flex;
+    font-size: 1.25rem;
+    height: 100%;
+    justify-content: center;
+}
+
+.img-container img {
+    max-height: 600px;
+    max-width: 650px;
+}
+
+
+.e-carousel.e-partial .e-carousel-slide-container {
+    padding: 0 100px;
+}
+
+
+.img-container {
+    height: 100%;
+    margin: 0;
+}
+
+/*CAROUSEL END*/
+
+.e-dialog .e-dlg-content {
+    padding: 0;
+    margin: 0;
+}
