@@ -1,11 +1,58 @@
-﻿@{
+﻿@model MovieListViewModel
+
+@{
     var currentPage = ViewContext.RouteData.Values["Controller"].ToString().ToLower();
+    var rnd = new Random();
+    var carouselList = new List<Movie>();
+    for (int i = 1; i < 6; i++)
+    {
+        var select = rnd.Next(1, 51);
+        foreach (var item in Model.Movies)
+        {
+            if (item.Id == select)
+            {
+                carouselList.Add(item);
+            }
+        }
+    }
 }
 
 <div class="container text-center">
     <div class="row">
-        <div class="col"><img class="highlight-movie" src="https://cdn.cdon.com/cmpadmin/images/2022-10-03-13-08-11-811-db724ca1-ae30-4db6-9a7a-222ed0621c50thorloveandthunder_outnow_cdon_1200x600.jpg?impolicy=imagebeam&imwidth=1200" /></div>
-    </div>
+        @*<div class="col"><img class="highlight-movie" src="https://cdn.cdon.com/cmpadmin/images/2022-10-03-13-08-11-811-db724ca1-ae30-4db6-9a7a-222ed0621c50thorloveandthunder_outnow_cdon_1200x600.jpg?impolicy=imagebeam&imwidth=1200" /></div>*@
+        <div class="container">
+            <div class="control-container">
+                <ejs-carousel id="defaultCarousel" partialVisible=true dataSource="@carouselList" itemTemplate='<div class="slide-content"><img src="${ImageUrl}"></div>'>
+                </ejs-carousel>
+            </div>
+        </div>
+        <style>
+            .control-container {
+                background-color: #adb5bd;
+                height: 600px;
+                margin: 0 auto;
+                width: 600px;
+            }
+
+            .e-carousel .slide-content {
+                align-items: center;
+                display: flex;
+                font-size: 1.25rem;
+                height: 100%;
+               
+                justify-content: center;
+            }
+            .slide-content img{
+                max-height: 700px;
+                max-width: 650px;
+            }
+            .title{
+                position: absolute;
+                left: 50%;
+                bottom: 20px;
+            }
+        </style>
+       </div>
 
     <div class="row">
         <div class="col-4">
