@@ -1,4 +1,32 @@
 ﻿@model Movie
 
-<h1>@Model.Title</h1>
-<h1>@Model.Directors</h1>
+
+    <div class="main_card">
+        <div class="card_left">
+            <div class="card_datails">
+                <h1>@Model.Title</h1>
+                <div class="card_cat">
+                    <p class="PG">RATING</p>
+                    <p class="year">YEAR</p>
+                    <p class="genre">GENRES</p>
+                    <p class="time">RUNTIME</p>
+                </div>
+                <p class="disc">DESCRIPTION</p>
+                <a href="IMDBLINK" target="_blank">IMDB LINK</a>
+                <div class="social-btn">
+                    <button class="details-button">
+                        <i class="fas fa-play"></i> ADD TO CART
+                    </button>
+                             
+                </div>
+            </div>
+        </div>
+        <div class="card_right">
+            <div class="img_container">
+                <img src="@Model.ImageUrl" alt="">
+            </div>
+            
+        </div>
+    </div>
+
+
