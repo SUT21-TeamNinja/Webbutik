@@ -6,16 +6,16 @@
             <div class="card_datails">
                 <h1>@Model.Title</h1>
                 <div class="card_cat">
-                    <p class="PG">RATING</p>
+                    <p class="PG">@Model.ImDbRating</p>
                     <p class="year">YEAR</p>
-                    <p class="genre">GENRES</p>
-                    <p class="time">RUNTIME</p>
+                    <p class="genre">@Model.Genres</p>
+                    <p class="time">@Model.RunTimeStr</p>
                 </div>
-                <p class="disc">DESCRIPTION</p>
-                <a href="IMDBLINK" target="_blank">IMDB LINK</a>
+                <p class="disc">@Model.Description</p>
+            <a href="https://www.imdb.com/title/ + @Model.ImdbId" target="_blank">More info</a>
                 <div class="social-btn">
                     <button class="details-button">
-                        <i class="fas fa-play"></i> ADD TO CART
+                        ADD TO CART
                     </button>
                              
                 </div>
