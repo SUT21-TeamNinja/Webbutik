@@ -21,7 +21,7 @@ namespace Webbutik.Models
             if (response.IsSuccessStatusCode)
             {
                 var strResponse = await response.Content.ReadAsStringAsync();
-                var trimlist = JObject.Parse(strResponse)["items"].Children().ToList();
+                var trimlist = JObject.Parse(strResponse)["results"].Children().ToList();
 
                 foreach (var item in trimlist)
                 {
@@ -29,7 +29,6 @@ namespace Webbutik.Models
                     
 
                     tempmovie.Title = item["title"].ToString();
-                    tempmovie.Directors = item["crew"].ToString();
                     tempmovie.ImageUrl = item["image"].ToString();
                     movielist.Add(tempmovie);
                 }

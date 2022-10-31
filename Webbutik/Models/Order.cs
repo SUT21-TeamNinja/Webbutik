@@ -31,7 +31,6 @@ namespace Webbutik.Models
 
         [Required(ErrorMessage = "This field is required.")]
         [StringLength(15)]        
-        [StringLength(10)]        
         public string Phone { get; set; }
 
         [Required(ErrorMessage = "This field is required.")]
