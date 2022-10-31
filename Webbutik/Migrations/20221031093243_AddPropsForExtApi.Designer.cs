@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Webbutik.Models;
 
@@ -11,9 +12,10 @@ using Webbutik.Models;
 namespace Webbutik.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221031093243_AddPropsForExtApi")]
+    partial class AddPropsForExtApi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -294,7 +296,7 @@ namespace Webbutik.Migrations
                             ImdbId = 1,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8486),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(4852),
                             RunTimeStr = "RunTimeStr  1",
                             Stars = "Stars 1",
                             Title = "Title 1"
@@ -312,7 +314,7 @@ namespace Webbutik.Migrations
                             ImdbId = 2,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8541),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(4949),
                             RunTimeStr = "RunTimeStr  2",
                             Stars = "Stars 2",
                             Title = "Title 2"
@@ -330,7 +332,7 @@ namespace Webbutik.Migrations
                             ImdbId = 3,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8556),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(4965),
                             RunTimeStr = "RunTimeStr  3",
                             Stars = "Stars 3",
                             Title = "Title 3"
@@ -348,7 +350,7 @@ namespace Webbutik.Migrations
                             ImdbId = 4,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8569),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(4978),
                             RunTimeStr = "RunTimeStr  4",
                             Stars = "Stars 4",
                             Title = "Title 4"
@@ -366,7 +368,7 @@ namespace Webbutik.Migrations
                             ImdbId = 5,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8581),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(4991),
                             RunTimeStr = "RunTimeStr  5",
                             Stars = "Stars 5",
                             Title = "Title 5"
@@ -384,7 +386,7 @@ namespace Webbutik.Migrations
                             ImdbId = 6,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8634),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5006),
                             RunTimeStr = "RunTimeStr  6",
                             Stars = "Stars 6",
                             Title = "Title 6"
@@ -402,7 +404,7 @@ namespace Webbutik.Migrations
                             ImdbId = 7,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8647),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5019),
                             RunTimeStr = "RunTimeStr  7",
                             Stars = "Stars 7",
                             Title = "Title 7"
@@ -420,7 +422,7 @@ namespace Webbutik.Migrations
                             ImdbId = 8,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8660),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5032),
                             RunTimeStr = "RunTimeStr  8",
                             Stars = "Stars 8",
                             Title = "Title 8"
@@ -438,7 +440,7 @@ namespace Webbutik.Migrations
                             ImdbId = 9,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8673),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5045),
                             RunTimeStr = "RunTimeStr  9",
                             Stars = "Stars 9",
                             Title = "Title 9"
@@ -456,7 +458,7 @@ namespace Webbutik.Migrations
                             ImdbId = 10,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8687),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5059),
                             RunTimeStr = "RunTimeStr  10",
                             Stars = "Stars 10",
                             Title = "Title 10"
@@ -474,7 +476,7 @@ namespace Webbutik.Migrations
                             ImdbId = 11,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8700),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5102),
                             RunTimeStr = "RunTimeStr  11",
                             Stars = "Stars 11",
                             Title = "Title 11"
@@ -492,7 +494,7 @@ namespace Webbutik.Migrations
                             ImdbId = 12,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8713),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5117),
                             RunTimeStr = "RunTimeStr  12",
                             Stars = "Stars 12",
                             Title = "Title 12"
@@ -510,7 +512,7 @@ namespace Webbutik.Migrations
                             ImdbId = 13,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8726),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5130),
                             RunTimeStr = "RunTimeStr  13",
                             Stars = "Stars 13",
                             Title = "Title 13"
@@ -528,7 +530,7 @@ namespace Webbutik.Migrations
                             ImdbId = 14,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8738),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5143),
                             RunTimeStr = "RunTimeStr  14",
                             Stars = "Stars 14",
                             Title = "Title 14"
@@ -546,7 +548,7 @@ namespace Webbutik.Migrations
                             ImdbId = 15,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8780),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5156),
                             RunTimeStr = "RunTimeStr  15",
                             Stars = "Stars 15",
                             Title = "Title 15"
@@ -564,7 +566,7 @@ namespace Webbutik.Migrations
                             ImdbId = 16,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8794),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5169),
                             RunTimeStr = "RunTimeStr  16",
                             Stars = "Stars 16",
                             Title = "Title 16"
@@ -582,7 +584,7 @@ namespace Webbutik.Migrations
                             ImdbId = 17,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8807),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5182),
                             RunTimeStr = "RunTimeStr  17",
                             Stars = "Stars 17",
                             Title = "Title 17"
@@ -600,7 +602,7 @@ namespace Webbutik.Migrations
                             ImdbId = 18,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8821),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5196),
                             RunTimeStr = "RunTimeStr  18",
                             Stars = "Stars 18",
                             Title = "Title 18"
@@ -618,7 +620,7 @@ namespace Webbutik.Migrations
                             ImdbId = 19,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8834),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5209),
                             RunTimeStr = "RunTimeStr  19",
                             Stars = "Stars 19",
                             Title = "Title 19"
@@ -636,7 +638,7 @@ namespace Webbutik.Migrations
                             ImdbId = 20,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8847),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5257),
                             RunTimeStr = "RunTimeStr  20",
                             Stars = "Stars 20",
                             Title = "Title 20"
@@ -654,7 +656,7 @@ namespace Webbutik.Migrations
                             ImdbId = 21,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8859),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5272),
                             RunTimeStr = "RunTimeStr  21",
                             Stars = "Stars 21",
                             Title = "Title 21"
@@ -672,7 +674,7 @@ namespace Webbutik.Migrations
                             ImdbId = 22,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8871),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5285),
                             RunTimeStr = "RunTimeStr  22",
                             Stars = "Stars 22",
                             Title = "Title 22"
@@ -690,7 +692,7 @@ namespace Webbutik.Migrations
                             ImdbId = 23,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8884),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5298),
                             RunTimeStr = "RunTimeStr  23",
                             Stars = "Stars 23",
                             Title = "Title 23"
@@ -708,7 +710,7 @@ namespace Webbutik.Migrations
                             ImdbId = 24,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8896),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5311),
                             RunTimeStr = "RunTimeStr  24",
                             Stars = "Stars 24",
                             Title = "Title 24"
@@ -726,7 +728,7 @@ namespace Webbutik.Migrations
                             ImdbId = 25,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8939),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5324),
                             RunTimeStr = "RunTimeStr  25",
                             Stars = "Stars 25",
                             Title = "Title 25"
@@ -744,7 +746,7 @@ namespace Webbutik.Migrations
                             ImdbId = 26,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8953),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5336),
                             RunTimeStr = "RunTimeStr  26",
                             Stars = "Stars 26",
                             Title = "Title 26"
@@ -762,7 +764,7 @@ namespace Webbutik.Migrations
                             ImdbId = 27,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8966),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5349),
                             RunTimeStr = "RunTimeStr  27",
                             Stars = "Stars 27",
                             Title = "Title 27"
@@ -780,7 +782,7 @@ namespace Webbutik.Migrations
                             ImdbId = 28,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8978),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5362),
                             RunTimeStr = "RunTimeStr  28",
                             Stars = "Stars 28",
                             Title = "Title 28"
@@ -798,7 +800,7 @@ namespace Webbutik.Migrations
                             ImdbId = 29,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8991),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5375),
                             RunTimeStr = "RunTimeStr  29",
                             Stars = "Stars 29",
                             Title = "Title 29"
@@ -816,7 +818,7 @@ namespace Webbutik.Migrations
                             ImdbId = 30,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9003),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5434),
                             RunTimeStr = "RunTimeStr  30",
                             Stars = "Stars 30",
                             Title = "Title 30"
@@ -834,7 +836,7 @@ namespace Webbutik.Migrations
                             ImdbId = 31,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9016),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5448),
                             RunTimeStr = "RunTimeStr  31",
                             Stars = "Stars 31",
                             Title = "Title 31"
@@ -852,7 +854,7 @@ namespace Webbutik.Migrations
                             ImdbId = 32,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9028),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5461),
                             RunTimeStr = "RunTimeStr  32",
                             Stars = "Stars 32",
                             Title = "Title 32"
@@ -870,7 +872,7 @@ namespace Webbutik.Migrations
                             ImdbId = 33,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9041),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5474),
                             RunTimeStr = "RunTimeStr  33",
                             Stars = "Stars 33",
                             Title = "Title 33"
@@ -888,7 +890,7 @@ namespace Webbutik.Migrations
                             ImdbId = 34,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9085),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5488),
                             RunTimeStr = "RunTimeStr  34",
                             Stars = "Stars 34",
                             Title = "Title 34"
@@ -906,7 +908,7 @@ namespace Webbutik.Migrations
                             ImdbId = 35,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9098),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5501),
                             RunTimeStr = "RunTimeStr  35",
                             Stars = "Stars 35",
                             Title = "Title 35"
@@ -924,7 +926,7 @@ namespace Webbutik.Migrations
                             ImdbId = 36,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9111),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5514),
                             RunTimeStr = "RunTimeStr  36",
                             Stars = "Stars 36",
                             Title = "Title 36"
@@ -942,7 +944,7 @@ namespace Webbutik.Migrations
                             ImdbId = 37,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9124),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5527),
                             RunTimeStr = "RunTimeStr  37",
                             Stars = "Stars 37",
                             Title = "Title 37"
@@ -960,7 +962,7 @@ namespace Webbutik.Migrations
                             ImdbId = 38,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9136),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5539),
                             RunTimeStr = "RunTimeStr  38",
                             Stars = "Stars 38",
                             Title = "Title 38"
@@ -978,7 +980,7 @@ namespace Webbutik.Migrations
                             ImdbId = 39,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9148),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5581),
                             RunTimeStr = "RunTimeStr  39",
                             Stars = "Stars 39",
                             Title = "Title 39"
@@ -996,7 +998,7 @@ namespace Webbutik.Migrations
                             ImdbId = 40,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9162),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5595),
                             RunTimeStr = "RunTimeStr  40",
                             Stars = "Stars 40",
                             Title = "Title 40"
@@ -1014,7 +1016,7 @@ namespace Webbutik.Migrations
                             ImdbId = 41,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9174),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5608),
                             RunTimeStr = "RunTimeStr  41",
                             Stars = "Stars 41",
                             Title = "Title 41"
@@ -1032,7 +1034,7 @@ namespace Webbutik.Migrations
                             ImdbId = 42,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9187),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5621),
                             RunTimeStr = "RunTimeStr  42",
                             Stars = "Stars 42",
                             Title = "Title 42"
@@ -1050,7 +1052,7 @@ namespace Webbutik.Migrations
                             ImdbId = 43,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9228),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5634),
                             RunTimeStr = "RunTimeStr  43",
                             Stars = "Stars 43",
                             Title = "Title 43"
@@ -1068,7 +1070,7 @@ namespace Webbutik.Migrations
                             ImdbId = 44,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9243),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5646),
                             RunTimeStr = "RunTimeStr  44",
                             Stars = "Stars 44",
                             Title = "Title 44"
@@ -1086,7 +1088,7 @@ namespace Webbutik.Migrations
                             ImdbId = 45,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9256),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5659),
                             RunTimeStr = "RunTimeStr  45",
                             Stars = "Stars 45",
                             Title = "Title 45"
@@ -1104,7 +1106,7 @@ namespace Webbutik.Migrations
                             ImdbId = 46,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9269),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5672),
                             RunTimeStr = "RunTimeStr  46",
                             Stars = "Stars 46",
                             Title = "Title 46"
@@ -1122,7 +1124,7 @@ namespace Webbutik.Migrations
                             ImdbId = 47,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9281),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5684),
                             RunTimeStr = "RunTimeStr  47",
                             Stars = "Stars 47",
                             Title = "Title 47"
@@ -1140,7 +1142,7 @@ namespace Webbutik.Migrations
                             ImdbId = 48,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9294),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5697),
                             RunTimeStr = "RunTimeStr  48",
                             Stars = "Stars 48",
                             Title = "Title 48"
@@ -1158,7 +1160,7 @@ namespace Webbutik.Migrations
                             ImdbId = 49,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9306),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5739),
                             RunTimeStr = "RunTimeStr  49",
                             Stars = "Stars 49",
                             Title = "Title 49"
@@ -1176,10 +1178,910 @@ namespace Webbutik.Migrations
                             ImdbId = 50,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9319),
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5752),
                             RunTimeStr = "RunTimeStr  50",
                             Stars = "Stars 50",
                             Title = "Title 50"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            ContentRating = "ContentRating 51",
+                            Description = "Description 51",
+                            Directors = "Directors 51",
+                            Discount = 25,
+                            Genres = "Genres 51",
+                            ImDbRating = "ImDbRating 51",
+                            ImageUrl = "ImageUrl 51",
+                            ImdbId = 51,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5765),
+                            RunTimeStr = "RunTimeStr  51",
+                            Stars = "Stars 51",
+                            Title = "Title 51"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            ContentRating = "ContentRating 52",
+                            Description = "Description 52",
+                            Directors = "Directors 52",
+                            Discount = 25,
+                            Genres = "Genres 52",
+                            ImDbRating = "ImDbRating 52",
+                            ImageUrl = "ImageUrl 52",
+                            ImdbId = 52,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5778),
+                            RunTimeStr = "RunTimeStr  52",
+                            Stars = "Stars 52",
+                            Title = "Title 52"
+                        },
+                        new
+                        {
+                            Id = 53,
+                            ContentRating = "ContentRating 53",
+                            Description = "Description 53",
+                            Directors = "Directors 53",
+                            Discount = 25,
+                            Genres = "Genres 53",
+                            ImDbRating = "ImDbRating 53",
+                            ImageUrl = "ImageUrl 53",
+                            ImdbId = 53,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5790),
+                            RunTimeStr = "RunTimeStr  53",
+                            Stars = "Stars 53",
+                            Title = "Title 53"
+                        },
+                        new
+                        {
+                            Id = 54,
+                            ContentRating = "ContentRating 54",
+                            Description = "Description 54",
+                            Directors = "Directors 54",
+                            Discount = 25,
+                            Genres = "Genres 54",
+                            ImDbRating = "ImDbRating 54",
+                            ImageUrl = "ImageUrl 54",
+                            ImdbId = 54,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5803),
+                            RunTimeStr = "RunTimeStr  54",
+                            Stars = "Stars 54",
+                            Title = "Title 54"
+                        },
+                        new
+                        {
+                            Id = 55,
+                            ContentRating = "ContentRating 55",
+                            Description = "Description 55",
+                            Directors = "Directors 55",
+                            Discount = 25,
+                            Genres = "Genres 55",
+                            ImDbRating = "ImDbRating 55",
+                            ImageUrl = "ImageUrl 55",
+                            ImdbId = 55,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5816),
+                            RunTimeStr = "RunTimeStr  55",
+                            Stars = "Stars 55",
+                            Title = "Title 55"
+                        },
+                        new
+                        {
+                            Id = 56,
+                            ContentRating = "ContentRating 56",
+                            Description = "Description 56",
+                            Directors = "Directors 56",
+                            Discount = 25,
+                            Genres = "Genres 56",
+                            ImDbRating = "ImDbRating 56",
+                            ImageUrl = "ImageUrl 56",
+                            ImdbId = 56,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5828),
+                            RunTimeStr = "RunTimeStr  56",
+                            Stars = "Stars 56",
+                            Title = "Title 56"
+                        },
+                        new
+                        {
+                            Id = 57,
+                            ContentRating = "ContentRating 57",
+                            Description = "Description 57",
+                            Directors = "Directors 57",
+                            Discount = 25,
+                            Genres = "Genres 57",
+                            ImDbRating = "ImDbRating 57",
+                            ImageUrl = "ImageUrl 57",
+                            ImdbId = 57,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5841),
+                            RunTimeStr = "RunTimeStr  57",
+                            Stars = "Stars 57",
+                            Title = "Title 57"
+                        },
+                        new
+                        {
+                            Id = 58,
+                            ContentRating = "ContentRating 58",
+                            Description = "Description 58",
+                            Directors = "Directors 58",
+                            Discount = 25,
+                            Genres = "Genres 58",
+                            ImDbRating = "ImDbRating 58",
+                            ImageUrl = "ImageUrl 58",
+                            ImdbId = 58,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5882),
+                            RunTimeStr = "RunTimeStr  58",
+                            Stars = "Stars 58",
+                            Title = "Title 58"
+                        },
+                        new
+                        {
+                            Id = 59,
+                            ContentRating = "ContentRating 59",
+                            Description = "Description 59",
+                            Directors = "Directors 59",
+                            Discount = 25,
+                            Genres = "Genres 59",
+                            ImDbRating = "ImDbRating 59",
+                            ImageUrl = "ImageUrl 59",
+                            ImdbId = 59,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5896),
+                            RunTimeStr = "RunTimeStr  59",
+                            Stars = "Stars 59",
+                            Title = "Title 59"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            ContentRating = "ContentRating 60",
+                            Description = "Description 60",
+                            Directors = "Directors 60",
+                            Discount = 25,
+                            Genres = "Genres 60",
+                            ImDbRating = "ImDbRating 60",
+                            ImageUrl = "ImageUrl 60",
+                            ImdbId = 60,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5909),
+                            RunTimeStr = "RunTimeStr  60",
+                            Stars = "Stars 60",
+                            Title = "Title 60"
+                        },
+                        new
+                        {
+                            Id = 61,
+                            ContentRating = "ContentRating 61",
+                            Description = "Description 61",
+                            Directors = "Directors 61",
+                            Discount = 25,
+                            Genres = "Genres 61",
+                            ImDbRating = "ImDbRating 61",
+                            ImageUrl = "ImageUrl 61",
+                            ImdbId = 61,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5922),
+                            RunTimeStr = "RunTimeStr  61",
+                            Stars = "Stars 61",
+                            Title = "Title 61"
+                        },
+                        new
+                        {
+                            Id = 62,
+                            ContentRating = "ContentRating 62",
+                            Description = "Description 62",
+                            Directors = "Directors 62",
+                            Discount = 25,
+                            Genres = "Genres 62",
+                            ImDbRating = "ImDbRating 62",
+                            ImageUrl = "ImageUrl 62",
+                            ImdbId = 62,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5935),
+                            RunTimeStr = "RunTimeStr  62",
+                            Stars = "Stars 62",
+                            Title = "Title 62"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            ContentRating = "ContentRating 63",
+                            Description = "Description 63",
+                            Directors = "Directors 63",
+                            Discount = 25,
+                            Genres = "Genres 63",
+                            ImDbRating = "ImDbRating 63",
+                            ImageUrl = "ImageUrl 63",
+                            ImdbId = 63,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5948),
+                            RunTimeStr = "RunTimeStr  63",
+                            Stars = "Stars 63",
+                            Title = "Title 63"
+                        },
+                        new
+                        {
+                            Id = 64,
+                            ContentRating = "ContentRating 64",
+                            Description = "Description 64",
+                            Directors = "Directors 64",
+                            Discount = 25,
+                            Genres = "Genres 64",
+                            ImDbRating = "ImDbRating 64",
+                            ImageUrl = "ImageUrl 64",
+                            ImdbId = 64,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5960),
+                            RunTimeStr = "RunTimeStr  64",
+                            Stars = "Stars 64",
+                            Title = "Title 64"
+                        },
+                        new
+                        {
+                            Id = 65,
+                            ContentRating = "ContentRating 65",
+                            Description = "Description 65",
+                            Directors = "Directors 65",
+                            Discount = 25,
+                            Genres = "Genres 65",
+                            ImDbRating = "ImDbRating 65",
+                            ImageUrl = "ImageUrl 65",
+                            ImdbId = 65,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5973),
+                            RunTimeStr = "RunTimeStr  65",
+                            Stars = "Stars 65",
+                            Title = "Title 65"
+                        },
+                        new
+                        {
+                            Id = 66,
+                            ContentRating = "ContentRating 66",
+                            Description = "Description 66",
+                            Directors = "Directors 66",
+                            Discount = 25,
+                            Genres = "Genres 66",
+                            ImDbRating = "ImDbRating 66",
+                            ImageUrl = "ImageUrl 66",
+                            ImdbId = 66,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(5987),
+                            RunTimeStr = "RunTimeStr  66",
+                            Stars = "Stars 66",
+                            Title = "Title 66"
+                        },
+                        new
+                        {
+                            Id = 67,
+                            ContentRating = "ContentRating 67",
+                            Description = "Description 67",
+                            Directors = "Directors 67",
+                            Discount = 25,
+                            Genres = "Genres 67",
+                            ImDbRating = "ImDbRating 67",
+                            ImageUrl = "ImageUrl 67",
+                            ImdbId = 67,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6029),
+                            RunTimeStr = "RunTimeStr  67",
+                            Stars = "Stars 67",
+                            Title = "Title 67"
+                        },
+                        new
+                        {
+                            Id = 68,
+                            ContentRating = "ContentRating 68",
+                            Description = "Description 68",
+                            Directors = "Directors 68",
+                            Discount = 25,
+                            Genres = "Genres 68",
+                            ImDbRating = "ImDbRating 68",
+                            ImageUrl = "ImageUrl 68",
+                            ImdbId = 68,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6042),
+                            RunTimeStr = "RunTimeStr  68",
+                            Stars = "Stars 68",
+                            Title = "Title 68"
+                        },
+                        new
+                        {
+                            Id = 69,
+                            ContentRating = "ContentRating 69",
+                            Description = "Description 69",
+                            Directors = "Directors 69",
+                            Discount = 25,
+                            Genres = "Genres 69",
+                            ImDbRating = "ImDbRating 69",
+                            ImageUrl = "ImageUrl 69",
+                            ImdbId = 69,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6055),
+                            RunTimeStr = "RunTimeStr  69",
+                            Stars = "Stars 69",
+                            Title = "Title 69"
+                        },
+                        new
+                        {
+                            Id = 70,
+                            ContentRating = "ContentRating 70",
+                            Description = "Description 70",
+                            Directors = "Directors 70",
+                            Discount = 25,
+                            Genres = "Genres 70",
+                            ImDbRating = "ImDbRating 70",
+                            ImageUrl = "ImageUrl 70",
+                            ImdbId = 70,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6068),
+                            RunTimeStr = "RunTimeStr  70",
+                            Stars = "Stars 70",
+                            Title = "Title 70"
+                        },
+                        new
+                        {
+                            Id = 71,
+                            ContentRating = "ContentRating 71",
+                            Description = "Description 71",
+                            Directors = "Directors 71",
+                            Discount = 25,
+                            Genres = "Genres 71",
+                            ImDbRating = "ImDbRating 71",
+                            ImageUrl = "ImageUrl 71",
+                            ImdbId = 71,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6081),
+                            RunTimeStr = "RunTimeStr  71",
+                            Stars = "Stars 71",
+                            Title = "Title 71"
+                        },
+                        new
+                        {
+                            Id = 72,
+                            ContentRating = "ContentRating 72",
+                            Description = "Description 72",
+                            Directors = "Directors 72",
+                            Discount = 25,
+                            Genres = "Genres 72",
+                            ImDbRating = "ImDbRating 72",
+                            ImageUrl = "ImageUrl 72",
+                            ImdbId = 72,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6093),
+                            RunTimeStr = "RunTimeStr  72",
+                            Stars = "Stars 72",
+                            Title = "Title 72"
+                        },
+                        new
+                        {
+                            Id = 73,
+                            ContentRating = "ContentRating 73",
+                            Description = "Description 73",
+                            Directors = "Directors 73",
+                            Discount = 25,
+                            Genres = "Genres 73",
+                            ImDbRating = "ImDbRating 73",
+                            ImageUrl = "ImageUrl 73",
+                            ImdbId = 73,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6106),
+                            RunTimeStr = "RunTimeStr  73",
+                            Stars = "Stars 73",
+                            Title = "Title 73"
+                        },
+                        new
+                        {
+                            Id = 74,
+                            ContentRating = "ContentRating 74",
+                            Description = "Description 74",
+                            Directors = "Directors 74",
+                            Discount = 25,
+                            Genres = "Genres 74",
+                            ImDbRating = "ImDbRating 74",
+                            ImageUrl = "ImageUrl 74",
+                            ImdbId = 74,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6119),
+                            RunTimeStr = "RunTimeStr  74",
+                            Stars = "Stars 74",
+                            Title = "Title 74"
+                        },
+                        new
+                        {
+                            Id = 75,
+                            ContentRating = "ContentRating 75",
+                            Description = "Description 75",
+                            Directors = "Directors 75",
+                            Discount = 25,
+                            Genres = "Genres 75",
+                            ImDbRating = "ImDbRating 75",
+                            ImageUrl = "ImageUrl 75",
+                            ImdbId = 75,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6132),
+                            RunTimeStr = "RunTimeStr  75",
+                            Stars = "Stars 75",
+                            Title = "Title 75"
+                        },
+                        new
+                        {
+                            Id = 76,
+                            ContentRating = "ContentRating 76",
+                            Description = "Description 76",
+                            Directors = "Directors 76",
+                            Discount = 25,
+                            Genres = "Genres 76",
+                            ImDbRating = "ImDbRating 76",
+                            ImageUrl = "ImageUrl 76",
+                            ImdbId = 76,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6173),
+                            RunTimeStr = "RunTimeStr  76",
+                            Stars = "Stars 76",
+                            Title = "Title 76"
+                        },
+                        new
+                        {
+                            Id = 77,
+                            ContentRating = "ContentRating 77",
+                            Description = "Description 77",
+                            Directors = "Directors 77",
+                            Discount = 25,
+                            Genres = "Genres 77",
+                            ImDbRating = "ImDbRating 77",
+                            ImageUrl = "ImageUrl 77",
+                            ImdbId = 77,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6187),
+                            RunTimeStr = "RunTimeStr  77",
+                            Stars = "Stars 77",
+                            Title = "Title 77"
+                        },
+                        new
+                        {
+                            Id = 78,
+                            ContentRating = "ContentRating 78",
+                            Description = "Description 78",
+                            Directors = "Directors 78",
+                            Discount = 25,
+                            Genres = "Genres 78",
+                            ImDbRating = "ImDbRating 78",
+                            ImageUrl = "ImageUrl 78",
+                            ImdbId = 78,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6200),
+                            RunTimeStr = "RunTimeStr  78",
+                            Stars = "Stars 78",
+                            Title = "Title 78"
+                        },
+                        new
+                        {
+                            Id = 79,
+                            ContentRating = "ContentRating 79",
+                            Description = "Description 79",
+                            Directors = "Directors 79",
+                            Discount = 25,
+                            Genres = "Genres 79",
+                            ImDbRating = "ImDbRating 79",
+                            ImageUrl = "ImageUrl 79",
+                            ImdbId = 79,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6213),
+                            RunTimeStr = "RunTimeStr  79",
+                            Stars = "Stars 79",
+                            Title = "Title 79"
+                        },
+                        new
+                        {
+                            Id = 80,
+                            ContentRating = "ContentRating 80",
+                            Description = "Description 80",
+                            Directors = "Directors 80",
+                            Discount = 25,
+                            Genres = "Genres 80",
+                            ImDbRating = "ImDbRating 80",
+                            ImageUrl = "ImageUrl 80",
+                            ImdbId = 80,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6226),
+                            RunTimeStr = "RunTimeStr  80",
+                            Stars = "Stars 80",
+                            Title = "Title 80"
+                        },
+                        new
+                        {
+                            Id = 81,
+                            ContentRating = "ContentRating 81",
+                            Description = "Description 81",
+                            Directors = "Directors 81",
+                            Discount = 25,
+                            Genres = "Genres 81",
+                            ImDbRating = "ImDbRating 81",
+                            ImageUrl = "ImageUrl 81",
+                            ImdbId = 81,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6238),
+                            RunTimeStr = "RunTimeStr  81",
+                            Stars = "Stars 81",
+                            Title = "Title 81"
+                        },
+                        new
+                        {
+                            Id = 82,
+                            ContentRating = "ContentRating 82",
+                            Description = "Description 82",
+                            Directors = "Directors 82",
+                            Discount = 25,
+                            Genres = "Genres 82",
+                            ImDbRating = "ImDbRating 82",
+                            ImageUrl = "ImageUrl 82",
+                            ImdbId = 82,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6251),
+                            RunTimeStr = "RunTimeStr  82",
+                            Stars = "Stars 82",
+                            Title = "Title 82"
+                        },
+                        new
+                        {
+                            Id = 83,
+                            ContentRating = "ContentRating 83",
+                            Description = "Description 83",
+                            Directors = "Directors 83",
+                            Discount = 25,
+                            Genres = "Genres 83",
+                            ImDbRating = "ImDbRating 83",
+                            ImageUrl = "ImageUrl 83",
+                            ImdbId = 83,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6264),
+                            RunTimeStr = "RunTimeStr  83",
+                            Stars = "Stars 83",
+                            Title = "Title 83"
+                        },
+                        new
+                        {
+                            Id = 84,
+                            ContentRating = "ContentRating 84",
+                            Description = "Description 84",
+                            Directors = "Directors 84",
+                            Discount = 25,
+                            Genres = "Genres 84",
+                            ImDbRating = "ImDbRating 84",
+                            ImageUrl = "ImageUrl 84",
+                            ImdbId = 84,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6277),
+                            RunTimeStr = "RunTimeStr  84",
+                            Stars = "Stars 84",
+                            Title = "Title 84"
+                        },
+                        new
+                        {
+                            Id = 85,
+                            ContentRating = "ContentRating 85",
+                            Description = "Description 85",
+                            Directors = "Directors 85",
+                            Discount = 25,
+                            Genres = "Genres 85",
+                            ImDbRating = "ImDbRating 85",
+                            ImageUrl = "ImageUrl 85",
+                            ImdbId = 85,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6290),
+                            RunTimeStr = "RunTimeStr  85",
+                            Stars = "Stars 85",
+                            Title = "Title 85"
+                        },
+                        new
+                        {
+                            Id = 86,
+                            ContentRating = "ContentRating 86",
+                            Description = "Description 86",
+                            Directors = "Directors 86",
+                            Discount = 25,
+                            Genres = "Genres 86",
+                            ImDbRating = "ImDbRating 86",
+                            ImageUrl = "ImageUrl 86",
+                            ImdbId = 86,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6332),
+                            RunTimeStr = "RunTimeStr  86",
+                            Stars = "Stars 86",
+                            Title = "Title 86"
+                        },
+                        new
+                        {
+                            Id = 87,
+                            ContentRating = "ContentRating 87",
+                            Description = "Description 87",
+                            Directors = "Directors 87",
+                            Discount = 25,
+                            Genres = "Genres 87",
+                            ImDbRating = "ImDbRating 87",
+                            ImageUrl = "ImageUrl 87",
+                            ImdbId = 87,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6346),
+                            RunTimeStr = "RunTimeStr  87",
+                            Stars = "Stars 87",
+                            Title = "Title 87"
+                        },
+                        new
+                        {
+                            Id = 88,
+                            ContentRating = "ContentRating 88",
+                            Description = "Description 88",
+                            Directors = "Directors 88",
+                            Discount = 25,
+                            Genres = "Genres 88",
+                            ImDbRating = "ImDbRating 88",
+                            ImageUrl = "ImageUrl 88",
+                            ImdbId = 88,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6359),
+                            RunTimeStr = "RunTimeStr  88",
+                            Stars = "Stars 88",
+                            Title = "Title 88"
+                        },
+                        new
+                        {
+                            Id = 89,
+                            ContentRating = "ContentRating 89",
+                            Description = "Description 89",
+                            Directors = "Directors 89",
+                            Discount = 25,
+                            Genres = "Genres 89",
+                            ImDbRating = "ImDbRating 89",
+                            ImageUrl = "ImageUrl 89",
+                            ImdbId = 89,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6371),
+                            RunTimeStr = "RunTimeStr  89",
+                            Stars = "Stars 89",
+                            Title = "Title 89"
+                        },
+                        new
+                        {
+                            Id = 90,
+                            ContentRating = "ContentRating 90",
+                            Description = "Description 90",
+                            Directors = "Directors 90",
+                            Discount = 25,
+                            Genres = "Genres 90",
+                            ImDbRating = "ImDbRating 90",
+                            ImageUrl = "ImageUrl 90",
+                            ImdbId = 90,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6384),
+                            RunTimeStr = "RunTimeStr  90",
+                            Stars = "Stars 90",
+                            Title = "Title 90"
+                        },
+                        new
+                        {
+                            Id = 91,
+                            ContentRating = "ContentRating 91",
+                            Description = "Description 91",
+                            Directors = "Directors 91",
+                            Discount = 25,
+                            Genres = "Genres 91",
+                            ImDbRating = "ImDbRating 91",
+                            ImageUrl = "ImageUrl 91",
+                            ImdbId = 91,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6397),
+                            RunTimeStr = "RunTimeStr  91",
+                            Stars = "Stars 91",
+                            Title = "Title 91"
+                        },
+                        new
+                        {
+                            Id = 92,
+                            ContentRating = "ContentRating 92",
+                            Description = "Description 92",
+                            Directors = "Directors 92",
+                            Discount = 25,
+                            Genres = "Genres 92",
+                            ImDbRating = "ImDbRating 92",
+                            ImageUrl = "ImageUrl 92",
+                            ImdbId = 92,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6410),
+                            RunTimeStr = "RunTimeStr  92",
+                            Stars = "Stars 92",
+                            Title = "Title 92"
+                        },
+                        new
+                        {
+                            Id = 93,
+                            ContentRating = "ContentRating 93",
+                            Description = "Description 93",
+                            Directors = "Directors 93",
+                            Discount = 25,
+                            Genres = "Genres 93",
+                            ImDbRating = "ImDbRating 93",
+                            ImageUrl = "ImageUrl 93",
+                            ImdbId = 93,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6422),
+                            RunTimeStr = "RunTimeStr  93",
+                            Stars = "Stars 93",
+                            Title = "Title 93"
+                        },
+                        new
+                        {
+                            Id = 94,
+                            ContentRating = "ContentRating 94",
+                            Description = "Description 94",
+                            Directors = "Directors 94",
+                            Discount = 25,
+                            Genres = "Genres 94",
+                            ImDbRating = "ImDbRating 94",
+                            ImageUrl = "ImageUrl 94",
+                            ImdbId = 94,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6435),
+                            RunTimeStr = "RunTimeStr  94",
+                            Stars = "Stars 94",
+                            Title = "Title 94"
+                        },
+                        new
+                        {
+                            Id = 95,
+                            ContentRating = "ContentRating 95",
+                            Description = "Description 95",
+                            Directors = "Directors 95",
+                            Discount = 25,
+                            Genres = "Genres 95",
+                            ImDbRating = "ImDbRating 95",
+                            ImageUrl = "ImageUrl 95",
+                            ImdbId = 95,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6448),
+                            RunTimeStr = "RunTimeStr  95",
+                            Stars = "Stars 95",
+                            Title = "Title 95"
+                        },
+                        new
+                        {
+                            Id = 96,
+                            ContentRating = "ContentRating 96",
+                            Description = "Description 96",
+                            Directors = "Directors 96",
+                            Discount = 25,
+                            Genres = "Genres 96",
+                            ImDbRating = "ImDbRating 96",
+                            ImageUrl = "ImageUrl 96",
+                            ImdbId = 96,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6492),
+                            RunTimeStr = "RunTimeStr  96",
+                            Stars = "Stars 96",
+                            Title = "Title 96"
+                        },
+                        new
+                        {
+                            Id = 97,
+                            ContentRating = "ContentRating 97",
+                            Description = "Description 97",
+                            Directors = "Directors 97",
+                            Discount = 25,
+                            Genres = "Genres 97",
+                            ImDbRating = "ImDbRating 97",
+                            ImageUrl = "ImageUrl 97",
+                            ImdbId = 97,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6505),
+                            RunTimeStr = "RunTimeStr  97",
+                            Stars = "Stars 97",
+                            Title = "Title 97"
+                        },
+                        new
+                        {
+                            Id = 98,
+                            ContentRating = "ContentRating 98",
+                            Description = "Description 98",
+                            Directors = "Directors 98",
+                            Discount = 25,
+                            Genres = "Genres 98",
+                            ImDbRating = "ImDbRating 98",
+                            ImageUrl = "ImageUrl 98",
+                            ImdbId = 98,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6518),
+                            RunTimeStr = "RunTimeStr  98",
+                            Stars = "Stars 98",
+                            Title = "Title 98"
+                        },
+                        new
+                        {
+                            Id = 99,
+                            ContentRating = "ContentRating 99",
+                            Description = "Description 99",
+                            Directors = "Directors 99",
+                            Discount = 25,
+                            Genres = "Genres 99",
+                            ImDbRating = "ImDbRating 99",
+                            ImageUrl = "ImageUrl 99",
+                            ImdbId = 99,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6530),
+                            RunTimeStr = "RunTimeStr  99",
+                            Stars = "Stars 99",
+                            Title = "Title 99"
+                        },
+                        new
+                        {
+                            Id = 100,
+                            ContentRating = "ContentRating 100",
+                            Description = "Description 100",
+                            Directors = "Directors 100",
+                            Discount = 25,
+                            Genres = "Genres 100",
+                            ImDbRating = "ImDbRating 100",
+                            ImageUrl = "ImageUrl 100",
+                            ImdbId = 100,
+                            InStock = 1,
+                            IsOnSale = true,
+                            ReleaseDate = new DateTime(2022, 10, 31, 10, 32, 43, 702, DateTimeKind.Local).AddTicks(6544),
+                            RunTimeStr = "RunTimeStr  100",
+                            Stars = "Stars 100",
+                            Title = "Title 100"
                         });
                 });
 
