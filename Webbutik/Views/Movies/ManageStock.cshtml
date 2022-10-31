@@ -3,8 +3,10 @@
 @{
     ViewData["Title"] = "ManageStock";
 }
+
 <div id="adm-container">
     <div class="wrapper">
+  
         <nav id="sidebar">
             <div class="sidebar-header">
 
@@ -12,7 +14,7 @@
 
 
             </div>
-
+           
             <ul class="list-unstyled components">
                 <p>*Name*</p>
                 <li>
@@ -46,32 +48,43 @@
                             @Html.DisplayNameFor(model => model.Title)
                         </th>
                         <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
                             @Html.DisplayNameFor(model => model.InStock)
                         </th>
-                        <td>
-                            @Html.DisplayNameFor(model => model.Description)
-                        </td>
                     </tr>
                 </thead>
 
                 <tbody>
+@*                    <form asp-action="ManageStock">*@
                     @foreach (var item in Model)
                     {
                         <tr>
                             <td>@item.Title</td>
                             <td>@item.Description</td>
+                            <td>@item.InStock</td>
                             <td>
-                                <a asp-controller="Movies" asp-action="DecreaseInStock" asp-route-id="@item.Id">
-                                   <i class="btn btn-danger">-</i>                               
+                                
+@*                                    <div class="form-group">
+                                        <label asp-for="@item.InStock" class="control-label"></label>
+                                        <input asp-for="@item.InStock" class="form-control" />
+                                        <span asp-validation-for="@item.InStock" class="text-danger"></span>
+                                    </div>*@
+                                <a asp-controller="Movies" asp-action="ManageStockIndividually" asp-route-id="@item.Id">
+                                    <i class="btn btn-primary">+</i>
                                 </a>
-                                @item.InStock
-                                <a asp-controller="Movies" asp-action="IncreaseInStock" asp-route-id="@item.Id">
-                                    <i class ="btn btn-primary">+</i>
-                                </a>
+                               
+
+                              
                             </td>
                         </tr>
+                 
                         
                     }
+                    
+@*                    <input type="submit" value="Save" class="btn btn-primary" />
+                    </form>*@
 
                 </tbody>
             </table>
@@ -83,3 +96,4 @@
         </div>
     </div>
 </div>
+

@@ -1,0 +1,41 @@
+﻿@model string
+
+<div id="adm-container">
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Page</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>*Name*</p>
+                <li>
+                    <a asp-controller="Movies" asp-action="ManageProducts">Manage Products</a>
+                </li>
+                <li>
+                    <a asp-controller="Movies" asp-action="ManageStock">Manage Stock</a>
+                </li>
+                <li>
+                    <a asp-controller="Movies" asp-action="ManageCampaigns">Manage Campaigns</a>
+                </li>
+                <li>
+                    <a asp-controller="Movies" asp-action="Dashboard">Statistic Dashboard</a>
+                </li>
+                <li>
+                    <a asp-controller="Movies"asp-action="PurchaseLog">Customer purchase log</a>
+                </li>
+                <li>
+                    <a asp-controller="Movies" asp-action="Currency">Currency</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="content-sidebar">
+            <p>Transporsträckan är @Model km lång</p>
+        </div>
+    </div>
+
+</div>
+
+
+

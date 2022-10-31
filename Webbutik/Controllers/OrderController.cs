@@ -1,14 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
+using System.Net;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Webbutik.Models;
 
 namespace Webbutik.Controllers
 {
     public class OrderController : Controller
-    {
+    { 
         private readonly AppDbContext _context;
         private readonly Cart _cart;
         public OrderController(AppDbContext context, Cart cart)
+
         {
             _context = context;
             _cart = cart;
@@ -54,16 +58,35 @@ namespace Webbutik.Controllers
             return View();
         }
 
-        
 
-        public IActionResult Test(string from, string too)
+        public IActionResult Distance(int id)
         {
-            var request = new HttpRequestMessage
+            var order = _context.Orders.FirstOrDefault(i => i.Id == id);
+            string url = "https://se.avstand.org/route.json?stops=" + "Galtabäck" + '|' + order.City;
+            WebRequest request = WebRequest.Create(url);
+            request.Method = "GET";
+            HttpWebResponse response = null;
+            response = (HttpWebResponse)request.GetResponse();
+
+            string result = null;
+            using (Stream stream = response.GetResponseStream())
             {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri("https://se.avstand.org/route.json?stops=" +from + '|' +too)
-            };
-            return View(request);
+                StreamReader sr = new StreamReader(stream);
+                result = sr.ReadToEnd();
+                sr.Close();
+            }
+
+            var trimlist = JObject.Parse(result)["distance"];
+
+            var stringing = trimlist.ToString();
+            return View("Index",stringing);
+        }
+
+        public IActionResult ItemsInOrder(int id)
+        {
+            var orderDetails = _context.OrderDetails.Where(i => i.OrderId == id).Include(m => m.Movie).Include(o => o.Order);
+            return View(orderDetails);
+
         }
     }
 }

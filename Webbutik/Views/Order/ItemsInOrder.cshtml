@@ -1,0 +1,71 @@
+﻿@model IEnumerable<OrderDetail>
+
+<div id="adm-container">
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Page</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>*Name*</p>
+                <li>
+                    <a asp-controller="Movies" asp-action="ManageProducts">Manage Products</a>
+                </li>
+                <li>
+                    <a asp-controller="Movies" asp-action="ManageStock">Manage Stock</a>
+                </li>
+                <li>
+                    <a asp-controller="Movies" asp-action="ManageCampaigns">Manage Campaigns</a>
+                </li>
+                <li>
+                    <a asp-controller="Movies" asp-action="Dashboard">Statistic Dashboard</a>
+                </li>
+                <li>
+                    <a asp-controller="Movies" asp-action="PurchaseLog">Customer purchase log</a>
+                </li>
+                <li>
+                    <a asp-controller="Movies" asp-action="Currency">Currency</a>
+                </li>
+            </ul>
+        </nav>
+   
+    <div id="content-sidebar">
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(t=>t.Movie.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(t=>t.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(t=>t.Price)
+            </th>
+
+        </tr>
+    </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.Movie.Title
+            </td>
+            <td>
+                @item.Quantity
+            </td>
+            <td>
+                @item.Price
+            </td>
+        </tr>
+                        
+        }
+        </tbody>
+</table>
+    </div>
+    </div>
+
+</div>

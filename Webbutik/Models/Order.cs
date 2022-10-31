@@ -31,10 +31,11 @@ namespace Webbutik.Models
 
         [Required(ErrorMessage = "This field is required.")]
         [StringLength(15)]        
+        [StringLength(10)]        
         public string Phone { get; set; }
 
         [Required(ErrorMessage = "This field is required.")]
-        [StringLength(20)]
+        [StringLength(35)]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "This field is required.")]
@@ -49,5 +50,6 @@ namespace Webbutik.Models
         //navigation
         [ValidateNever]
         public ICollection<OrderDetail> OrderDetails { get; set; }
+
     }
 }

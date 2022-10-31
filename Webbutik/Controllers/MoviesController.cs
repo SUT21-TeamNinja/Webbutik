@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.View;
 using Webbutik.Models;
 using Webbutik.ViewModels;
+using X.PagedList;
 
 namespace Webbutik.Controllers
 {
@@ -20,8 +22,8 @@ namespace Webbutik.Controllers
         {
             _context = context;
         }
-
-        public async Task<IActionResult> Start()
+        // GET: Movies
+        public async Task<IActionResult> Index()
         {
             var list = await FakeMovies.GetMoviesFromApi();
             if (!IsUpdated)
@@ -29,30 +31,25 @@ namespace Webbutik.Controllers
                 await Populate(list);
                 IsUpdated = true;
             }
-            return View();
+            var movies = await _context.Movies.ToListAsync();
+            var viewModel = new MovieListViewModel
+            {
+                Movies = movies
+            };
+            return View(viewModel);
         }
-        
+
         public async Task Populate(List<Movie> list)
         {
             for (int i = 1; i < _context.Movies.Count(); i++)
             {
                 var movie = await _context.Movies.FirstOrDefaultAsync(x => x.Id == i);
                 movie.Title = list[i].Title;
-                movie.Description = list[i].Description;
                 movie.ImageUrl = list[i].ImageUrl;
-                movie.ReleaseDate = list[i].ReleaseDate;
-                movie.Stars = list[i].Stars;
-                movie.Writers = list[i].Writers;
                 movie.Directors = list[i].Directors;
                 Console.WriteLine("updated");
             }
             await _context.SaveChangesAsync();
-        }
-
-        // GET: Movies
-        public async Task<IActionResult> Index()
-        {
-              return View(await _context.Movies.ToListAsync());
         }
 
         // GET: Movies/Details/5
@@ -70,13 +67,59 @@ namespace Webbutik.Controllers
                 return NotFound();
             }
 
-            return View(movie);
+            return PartialView("components//_movieMovieDetails", movie);
         }
 
         // GET: Movies/Create
         public IActionResult Create()
         {
             return View();
+        }
+
+        public ViewResult AllMovies(string sortOrder, string currentFilter, string searchString, int? page)
+        {
+
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var movieListVM = new MovieListViewModel() { Movies = _context.Movies };
+            var movies = movieListVM.Movies;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(m => m.Title.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    movies = movies.OrderByDescending(m => m.Title);
+                    break;
+                case "Date":
+                    movies = movies.OrderBy(m => m.ReleaseDate);
+                    break;
+                case "date_desc":
+                    movies = movies.OrderByDescending(m => m.ReleaseDate);
+                    break;
+                default:  // Name ascending 
+                    movies = movies.OrderBy(m => m.Title);
+                    break;
+            }
+
+            int pageSize = 20;
+            int pageNumber = (page ?? 1);
+            return View(movies.ToPagedList(pageNumber, pageSize));
         }
 
         // POST: Movies/Create
@@ -178,16 +221,17 @@ namespace Webbutik.Controllers
             {
                 _context.Movies.Remove(movie);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool MovieExists(int id)
         {
-          return _context.Movies.Any(e => e.Id == id);
+            return _context.Movies.Any(e => e.Id == id);
         }
 
+        [Authorize(Roles = "Admin")]
         public ViewResult Admin()
         {
             return View();
@@ -215,7 +259,7 @@ namespace Webbutik.Controllers
                 AllMovies = _context.Movies.ToList(),
                 MoviesOnSale = _context.Movies.Where(m => m.IsOnSale == true).ToList()
             };
-            return View(discountViewModel); 
+            return View(discountViewModel);
         }
 
         [HttpPost]
@@ -268,24 +312,33 @@ namespace Webbutik.Controllers
 
         public async Task<IActionResult> ManageStock()
         {
-            _context.SaveChanges();
             return View(await _context.Movies.ToListAsync());
+        }
+
+        public async Task<IActionResult> ManageStockIndividually(int id)
+        {
+            var movie = await _context.Movies.FirstOrDefaultAsync(i => i.Id == id);
+            if (movie == null)
+            {
+                return NotFound();
+            }
+            return View(movie);
         }
 
         public async Task<IActionResult> IncreaseInStock(int id)
         {
-            var test = await _context.Movies.FirstOrDefaultAsync(i => i.Id == id);
-            if (test == null)
+            var movie = await _context.Movies.FirstOrDefaultAsync(i => i.Id == id);
+            if (movie == null)
             {
                 NotFound();
             }
             else
             {
-                test.InStock++;
+                movie.InStock++;
             }
-           
+
             _context.SaveChanges();
-            return RedirectToAction("ManageStock");
+            return RedirectToAction("ManageStockIndividually", movie);
         }
 
         public async Task<IActionResult> DecreaseInStock(int id)
@@ -309,14 +362,15 @@ namespace Webbutik.Controllers
             }
 
             _context.SaveChanges();
-            return RedirectToAction("ManageStock");
+            return RedirectToAction("ManageStockIndividually", movie);
         }
 
 
-        public ViewResult PurchaseLog()
+        public async Task<IActionResult> PurchaseLog()
         {
-            return View();
+            return View(await _context.Orders.ToListAsync());
         }
+
 
         public ViewResult Dashboard()
         {

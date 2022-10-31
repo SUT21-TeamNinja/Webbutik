@@ -26,9 +26,36 @@
     <div class="text-center">
         <a class="btn btn-dark" asp-controller="order"
            asp-action="checkout">Checkout</a>
-        <a class="btn btn-dark" asp-controller="cart"
-           asp-action="clearcart">Clear cart</a>
+        <a id="clearcart" class="btn btn-dark">Clear cart</a>
     </div>
 </div>
 
+<style>
+    .e-confirm-dialog.customClass {
+        max-width: 350px;
+        max-height: 200px !important;
+    }
+</style>
+<script>
+    document.getElementById('clearcart').onclick = function () {
+        ej.popups.DialogUtility.confirm({
+            title: "Clear cart",
+            content: "Are you sure you want to clear the cart?",
+            okButton: { click: confirmOkAction },
+            cancelButton: { click: confirmCancelAction },
+            position: { X: "center", Y: "center" },
+            width : "400px",
+            height: "200px",
+            cssClass: "customClass"      
+            
+        });
+    };
+    function confirmOkAction() {
+        this.hide();
+        window.location.href = "@Url.Action("clearcart", "cart")"        
+    }
+    function confirmCancelAction() {
+        this.hide();       
+    }
+</script>
 
