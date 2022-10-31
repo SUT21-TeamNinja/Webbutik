@@ -276,56 +276,31 @@ namespace Webbutik.Controllers
             return View(selectedMovie);
         }
 
-        //public async Task<IActionResult> Campaigns()
-        //{
-        //    var movies = await _context.Movies.Where(m => m.IsOnSale == true).ToListAsync();
-        //    return View(movies);
-        //}
-
-        public ViewResult Campaigns(string sortOrder, string currentFilter, string searchString, int? page)
+        public async Task<IActionResult> Campaigns()
         {
+            var movies = await _context.Movies.Where(m => m.DiscountStart != null).ToListAsync();
+            return View(movies);
+        }
 
-            ViewBag.CurrentSort = sortOrder;
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
-
-            if (searchString != null)
+        public async Task<IActionResult> DeleteCampaign(Movie movie)
+        {
+            if (movie == null)
             {
-                page = 1;
-            }
-            else
-            {
-                searchString = currentFilter;
+                return NotFound();
             }
 
-            ViewBag.CurrentFilter = searchString;
+            var selectedMovie = await _context.Movies.FindAsync(movie.Id);
 
-            var movieListVM = new MovieListViewModel() { Movies = _context.Movies };
-            var movies = movieListVM.Movies;
+            selectedMovie.IsOnSale = false;
+            selectedMovie.Discount = null;
+            selectedMovie.DiscountPrice = null;
+            selectedMovie.DiscountStart = null;
+            selectedMovie.DiscountEnd = null;
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                movies = movies.Where(m => m.Title.Contains(searchString));
-            }
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    movies = movies.OrderByDescending(m => m.Title);
-                    break;
-                case "Date":
-                    movies = movies.OrderBy(m => m.ReleaseDate);
-                    break;
-                case "date_desc":
-                    movies = movies.OrderByDescending(m => m.ReleaseDate);
-                    break;
-                default:  // Name ascending 
-                    movies = movies.OrderBy(m => m.Title);
-                    break;
-            }
+            _context.Update(selectedMovie);
+            _context.SaveChanges();
 
-            int pageSize = 20;
-            int pageNumber = (page ?? 1);
-            return View(movies.ToPagedList(pageNumber, pageSize));
+            return RedirectToAction("ManageCampaigns");
         }
 
         public async Task<IActionResult> ManageStock()
