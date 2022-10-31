@@ -16,6 +16,7 @@ namespace Webbutik.Controllers
     public class MoviesController : Controller
     {
         private readonly AppDbContext _context;
+        private static bool IsUpdated = false;
 
         public MoviesController(AppDbContext context)
         {
@@ -24,7 +25,31 @@ namespace Webbutik.Controllers
         // GET: Movies
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Movies.ToListAsync());
+            var list = await FakeMovies.GetMoviesFromApi();
+            if (!IsUpdated)
+            {
+                await Populate(list);
+                IsUpdated = true;
+            }
+            var movies = await _context.Movies.ToListAsync();
+            var viewModel = new MovieListViewModel
+            {
+                Movies = movies
+            };
+            return View(viewModel);
+        }
+
+        public async Task Populate(List<Movie> list)
+        {
+            for (int i = 1; i < _context.Movies.Count(); i++)
+            {
+                var movie = await _context.Movies.FirstOrDefaultAsync(x => x.Id == i);
+                movie.Title = list[i].Title;
+                movie.ImageUrl = list[i].ImageUrl;
+                movie.Directors = list[i].Directors;
+                Console.WriteLine("updated");
+            }
+            await _context.SaveChangesAsync();
         }
 
         // GET: Movies/Details/5
