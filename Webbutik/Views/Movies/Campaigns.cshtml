@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Movie>
+
+@foreach(var item in Model){
+	<div>
+		<span>@item.Title</span>
+		<span>@await Component.InvokeAsync("DiscountPrice", new { id = item.Id })</span>
+	</div>
+	
+}

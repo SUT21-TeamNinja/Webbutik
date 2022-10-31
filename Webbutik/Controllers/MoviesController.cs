@@ -232,8 +232,7 @@ namespace Webbutik.Controllers
             if (ModelState.IsValid)
             {
                 try
-                {                    
-                    selectedMovie.IsOnSale = true;
+                {                 
                     selectedMovie.Discount = movie.Discount;
                     decimal discount = Convert.ToDecimal(selectedMovie.Discount) / 100;
                     selectedMovie.DiscountPrice = selectedMovie.Price - ((selectedMovie.Price * discount));
@@ -257,6 +256,12 @@ namespace Webbutik.Controllers
                 return RedirectToAction(nameof(ManageCampaigns));
             }
             return View(selectedMovie);
+        }
+
+        public async Task<IActionResult> Campaigns()
+        {
+            var movies = await _context.Movies.Where(m => m.IsOnSale == true).ToListAsync();
+            return View(movies);
         }
 
 
