@@ -40,7 +40,7 @@ namespace Webbutik.Controllers
                 return NotFound();
             }
 
-            return PartialView("components//_movieMovieDetails", movie);
+            return View(movie);
         }
 
         // GET: Movies/Create
@@ -278,10 +278,30 @@ namespace Webbutik.Controllers
 
         public async Task<IActionResult> Campaigns()
         {
-            var movies = await _context.Movies.Where(m => m.IsOnSale == true).ToListAsync();
+            var movies = await _context.Movies.Where(m => m.DiscountStart != null).ToListAsync();
             return View(movies);
         }
 
+        public async Task<IActionResult> DeleteCampaign(Movie movie)
+        {
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            var selectedMovie = await _context.Movies.FindAsync(movie.Id);
+
+            selectedMovie.IsOnSale = false;
+            selectedMovie.Discount = null;
+            selectedMovie.DiscountPrice = null;
+            selectedMovie.DiscountStart = null;
+            selectedMovie.DiscountEnd = null;
+
+            _context.Update(selectedMovie);
+            _context.SaveChanges();
+
+            return RedirectToAction("ManageCampaigns");
+        }
 
         public async Task<IActionResult> ManageStock()
         {
