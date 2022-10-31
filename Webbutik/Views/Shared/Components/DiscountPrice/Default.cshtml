@@ -1,0 +1,10 @@
+﻿@model Movie
+
+@if(Model.IsOnSale == true){
+	<span style="color: red;">@Model.DiscountPrice</span> 
+	<span style="text-decoration: line-through;">@Model.Price</span>
+}
+@if(Model.IsOnSale == false){
+	<span>@Model.Price</span>
+}
+

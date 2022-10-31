@@ -46,10 +46,13 @@
                             Title
                         </th>
                         <th>
+                            Price
+                        </th>
+                        <th>
                             Discount
                         </th>
                         <th>
-                            Price
+                            Discount Price
                         </th>
                         <th>
                             Discount Start
@@ -67,17 +70,20 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Title)
                             </td>
+                                <td>
+                                @Html.DisplayFor(modelItem => item.Price) kr <!-- TODO: Add currency-->
+                                </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Discount)
+                                @Html.DisplayFor(modelItem => item.Discount) %
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Price)
+                                @Html.DisplayFor(modelItem => item.DiscountPrice) kr <!-- TODO: Add currency-->
                             </td>
                             <td>
-                                @*@Html.DisplayFor(modelItem => item.DiscountStart)*@
+                                @Html.DisplayFor(modelItem => item.DiscountStart)
                             </td>   
                             <td>
-                                @*@Html.DisplayFor(modelItem => item.DiscountEnd)*@
+                                @Html.DisplayFor(modelItem => item.DiscountEnd)
                             </td>                              
                             <td>
                                 @*<a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square" style="color: darkorange"></i></a> |*@

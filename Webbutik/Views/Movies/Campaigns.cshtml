@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Movie>
+
+@foreach(var item in Model){
+	if (item.DiscountStart > DateTime.Now)
+	{
+		<div>
+			<span>@item.Title</span>
+			<span>@await Component.InvokeAsync("DiscountPrice", new { id = item.Id })</span>
+		</div>
+	}	
+}

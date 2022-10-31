@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Webbutik.Models
 {
@@ -15,6 +16,10 @@ namespace Webbutik.Models
         public string? Directors { get; set; }
         public bool? IsOnSale { get; set; }
         public int? Discount { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal? DiscountPrice { get; set; }
+        public DateTime? DiscountStart { get; set; }
+        public DateTime? DiscountEnd { get; set; }
         public int? InStock { get; set; }
         public int? Price { get; set; }
 

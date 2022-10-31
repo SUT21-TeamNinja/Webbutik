@@ -30,6 +30,7 @@ namespace Webbutik.Models
         public string ZipCode { get; set; }
 
         [Required(ErrorMessage = "This field is required.")]
+        [StringLength(15)]        
         [StringLength(10)]        
         public string Phone { get; set; }
 
@@ -45,9 +46,7 @@ namespace Webbutik.Models
         public int? OrderTotal { get; set; }
         [ValidateNever]
         public DateTime OrderDate { get; set; }
-        public DateTime? DiscountStart { get; set; }
-        public DateTime? DiscountEnd { get; set; }
-
+        
         //navigation
         [ValidateNever]
         public ICollection<OrderDetail> OrderDetails { get; set; }

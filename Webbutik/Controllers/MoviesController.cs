@@ -279,7 +279,10 @@ namespace Webbutik.Controllers
                 {
                     selectedMovie.IsOnSale = true;
                     selectedMovie.Discount = movie.Discount;
-                    // TODO: Add price
+                    decimal discount = Convert.ToDecimal(selectedMovie.Discount) / 100;
+                    selectedMovie.DiscountPrice = selectedMovie.Price - ((selectedMovie.Price * discount));
+                    selectedMovie.DiscountStart = movie.DiscountStart;
+                    selectedMovie.DiscountEnd = movie.DiscountEnd;
 
                     _context.Update(selectedMovie);
                     await _context.SaveChangesAsync();
@@ -298,6 +301,12 @@ namespace Webbutik.Controllers
                 return RedirectToAction(nameof(ManageCampaigns));
             }
             return View(selectedMovie);
+        }
+
+        public async Task<IActionResult> Campaigns()
+        {
+            var movies = await _context.Movies.Where(m => m.IsOnSale == true).ToListAsync();
+            return View(movies);
         }
 
 
