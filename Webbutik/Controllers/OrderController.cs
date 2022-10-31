@@ -88,5 +88,40 @@ namespace Webbutik.Controllers
             return View(orderDetails);
 
         }
+
+        public void ChnageCurrency(string Currency, string amount)
+        {
+            string to = Currency;
+            string StringAmount = amount;
+            string url = "https://api.apilayer.com/exchangerates_data/convert?to=" + to + "&from=SEK&amount=" + amount;
+
+
+            WebRequest request = WebRequest.Create(url);
+            request.Headers.Add("apikey", "yCqdysS5U7aG92l5q90ClG2vN9kL7Tnm");
+            request.Method = "GET";
+            HttpWebResponse response = null;
+            response = (HttpWebResponse)request.GetResponse();
+
+            string result = null;
+            using (Stream stream = response.GetResponseStream())
+            {
+                StreamReader sr = new StreamReader(stream);
+                result = sr.ReadToEnd();
+                sr.Close();
+            }
+
+            var trimlist = JObject.Parse(result)["result"];
+
+            var stringing = trimlist.ToString();
+
+            decimal test = Convert.ToDecimal(stringing);
+
+            decimal rounded = Math.Round(test, 0);
+
+            int Convertedresult = Convert.ToInt32(rounded);
+
+            Console.WriteLine(Convertedresult);
+
+        }
     }
 }
