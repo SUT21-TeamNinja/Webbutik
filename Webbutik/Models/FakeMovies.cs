@@ -33,7 +33,6 @@ namespace Webbutik.Models
                     tempmovie.ImDbRating = item["imDbRating"].ToString();
                     tempmovie.Genres = item["genres"].ToString();
                     tempmovie.ContentRating = item["contentRating"].ToString();
-                    tempmovie.Directors = item["directors"].ToString();
                     tempmovie.Description = item["plot"].ToString();
                     tempmovie.Stars = item["stars"].ToString();
 
