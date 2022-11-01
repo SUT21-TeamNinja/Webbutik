@@ -8,11 +8,17 @@
 <div class="container">
     <h3 class="header">Purchasable Movies</h3>
 
-    <div class="sortmenu" style="transform:translateY(4rem)">
-        @Html.ActionLink("date", "AllMovies", new { sortOrder = ViewBag.NameSortParm })
-        @Html.ActionLink("date_desc", "AllMovies", new { sortOrder = ViewBag.NameSortParm })
-        @Html.ActionLink("name_desc", "AllMovies", new { sortOrder = ViewBag.NameSortParm })
-        @Html.ActionLink("", "AllMovies", new { sortOrder = ViewBag.NameSortParm })
+    <div class="sortmenu" style="transform:translate(-4rem,4rem)">
+        <p> @Html.ActionLink("date", "AllMovies", new { sortOrder = ViewBag.NameSortParm })</p>
+        <p>
+            @Html.ActionLink("date_desc", "AllMovies", new { sortOrder = ViewBag.NameSortParm })
+        </p>
+        <p>
+            @Html.ActionLink("name_desc", "AllMovies", new { sortOrder = ViewBag.NameSortParm })
+        </p>
+        <p>
+            @Html.ActionLink("", "AllMovies", new { sortOrder = ViewBag.NameSortParm })
+        </p>
     </div>
 
     <form asp-controller="Movies" asp-action="AllMovies" style="transform:translateX(4rem)">
@@ -22,7 +28,7 @@
         </p>
     </form>
 
-    <div class="card-group row-cols-5">
+    <div class="card-group row-cols-5" style="transform:translateX(5rem)">
         @foreach (var item in Model)
         {
             <partial name="Components//_MovieCard" model="item" />
