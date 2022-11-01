@@ -1,10 +1,10 @@
 ﻿@model Movie
 
 @if(Model.DiscountStart != null && DateTime.Compare(Convert.ToDateTime(Model.DiscountStart), DateTime.Now) < 0){
-	<span style="color: red; font-weight: bold">@Model.DiscountPrice</span> 
-	<span style="text-decoration: line-through; font-weight: bold">@Model.Price</span>
+	<span style="color: darkred; font-weight: bold">@Model.DiscountPrice kr</span> 
+	<span style="text-decoration: line-through; font-weight: bold">@Model.Price kr</span>
 }
 @if(Model.IsOnSale == false){
-	<span style="font-weight: bold">@Model.Price</span>
+	<span style="font-weight: bold">@Model.Price kr</span>
 }
 

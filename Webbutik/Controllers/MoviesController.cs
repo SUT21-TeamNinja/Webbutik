@@ -375,11 +375,11 @@ namespace Webbutik.Controllers
                 movieOrders.Add(movie, amountOfOrders);
             }
 
-            var popularOrders = movieOrders.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+            var orders = movieOrders.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
             List<Movie> topMovies = new List<Movie>();
             int count = 0;
                         
-            foreach (var item in popularOrders)
+            foreach (var item in orders)
             {
                 topMovies.Add(item.Key);
                 count++;
