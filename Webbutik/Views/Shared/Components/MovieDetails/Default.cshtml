@@ -18,10 +18,10 @@
                 <p class="genre">@Model.Genres</p>
                 <p class="time">@Model.RunTimeStr</p>
             </div>
-            <p class="description">@Model.Description</p>           
+            <p class="description text-start">@Model.Description</p>           
             <div class="social-btn text-center">
                 <a class="btn btn-dark" asp-controller="cart"
-                        asp-action="addtocart" asp-route-id="2" asp-route-currentPage="@currentPage">
+                        asp-action="addtocart" asp-route-id="@Model.Id" asp-route-currentPage="@currentPage">
                     Add to cart
                 </a>
                 <a class="btn btn-dark" href="https://www.imdb.com/title/@Model.ImdbId" target="_blank">
