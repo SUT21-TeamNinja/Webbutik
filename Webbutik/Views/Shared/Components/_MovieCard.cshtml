@@ -3,21 +3,24 @@
 
 <div class="col-sm-3">
     <div class="card mb-5" style="width: 13rem; height: 18rem">
-        <div class="row g-0">
-            <div class="col-md-4" style="width: 7rem; height: 11rem;">
-                <img src="@Model.ImageUrl" class="img-fluid rounded-start" alt="<BILD SAKNAS>">
+        <div class="row g-0" styel="position:relative">
+            <div class="col-md-4" style="width: 7rem; height: 10rem;">
+                <img src="@Model.ImageUrl" class="img-fluid rounded-start" alt="<IMAGE MISSING>" style="width: 7rem; height: 10rem;">
             </div>
-            <div class="col-md-8">
-                <div class="card-body" style="transform:translateY(-3rem)">
-                  
-                    <h6 class="card-title" style="max-width: 10rem">@Model.Title</h6>
-                    <h5 style="color:darkred">@Model.Price</h5>
-                    @await Component.InvokeAsync("DiscountPrice", new { id = Model.Id })
-                    <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.Id">
-                        <div class="btn btn-success">PURCHASE</div>
+            <div class="col-md-8" style="transform:translateY(0); ">
+@*                <div class="card-body" >
+*@                  
+                    <h6 class="card-title" style="width: 10rem; font-size:small">@Model.Title</h6>
+                @await Component.InvokeAsync("DiscountPrice", new { id = Model.Id })
+                <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.Id">
+                        <div class="btn btn-success" style="position: absolute;
+                             bottom: 0;
+                             left: 0;">
+                            PURCHASE
+                        </div>
                     </a>
-                </div>
-            </div>
+@*                </div>
+*@            </div>
 
         </div>
     </div>
