@@ -1,11 +1,28 @@
 ﻿@model IEnumerable<Movie>
 
-@foreach(var item in Model){
-	if (item.DiscountStart > DateTime.Now)
-	{
-		<div>
-			<span>@item.Title</span>
-			<span>@await Component.InvokeAsync("DiscountPrice", new { id = item.Id })</span>
-		</div>
-	}	
+@{
+    ViewData["Title"] = "Campaigns";
 }
+
+<div class="container">
+    <h3 class="header">Movies On Sale</h3>
+
+    <div class="row" style="justify-content: flex-start">
+        @foreach (var item in Model)
+        {
+            @if (DateTime.Compare(Convert.ToDateTime(item.DiscountStart), DateTime.Now) < 0)
+            {
+                <partial name="Components//_MovieCard" model="item" />
+
+                <div class="modal" id="exampleModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <partial name="Components//_MovieDetails" model="item" />
+                        </div>
+                    </div>
+                </div>
+            }            
+        }
+    </div>
+</div>
