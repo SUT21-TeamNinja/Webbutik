@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -359,6 +360,38 @@ namespace Webbutik.Controllers
             return RedirectToAction("ManageStockIndividually", movie);
         }
 
+        public async Task<IActionResult> TopTenMovies()
+        {
+            var moviesInDB = await _context.Movies.ToListAsync();
+            Dictionary<Movie, int> movieOrders = new Dictionary<Movie, int>();
+
+            foreach (var movie in moviesInDB)
+            {
+                var amountOfOrders = (from o in _context.OrderDetails
+                                      join m in _context.Movies on o.MovieId equals m.Id
+                                      where m.Id == movie.Id
+                                      select o.OrderId).Count();
+
+                movieOrders.Add(movie, amountOfOrders);
+            }
+
+            var orders = movieOrders.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+            List<Movie> topMovies = new List<Movie>();
+            int count = 0;
+                        
+            foreach (var item in orders)
+            {
+                topMovies.Add(item.Key);
+                count++;
+
+                if (count >= 10)
+                {
+                    break;
+                }
+            }
+
+            return View(topMovies);
+        }
 
         public async Task<IActionResult> PurchaseLog()
         {
