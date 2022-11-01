@@ -38,19 +38,23 @@
         </nav>
         <div id="content-sidebar">
 
-    <div class="card" style="width: 100%;">
-    <img src="@Model.ImageUrl" class="img-thumbnail" alt="Movie cover">
+    <div class="card" style="width: 15rem; height:20rem;">
+                <img src="@Model.ImageUrl" class="img-thumbnail" alt="Movie cover">
     <div class="card-body">
         <h5 class="card-title">@Model.Title</h5>
         <p class="card-text">@Model.Description</p>
+
+        <div class="group-inline">
+        
         <a asp-controller="Movies" asp-action="DecreaseInStock" asp-route-id="@Model.Id">
-            <i class="btn btn-danger">-</i>
+            <i class="btn btn-danger d-inline-block">-</i>
         </a>
-        @Model.InStock
+                    <p class="d-inline-block">Number in stock: @Model.InStock</p>
 
         <a asp-controller="Movies" asp-action="IncreaseInStock" asp-route-id="@Model.Id">
-            <i class="btn btn-primary">+</i>
+                        <i class="btn btn-primary">+</i>
         </a>
+        </div>
     </div>
 </div>
 

@@ -89,11 +89,10 @@ namespace Webbutik.Controllers
 
         }
 
-        public void ChnageCurrency(string Currency, string amount)
+        public IActionResult ChangeCurrency(string Currency, string amount) 
         {
-            string to = Currency;
-            string StringAmount = amount;
-            string url = "https://api.apilayer.com/exchangerates_data/convert?to=" + to + "&from=SEK&amount=" + amount;
+
+            string url = "https://api.apilayer.com/exchangerates_data/convert?to=" + Currency + "&from=SEK&amount=" + amount;
 
 
             WebRequest request = WebRequest.Create(url);
@@ -118,9 +117,13 @@ namespace Webbutik.Controllers
 
             decimal rounded = Math.Round(test, 0);
 
-            int Convertedresult = Convert.ToInt32(rounded);
+            int ConvertedResult = Convert.ToInt32(rounded);
 
-            Console.WriteLine(Convertedresult);
+
+
+            return View(ConvertedResult);
+
+            
 
         }
     }

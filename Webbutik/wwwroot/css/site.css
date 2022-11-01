@@ -263,8 +263,22 @@ li a{
     }
 }
 
+.card{
+    display:flex;
+}
 
+.group-inline {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    background-color:gray;
+    padding:1rem;
+}
 
+.group-inline div {
+    width: 30%;
+}
 
 
 /*  FOLLOW*/
