@@ -10,13 +10,13 @@ namespace Webbutik.Models
         public string? Title { get; set; }
         public string? Description { get; set; }
         public string? ImageUrl { get; set; }
-        public DateTime? ReleaseDate { get; set; }
+        public string? ReleaseDate { get; set; }
         public string? Stars { get; set; }
         public string? ImDbRating { get; set; }
         public string? ContentRating { get; set; }
         public string? RunTimeStr { get; set; }
         public string? Genres { get; set; }
-        public int? ImdbId { get; set; }
+        public string? ImdbId { get; set; }
         public string? Directors { get; set; }
         public bool? IsOnSale { get; set; }
         public int? Discount { get; set; }

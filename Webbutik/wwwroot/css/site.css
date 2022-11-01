@@ -124,13 +124,13 @@ li a{
     width: 100%;
 }
 
-.card_datails {
+.card_details {
     width: 90%;
     padding: 30px;
     margin-top: -25px;
 }
 
-    .card_datails h1 {
+    .card_details h1 {
         font-size: 30px;
     }
 
@@ -161,28 +161,36 @@ li a{
 }
 
 .PG {
-    background: #92FE9D;
+    background: #212529;
     -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.1);
     box-shadow: 0 0 50px rgba(0,0,0,0.1);
     -webkit-transition: 300ms ease-in-out;
 }
-
-.disc {
-    font-weight: 100;
-    line-height: 27px;
+.imdb-logo{
+    width: 40px;
+    height: 20px;
 }
 
-a {
-    color: darkcyan;
+.description {
+    font-weight: 100;
+    line-height: 27px;
+    height: 8rem;
+}
+
+.imdb-link  {
+    color: #212529;
     display: block;
     text-decoration: none;
 }
+    .imdb-link:hover {
+        color: white;
+    }
 
 .social-btn {
     margin-left: -10px;
 }
 
-.details-button {
+.add-button {
     color: #fff;
     border: none;
     padding: 20px;
@@ -190,7 +198,7 @@ a {
     font-size: 12px;
     margin-top: 30px;
     margin-left: 10px;
-    background: #92FE9D;
+    background: #212529;
     border-radius: 12px;
     -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.2);
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
@@ -199,7 +207,7 @@ a {
     transition: 200ms ease-in-out;
 }
 
-    .details-button:hover {
+    .add-button:hover {
         -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
         transform: scale(1.1);
