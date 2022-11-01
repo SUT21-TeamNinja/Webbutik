@@ -17,11 +17,13 @@ namespace Webbutik.Controllers
         public async Task<IActionResult> Index()
         {
             //var list = await FakeMovies.GetMoviesFromApi();
+
             if (!IsUpdated)
             {
                 //await Populate(list);
                 IsUpdated = true;
             }
+
             var movies = await _context.Movies.ToListAsync();
             var viewModel = new MovieListViewModel
             {
