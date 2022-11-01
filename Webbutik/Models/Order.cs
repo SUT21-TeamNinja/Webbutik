@@ -30,8 +30,7 @@ namespace Webbutik.Models
         public string ZipCode { get; set; }
 
         [Required(ErrorMessage = "This field is required.")]
-        [StringLength(15)]           
-        [StringLength(15)]        
+        [StringLength(15)]               
         public string Phone { get; set; }
 
         [Required(ErrorMessage = "This field is required.")]
