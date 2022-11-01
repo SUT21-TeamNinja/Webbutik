@@ -42,60 +42,84 @@
                               showIndicators=false
                               itemTemplate='<figure class="img-container">
                                             <img src="${ImageUrl}"/>
-                                            </figure>'>                              
+                                            </figure>'>
                 </ejs-carousel>
             </div>
         </div>
     </div>
+    <hr />
+
+    <h4>This weeks top picks</h4>
 
     <div class="row">
-        <div class="col-4">
-            <img id="details" class="thumbnail" src="https://cdn.cdon.com/cmpadmin/images/2022-10-10-13-15-59-1559-a9d91be7-fb1b-414e-907d-fda44b28bfadtopgunmaverick_cdon_1200x600.jpg?impolicy=imagebeam&imwidth=1200" />
+        <div id='container'>
         </div>
-        <div class="col-4">
-            <img class="thumbnail" src="https://cdn.cdon.com/cmpadmin/images/2022-10-10-13-15-59-1559-ae496605-79c4-46f6-b185-71b58250450ajurassicworlddominion_cdon_1200x600.jpg?impolicy=imagebeam&imwidth=1200" />
-        </div>
-        <div class="col-4">
-            <img class="thumbnail" src="https://cdn.cdon.com/cmpadmin/images/2022-10-03-13-08-11-811-2306d96d-5866-4057-9511-87d4e668fd3aelvis_ordernow_cdon_1200x600.jpg?impolicy=imagebeam&imwidth=1200" />
-        </div>
-    </div>
+        @foreach (var item in miniList)
+        {
+            <div class="col-3">
+                <img id="details@(miniList.IndexOf(item))" class="thumbnail" src="@item.ImageUrl" />
+            </div>
 
-    <div class="row">
-        <div class="col-4">
-            <a class="btn btn-dark thumbnail" asp-controller="cart"
-               asp-action="addtocart" asp-route-id="1" asp-route-currentPage="@currentPage">Add to cart</a>
-        </div>
-        <div class="col-4">
-            <a class="btn btn-dark thumbnail" asp-controller="cart"
-               asp-action="addtocart" asp-route-id="2" asp-route-currentPage="@currentPage">Add to cart</a>
-        </div>
-        <div class="col-4">
-            <a class="btn btn-dark thumbnail" asp-controller="cart"
-               asp-action="addtocart" asp-route-id="3">Add to cart</a>
-        </div>
+            <ejs-dialog id='dialog@(miniList.IndexOf(item))' isModal="true" width="760px" height="390px" overlayClick="onOverlayClick@(miniList.IndexOf(item))"
+                    target="#container" visible=false>
+                <e-content-template>
+                    @await Component.InvokeAsync("MovieDetails", new{ id = item.Id})
+                </e-content-template>
+            </ejs-dialog>
+        }
+        @foreach (var item in miniList)
+        {
+            <div class="col-3">
+                <a class="btn btn-dark thumbnail-add" asp-controller="cart"
+               asp-action="addtocart" asp-route-id="@item.Id" asp-route-currentPage="@currentPage">Add to cart</a>
+            </div>
+        }
+
+        <style>
+            .e-dialog .e-dlg-content {
+                padding: 0;
+                margin: 0;
+            }
+        </style>
     </div>
 </div>
 
 
-<div id='container'>
-    <ejs-dialog id='dialog' isModal="true" width="760px" height="390px" overlayClick="onOverlayClick"
-                target="#container" visible="false">
-        <e-content-template>
-            @*NEED TO CHANGE THE ID TO THE ACTUAL ID FROM DATABASE.*@
-            @await Component.InvokeAsync("MovieDetails", new{ id = 1})
-        </e-content-template>
-    </ejs-dialog>
-</div>
 
 <script>
-    window.onload = function () {
-        document.getElementById('details').onclick = function () {
-            var dialog = document.getElementById("dialog").ej2_instances[0];
-            dialog.show();
-        }
+
+    document.getElementById('details0').onclick = function () {
+        var dialog = document.getElementById("dialog0").ej2_instances[0];
+        dialog.show();
     }
-    function onOverlayClick() {
-        var dialog = document.getElementById("dialog").ej2_instances[0];
+    document.getElementById('details1').onclick = function () {
+        var dialog = document.getElementById("dialog1").ej2_instances[0];
+        dialog.show();
+    }
+    document.getElementById('details2').onclick = function () {
+        var dialog = document.getElementById("dialog2").ej2_instances[0];
+        dialog.show();
+    }
+    document.getElementById('details3').onclick = function () {
+        var dialog = document.getElementById("dialog3").ej2_instances[0];
+        dialog.show();
+    }
+
+
+    function onOverlayClick0() {
+        var dialog = document.getElementById("dialog0").ej2_instances[0];
+        dialog.hide();
+    }
+    function onOverlayClick1() {
+        var dialog = document.getElementById("dialog1").ej2_instances[0];
+        dialog.hide();
+    }
+    function onOverlayClick2() {
+        var dialog = document.getElementById("dialog2").ej2_instances[0];
+        dialog.hide();
+    }
+    function onOverlayClick3() {
+        var dialog = document.getElementById("dialog3").ej2_instances[0];
         dialog.hide();
     }
 </script>
