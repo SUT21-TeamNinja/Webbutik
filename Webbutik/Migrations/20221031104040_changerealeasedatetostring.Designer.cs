@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Webbutik.Models;
 
@@ -11,9 +12,10 @@ using Webbutik.Models;
 namespace Webbutik.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221031104040_changerealeasedatetostring")]
+    partial class changerealeasedatetostring
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -252,8 +254,8 @@ namespace Webbutik.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ImdbId")
-                        .HasColumnType("int");
+                    b.Property<string>("ImdbId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("InStock")
                         .HasColumnType("int");
@@ -264,8 +266,8 @@ namespace Webbutik.Migrations
                     b.Property<int?>("Price")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("ReleaseDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ReleaseDate")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RunTimeStr")
                         .HasColumnType("nvarchar(max)");
@@ -291,10 +293,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 1",
                             ImDbRating = "ImDbRating 1",
                             ImageUrl = "ImageUrl 1",
-                            ImdbId = 1,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8486),
                             RunTimeStr = "RunTimeStr  1",
                             Stars = "Stars 1",
                             Title = "Title 1"
@@ -309,10 +309,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 2",
                             ImDbRating = "ImDbRating 2",
                             ImageUrl = "ImageUrl 2",
-                            ImdbId = 2,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8541),
                             RunTimeStr = "RunTimeStr  2",
                             Stars = "Stars 2",
                             Title = "Title 2"
@@ -327,10 +325,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 3",
                             ImDbRating = "ImDbRating 3",
                             ImageUrl = "ImageUrl 3",
-                            ImdbId = 3,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8556),
                             RunTimeStr = "RunTimeStr  3",
                             Stars = "Stars 3",
                             Title = "Title 3"
@@ -345,10 +341,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 4",
                             ImDbRating = "ImDbRating 4",
                             ImageUrl = "ImageUrl 4",
-                            ImdbId = 4,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8569),
                             RunTimeStr = "RunTimeStr  4",
                             Stars = "Stars 4",
                             Title = "Title 4"
@@ -363,10 +357,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 5",
                             ImDbRating = "ImDbRating 5",
                             ImageUrl = "ImageUrl 5",
-                            ImdbId = 5,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8581),
                             RunTimeStr = "RunTimeStr  5",
                             Stars = "Stars 5",
                             Title = "Title 5"
@@ -381,10 +373,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 6",
                             ImDbRating = "ImDbRating 6",
                             ImageUrl = "ImageUrl 6",
-                            ImdbId = 6,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8634),
                             RunTimeStr = "RunTimeStr  6",
                             Stars = "Stars 6",
                             Title = "Title 6"
@@ -399,10 +389,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 7",
                             ImDbRating = "ImDbRating 7",
                             ImageUrl = "ImageUrl 7",
-                            ImdbId = 7,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8647),
                             RunTimeStr = "RunTimeStr  7",
                             Stars = "Stars 7",
                             Title = "Title 7"
@@ -417,10 +405,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 8",
                             ImDbRating = "ImDbRating 8",
                             ImageUrl = "ImageUrl 8",
-                            ImdbId = 8,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8660),
                             RunTimeStr = "RunTimeStr  8",
                             Stars = "Stars 8",
                             Title = "Title 8"
@@ -435,10 +421,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 9",
                             ImDbRating = "ImDbRating 9",
                             ImageUrl = "ImageUrl 9",
-                            ImdbId = 9,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8673),
                             RunTimeStr = "RunTimeStr  9",
                             Stars = "Stars 9",
                             Title = "Title 9"
@@ -453,10 +437,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 10",
                             ImDbRating = "ImDbRating 10",
                             ImageUrl = "ImageUrl 10",
-                            ImdbId = 10,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8687),
                             RunTimeStr = "RunTimeStr  10",
                             Stars = "Stars 10",
                             Title = "Title 10"
@@ -471,10 +453,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 11",
                             ImDbRating = "ImDbRating 11",
                             ImageUrl = "ImageUrl 11",
-                            ImdbId = 11,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8700),
                             RunTimeStr = "RunTimeStr  11",
                             Stars = "Stars 11",
                             Title = "Title 11"
@@ -489,10 +469,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 12",
                             ImDbRating = "ImDbRating 12",
                             ImageUrl = "ImageUrl 12",
-                            ImdbId = 12,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8713),
                             RunTimeStr = "RunTimeStr  12",
                             Stars = "Stars 12",
                             Title = "Title 12"
@@ -507,10 +485,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 13",
                             ImDbRating = "ImDbRating 13",
                             ImageUrl = "ImageUrl 13",
-                            ImdbId = 13,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8726),
                             RunTimeStr = "RunTimeStr  13",
                             Stars = "Stars 13",
                             Title = "Title 13"
@@ -525,10 +501,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 14",
                             ImDbRating = "ImDbRating 14",
                             ImageUrl = "ImageUrl 14",
-                            ImdbId = 14,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8738),
                             RunTimeStr = "RunTimeStr  14",
                             Stars = "Stars 14",
                             Title = "Title 14"
@@ -543,10 +517,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 15",
                             ImDbRating = "ImDbRating 15",
                             ImageUrl = "ImageUrl 15",
-                            ImdbId = 15,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8780),
                             RunTimeStr = "RunTimeStr  15",
                             Stars = "Stars 15",
                             Title = "Title 15"
@@ -561,10 +533,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 16",
                             ImDbRating = "ImDbRating 16",
                             ImageUrl = "ImageUrl 16",
-                            ImdbId = 16,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8794),
                             RunTimeStr = "RunTimeStr  16",
                             Stars = "Stars 16",
                             Title = "Title 16"
@@ -579,10 +549,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 17",
                             ImDbRating = "ImDbRating 17",
                             ImageUrl = "ImageUrl 17",
-                            ImdbId = 17,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8807),
                             RunTimeStr = "RunTimeStr  17",
                             Stars = "Stars 17",
                             Title = "Title 17"
@@ -597,10 +565,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 18",
                             ImDbRating = "ImDbRating 18",
                             ImageUrl = "ImageUrl 18",
-                            ImdbId = 18,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8821),
                             RunTimeStr = "RunTimeStr  18",
                             Stars = "Stars 18",
                             Title = "Title 18"
@@ -615,10 +581,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 19",
                             ImDbRating = "ImDbRating 19",
                             ImageUrl = "ImageUrl 19",
-                            ImdbId = 19,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8834),
                             RunTimeStr = "RunTimeStr  19",
                             Stars = "Stars 19",
                             Title = "Title 19"
@@ -633,10 +597,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 20",
                             ImDbRating = "ImDbRating 20",
                             ImageUrl = "ImageUrl 20",
-                            ImdbId = 20,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8847),
                             RunTimeStr = "RunTimeStr  20",
                             Stars = "Stars 20",
                             Title = "Title 20"
@@ -651,10 +613,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 21",
                             ImDbRating = "ImDbRating 21",
                             ImageUrl = "ImageUrl 21",
-                            ImdbId = 21,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8859),
                             RunTimeStr = "RunTimeStr  21",
                             Stars = "Stars 21",
                             Title = "Title 21"
@@ -669,10 +629,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 22",
                             ImDbRating = "ImDbRating 22",
                             ImageUrl = "ImageUrl 22",
-                            ImdbId = 22,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8871),
                             RunTimeStr = "RunTimeStr  22",
                             Stars = "Stars 22",
                             Title = "Title 22"
@@ -687,10 +645,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 23",
                             ImDbRating = "ImDbRating 23",
                             ImageUrl = "ImageUrl 23",
-                            ImdbId = 23,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8884),
                             RunTimeStr = "RunTimeStr  23",
                             Stars = "Stars 23",
                             Title = "Title 23"
@@ -705,10 +661,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 24",
                             ImDbRating = "ImDbRating 24",
                             ImageUrl = "ImageUrl 24",
-                            ImdbId = 24,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8896),
                             RunTimeStr = "RunTimeStr  24",
                             Stars = "Stars 24",
                             Title = "Title 24"
@@ -723,10 +677,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 25",
                             ImDbRating = "ImDbRating 25",
                             ImageUrl = "ImageUrl 25",
-                            ImdbId = 25,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8939),
                             RunTimeStr = "RunTimeStr  25",
                             Stars = "Stars 25",
                             Title = "Title 25"
@@ -741,10 +693,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 26",
                             ImDbRating = "ImDbRating 26",
                             ImageUrl = "ImageUrl 26",
-                            ImdbId = 26,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8953),
                             RunTimeStr = "RunTimeStr  26",
                             Stars = "Stars 26",
                             Title = "Title 26"
@@ -759,10 +709,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 27",
                             ImDbRating = "ImDbRating 27",
                             ImageUrl = "ImageUrl 27",
-                            ImdbId = 27,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8966),
                             RunTimeStr = "RunTimeStr  27",
                             Stars = "Stars 27",
                             Title = "Title 27"
@@ -777,10 +725,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 28",
                             ImDbRating = "ImDbRating 28",
                             ImageUrl = "ImageUrl 28",
-                            ImdbId = 28,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8978),
                             RunTimeStr = "RunTimeStr  28",
                             Stars = "Stars 28",
                             Title = "Title 28"
@@ -795,10 +741,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 29",
                             ImDbRating = "ImDbRating 29",
                             ImageUrl = "ImageUrl 29",
-                            ImdbId = 29,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(8991),
                             RunTimeStr = "RunTimeStr  29",
                             Stars = "Stars 29",
                             Title = "Title 29"
@@ -813,10 +757,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 30",
                             ImDbRating = "ImDbRating 30",
                             ImageUrl = "ImageUrl 30",
-                            ImdbId = 30,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9003),
                             RunTimeStr = "RunTimeStr  30",
                             Stars = "Stars 30",
                             Title = "Title 30"
@@ -831,10 +773,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 31",
                             ImDbRating = "ImDbRating 31",
                             ImageUrl = "ImageUrl 31",
-                            ImdbId = 31,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9016),
                             RunTimeStr = "RunTimeStr  31",
                             Stars = "Stars 31",
                             Title = "Title 31"
@@ -849,10 +789,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 32",
                             ImDbRating = "ImDbRating 32",
                             ImageUrl = "ImageUrl 32",
-                            ImdbId = 32,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9028),
                             RunTimeStr = "RunTimeStr  32",
                             Stars = "Stars 32",
                             Title = "Title 32"
@@ -867,10 +805,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 33",
                             ImDbRating = "ImDbRating 33",
                             ImageUrl = "ImageUrl 33",
-                            ImdbId = 33,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9041),
                             RunTimeStr = "RunTimeStr  33",
                             Stars = "Stars 33",
                             Title = "Title 33"
@@ -885,10 +821,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 34",
                             ImDbRating = "ImDbRating 34",
                             ImageUrl = "ImageUrl 34",
-                            ImdbId = 34,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9085),
                             RunTimeStr = "RunTimeStr  34",
                             Stars = "Stars 34",
                             Title = "Title 34"
@@ -903,10 +837,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 35",
                             ImDbRating = "ImDbRating 35",
                             ImageUrl = "ImageUrl 35",
-                            ImdbId = 35,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9098),
                             RunTimeStr = "RunTimeStr  35",
                             Stars = "Stars 35",
                             Title = "Title 35"
@@ -921,10 +853,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 36",
                             ImDbRating = "ImDbRating 36",
                             ImageUrl = "ImageUrl 36",
-                            ImdbId = 36,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9111),
                             RunTimeStr = "RunTimeStr  36",
                             Stars = "Stars 36",
                             Title = "Title 36"
@@ -939,10 +869,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 37",
                             ImDbRating = "ImDbRating 37",
                             ImageUrl = "ImageUrl 37",
-                            ImdbId = 37,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9124),
                             RunTimeStr = "RunTimeStr  37",
                             Stars = "Stars 37",
                             Title = "Title 37"
@@ -957,10 +885,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 38",
                             ImDbRating = "ImDbRating 38",
                             ImageUrl = "ImageUrl 38",
-                            ImdbId = 38,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9136),
                             RunTimeStr = "RunTimeStr  38",
                             Stars = "Stars 38",
                             Title = "Title 38"
@@ -975,10 +901,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 39",
                             ImDbRating = "ImDbRating 39",
                             ImageUrl = "ImageUrl 39",
-                            ImdbId = 39,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9148),
                             RunTimeStr = "RunTimeStr  39",
                             Stars = "Stars 39",
                             Title = "Title 39"
@@ -993,10 +917,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 40",
                             ImDbRating = "ImDbRating 40",
                             ImageUrl = "ImageUrl 40",
-                            ImdbId = 40,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9162),
                             RunTimeStr = "RunTimeStr  40",
                             Stars = "Stars 40",
                             Title = "Title 40"
@@ -1011,10 +933,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 41",
                             ImDbRating = "ImDbRating 41",
                             ImageUrl = "ImageUrl 41",
-                            ImdbId = 41,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9174),
                             RunTimeStr = "RunTimeStr  41",
                             Stars = "Stars 41",
                             Title = "Title 41"
@@ -1029,10 +949,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 42",
                             ImDbRating = "ImDbRating 42",
                             ImageUrl = "ImageUrl 42",
-                            ImdbId = 42,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9187),
                             RunTimeStr = "RunTimeStr  42",
                             Stars = "Stars 42",
                             Title = "Title 42"
@@ -1047,10 +965,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 43",
                             ImDbRating = "ImDbRating 43",
                             ImageUrl = "ImageUrl 43",
-                            ImdbId = 43,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9228),
                             RunTimeStr = "RunTimeStr  43",
                             Stars = "Stars 43",
                             Title = "Title 43"
@@ -1065,10 +981,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 44",
                             ImDbRating = "ImDbRating 44",
                             ImageUrl = "ImageUrl 44",
-                            ImdbId = 44,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9243),
                             RunTimeStr = "RunTimeStr  44",
                             Stars = "Stars 44",
                             Title = "Title 44"
@@ -1083,10 +997,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 45",
                             ImDbRating = "ImDbRating 45",
                             ImageUrl = "ImageUrl 45",
-                            ImdbId = 45,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9256),
                             RunTimeStr = "RunTimeStr  45",
                             Stars = "Stars 45",
                             Title = "Title 45"
@@ -1101,10 +1013,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 46",
                             ImDbRating = "ImDbRating 46",
                             ImageUrl = "ImageUrl 46",
-                            ImdbId = 46,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9269),
                             RunTimeStr = "RunTimeStr  46",
                             Stars = "Stars 46",
                             Title = "Title 46"
@@ -1119,10 +1029,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 47",
                             ImDbRating = "ImDbRating 47",
                             ImageUrl = "ImageUrl 47",
-                            ImdbId = 47,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9281),
                             RunTimeStr = "RunTimeStr  47",
                             Stars = "Stars 47",
                             Title = "Title 47"
@@ -1137,10 +1045,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 48",
                             ImDbRating = "ImDbRating 48",
                             ImageUrl = "ImageUrl 48",
-                            ImdbId = 48,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9294),
                             RunTimeStr = "RunTimeStr  48",
                             Stars = "Stars 48",
                             Title = "Title 48"
@@ -1155,10 +1061,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 49",
                             ImDbRating = "ImDbRating 49",
                             ImageUrl = "ImageUrl 49",
-                            ImdbId = 49,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9306),
                             RunTimeStr = "RunTimeStr  49",
                             Stars = "Stars 49",
                             Title = "Title 49"
@@ -1173,10 +1077,8 @@ namespace Webbutik.Migrations
                             Genres = "Genres 50",
                             ImDbRating = "ImDbRating 50",
                             ImageUrl = "ImageUrl 50",
-                            ImdbId = 50,
                             InStock = 1,
                             IsOnSale = true,
-                            ReleaseDate = new DateTime(2022, 10, 31, 10, 50, 46, 973, DateTimeKind.Local).AddTicks(9319),
                             RunTimeStr = "RunTimeStr  50",
                             Stars = "Stars 50",
                             Title = "Title 50"
