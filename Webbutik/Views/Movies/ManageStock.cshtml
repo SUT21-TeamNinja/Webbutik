@@ -76,15 +76,17 @@
                             </td>
                         </tr>*@
 
-                    <div class="card" style="width: 35rem; height:50rem;">
+                    <div class="card" style="width: 25rem; height:40rem;">
                        
                         <div class="card-body">
-                        <img src="@item.ImageUrl" class="img-thumbnail" style="height:30rem;width:20rem;" alt="Movie cover">
+                        <img src="@item.ImageUrl" class="img-thumbnail" style="height:20rem;width:15rem;" alt="Movie cover">
                             <h5 class="card-title">@item.Title</h5>
                             <p class="card-text">@item.Description</p>
                                 <a asp-controller="Movies" asp-action="ManageStockIndividually" asp-route-id="@item.Id">
                                     <i class="btn btn-primary">Manage Stock</i>
+
                                 </a>
+                                <p>Number in Stock @item.InStock</p>
                         </div>
                     </div>
                         
