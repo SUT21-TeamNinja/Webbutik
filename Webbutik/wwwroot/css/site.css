@@ -15,7 +15,8 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-color: #676767;
+    background: rgb(65,65,65);
+    background: linear-gradient(90deg, rgba(65,65,65,1) 5%, rgba(103,103,103,1) 25%, rgba(103,103,103,1) 75%, rgba(65,65,65,1) 95%);
 }
 
 footer .container {
