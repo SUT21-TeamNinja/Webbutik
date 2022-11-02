@@ -36,9 +36,16 @@ namespace Webbutik.Models
                     tempmovie.Description = item["plot"].ToString();
                     tempmovie.Stars = item["stars"].ToString();
                     tempmovie.RunTimeStr = item["runtimeStr"].ToString();
-                    //tempmovie.Directors = item["stars"].ToString();
                     tempmovie.ReleaseDate = item["description"].ToString();
                     tempmovie.ImdbId = item["id"].ToString();
+
+
+                    tempmovie.Directors = item["stars"].ToString();
+                    int index = tempmovie.Directors.IndexOf(",");
+                    if (index >= 0)
+                    {
+                        tempmovie.Directors = tempmovie.Directors.Substring(0, index);
+                    }
 
                     movielist.Add(tempmovie);
                 }
