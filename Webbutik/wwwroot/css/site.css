@@ -70,6 +70,10 @@ thumbnail:hover {
 /* Start page end */
 
 /* Sidebar start */
+
+.sidebar-header h3{
+    color: white;
+}
 .wrapper {
     display: flex;
     width: 100%;
@@ -80,10 +84,10 @@ thumbnail:hover {
     min-width: 250px;
     max-width: 250px;
     min-height: 100vh;
-    background-image: linear-gradient(#aec0c3, #212529);
+    background-image: linear-gradient(#212529, #212529);
     /*border-right: black solid 2px;*/
     padding: 1em;
-    box-shadow: 5px 0px 10px gray;
+    /*box-shadow: 5px 0px 30px black;*/
 }
 
 .adm-container {
@@ -91,7 +95,7 @@ thumbnail:hover {
 }
 
 li a {
-    color: black;
+    color: white;
     text-decoration: none;
     cursor: pointer;
     font-weight: bold;
@@ -102,6 +106,14 @@ li a {
     padding: 3em;
     padding-left: 4em;
 }
+
+#content-sidebar h1{
+    color: white;
+}
+
+#content-sidebar table {
+    color: white;
+}
 /* Sidebar end */
 
 /* Footer start */
@@ -111,6 +123,42 @@ li a {
 
 /* Footer end */
 
+/* Admin Pages start */
+.container-adm {
+    margin-top: 2em;
+    margin-left: 4em;
+    margin-bottom: 2em;
+}
+
+#adm-details{
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 0;
+    padding: 1em;
+    width: 1000px;
+}
+
+#adm-edit{
+    margin-left: 0;
+}
+
+#adm-form-group{
+    padding-left: 0;
+}
+
+.adm-form {
+    margin-left: 0;
+}
+
+.adm-form .form-group label{
+    color: white;
+    margin-top: 0.5em;
+}
+
+#save-btn{
+    margin-top: 1em;
+}
+/* Admin Pages end */
 /* Admin Manage Products */
 #btn-add a {
     color: white;
