@@ -120,7 +120,19 @@ li a:hover {
 #content-sidebar table {
     color: white;
 }
+
+#btn-delete{
+    width: 100px;
+}
 /* Sidebar end */
+/* Movie Pages start */
+.header {
+    margin-left: 0em;
+    margin-bottom: 1em;
+    color: white;
+}
+
+/* Movie Pages end */
 
 /* Footer start */
 .border-top {
@@ -161,7 +173,11 @@ li a:hover {
     margin-top: 0.5em;
 }
 
-#save-btn{
+.adm-form .form-group input{
+    margin-bottom: 0;
+}
+
+#save-btn {
     margin-top: 1em;
 }
 /* Admin Pages end */
@@ -170,10 +186,12 @@ li a:hover {
     color: white;
     text-decoration: none;
 }
+
+#btn-add{
+    margin-bottom: 1em;
+}
 /* Admin Manage Products end*/
-
 /*MOVIEDETAIL POPUP START*/
-
 .main_card {
     color: #fff;
     width: 760px;
