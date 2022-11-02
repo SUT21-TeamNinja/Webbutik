@@ -27,11 +27,7 @@ namespace Webbutik.Controllers
         public async Task<IActionResult> CheckOutAsync(Order order)
         {
             _cart.CartItems = await _cart.GetCartItemsAsync();
-
-            if (_cart.CartItems.Count == 0)
-            {
-                return View("Empty");
-            }
+            
             if (ModelState.IsValid)
             {
                 order.OrderDate = DateTime.Now;

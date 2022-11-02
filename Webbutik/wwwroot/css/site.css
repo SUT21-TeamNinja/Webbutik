@@ -348,6 +348,17 @@ li a:hover {
         opacity: 0;
     }
 }
+
+h1{
+    color:white;
+}
+h2{
+    color:white
+}
+h3{
+    color:white;
+}
+
 /*Manage Stock*/
 .center {
     display: block;
@@ -357,9 +368,9 @@ li a:hover {
     margin-top:2rem
 }
 
-.card {
+/*.card {
     display: flex;
-}
+}*/
 
 .group-inline {
     display: flex;
@@ -683,9 +694,7 @@ li a:hover {
     padding: 0 1vh;
 }
 
-a {
-    padding: 0 1vh;
-}
+
 
 .close {
     margin-left: auto;
@@ -704,11 +713,11 @@ hr {
     margin-top: 1.25rem;
 }
 
-form {
+.cart-form {
     padding: 2vh 0;
 }
 
-select {
+.cart-select {
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1.5vh 1vh;
     margin-bottom: 4vh;
@@ -717,7 +726,7 @@ select {
     background-color: rgb(247, 247, 247);
 }
 
-input {
+.cart-input {
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1vh;
     margin-bottom: 4vh;
@@ -726,7 +735,7 @@ input {
     background-color: rgb(247, 247, 247);
 }
 
-    input:focus::-webkit-input-placeholder {
+    .cart-input:focus::-webkit-input-placeholder {
         color: transparent;
     }
 

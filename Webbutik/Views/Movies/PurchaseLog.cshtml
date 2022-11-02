@@ -61,6 +61,12 @@
                         <th>
                             @Html.DisplayNameFor(order => order.OrderDate)
                         </th>
+                        <th>
+                            
+                        </th>
+                        <th>
+                            
+                        </th>
                     </tr>
                 </thead>
          
@@ -89,16 +95,14 @@
                     </td>
                     <td>
                         <a asp-controller="Order" asp-action="Distance" asp-route-id="@item.Id">
-                        <i class="fa-regular fa-map btn btn-dark"> Distance</i>
+                            <i class="fa-regular fa-map btn btn-dark"></i>Distance
                         </a>
                     </td>
                     <td>
                         <a asp-controller="Order" asp-action="ItemsInOrder" asp-route-id="@item.Id">
-                        <i class="fa-solid fa-film btn btn-dark"> Movies in this order</i>
+                            <i class="fa-solid fa-film btn btn-dark"></i>Movies in this order
                         </a>
                     </td>
-                            
-                    <td>
 
                 </tr>
             }
