@@ -38,25 +38,26 @@
         </nav>
         <div id="content-sidebar">
 
-    <div class="card" style="width: 15rem; height:20rem;">
-                <img src="@Model.ImageUrl" class="img-thumbnail" alt="Movie cover">
-    <div class="card-body">
-        <h5 class="card-title">@Model.Title</h5>
-        <p class="card-text">@Model.Description</p>
+    <div class="card" style="width: 30rem; height:45rem;">
+                <img src="@Model.ImageUrl" class="center" style="width:15rem; " alt="Movie cover">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text">@Model.Description</p>
 
-        <div class="group-inline">
+            <div class="group-inline">
         
-        <a asp-controller="Movies" asp-action="DecreaseInStock" asp-route-id="@Model.Id">
-            <i class="btn btn-danger d-inline-block">-</i>
-        </a>
-                    <p class="d-inline-block">Number in stock: @Model.InStock</p>
+                <a asp-controller="Movies" asp-action="DecreaseInStock" asp-route-id="@Model.Id">
+                    <i class="btn btn-danger d-inline-block">-</i>
+                </a>
 
-        <a asp-controller="Movies" asp-action="IncreaseInStock" asp-route-id="@Model.Id">
-                        <i class="btn btn-primary">+</i>
-        </a>
+                <p class="d-inline-block">Number in stock: @Model.InStock</p>
+
+                <a asp-controller="Movies" asp-action="IncreaseInStock" asp-route-id="@Model.Id">
+                    <i class="btn btn-primary">+</i>
+                </a>
+            </div>
         </div>
     </div>
-</div>
 
     </div>
     </div>

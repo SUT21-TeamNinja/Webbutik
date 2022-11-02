@@ -41,60 +41,50 @@
 
             <h1>Manage Stock</h1>
 
-@*            <table class="table table-responsive-sm">
+            <table class="table table-responsive-sm">
                 <thead>
                     <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ImageUrl)
+                        </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Title)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Description)
+                            @Html.DisplayNameFor(model => model.InStock)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.InStock)
+                            Manage Stock
                         </th>
                     </tr>
                 </thead>
 
-                <tbody>*@
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                <tbody>
+
                     @foreach (var item in Model)
                     {
-@*                        <tr>
-                            <td>@item.Title</td>
-                            <td>@item.Description</td>
-                            <td>@item.InStock</td>
-                            <td>
-                                
-
-                                <a asp-controller="Movies" asp-action="ManageStockIndividually" asp-route-id="@item.Id">
-                                    <i class="btn btn-primary">Manage Stock</i>
-                                </a>
-                               
-
-                              
+                        <tr>
+                            <td> 
+                                <img src="@item.ImageUrl" class="img-fluid rounded-start" alt="Movie Cover" style="height: 100px;">
                             </td>
-                        </tr>*@
-
-                    <div class="card" style="width: 25rem; height:40rem;">
-                       
-                        <div class="card-body">
-                        <img src="@item.ImageUrl" class="img-thumbnail" style="height:20rem;width:15rem;" alt="Movie cover">
-                            <h5 class="card-title">@item.Title</h5>
-                            <p class="card-text">@item.Description</p>
+                            <td>
+                                @item.Title
+                            </td>
+                            <td>
+                                @item.InStock
+                            </td>
+                            <td>
                                 <a asp-controller="Movies" asp-action="ManageStockIndividually" asp-route-id="@item.Id">
-                                    <i class="btn btn-primary">Manage Stock</i>
-
-                                </a>
-                                <p>Number in Stock @item.InStock</p>
-                        </div>
-                    </div>
-                        
+                                    <i class="btn btn-dark">Manage Stock</i>
+                                </a>                              
+                            </td>
+                        </tr>
                     }
+
+                </tbody>
+            </table>
             </div>
 
-            @*                </tbody>
-            </table>*@
           
             
 
