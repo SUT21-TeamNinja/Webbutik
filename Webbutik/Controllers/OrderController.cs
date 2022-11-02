@@ -55,7 +55,7 @@ namespace Webbutik.Controllers
         }
 
 
-        public IActionResult Distance(int id)
+        public async Task<IActionResult> Distance(int id)
         {
             var order = _context.Orders.FirstOrDefault(i => i.Id == id);
             string url = "https://se.avstand.org/route.json?stops=" + "Galtabäck" + '|' + order.City;
@@ -85,12 +85,16 @@ namespace Webbutik.Controllers
 
         }
 
-        public IActionResult ChangeCurrency(Movie movie) 
+        public IActionResult ChangeCurrency(int id) 
         {
-
-            decimal? amount = movie.DiscountPrice;
+            var order = _context.Orders.FirstOrDefault(i => i.Id==id);
+            if (order == null)
+            {
+                return NotFound();
+            }
+            decimal? amount = order.OrderTotal;
+           
             string Currency = "USD";
-
             string url = "https://api.apilayer.com/exchangerates_data/convert?to=" + Currency + "&from=SEK&amount=" + amount;
 
 
@@ -112,15 +116,18 @@ namespace Webbutik.Controllers
 
             var stringing = trimlist.ToString();
 
-            decimal test = Convert.ToDecimal(stringing);
+            decimal ToADecimal = Convert.ToDecimal(stringing);
 
-            decimal rounded = Math.Round(test, 0);
+            decimal rounded = Math.Round(ToADecimal, 0);
 
             int ConvertedResult = Convert.ToInt32(rounded);
 
+            order.OrderTotal = ConvertedResult;
 
+            var orderDetails = _context.OrderDetails.Where(i => i.OrderId == id).Include(m => m.Movie).Include(o => o.Order);
+            return View("ItemsInOrder", orderDetails);
 
-            return View(ConvertedResult);
+            
 
             
 
