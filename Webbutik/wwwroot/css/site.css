@@ -78,6 +78,7 @@ thumbnail:hover {
     display: flex;
     width: 100%;
     align-items: stretch;
+    margin-top: 1em;
 }
 
 #sidebar {
@@ -88,6 +89,7 @@ thumbnail:hover {
     /*border-right: black solid 2px;*/
     padding: 1em;
     /*box-shadow: 5px 0px 30px black;*/
+    border-top-right-radius: 20px;
 }
 
 .adm-container {
