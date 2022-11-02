@@ -7,7 +7,7 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Admin Page
+                <h3>Admin Page</h3>
                     <hr/>
             </div>
             <a id="manage" asp-area="Identity" asp-page="/Account/Manage/Index" style="color:white;"><i class="fa-solid fa-user-gear"></i> Manage Account</a>
@@ -24,13 +24,7 @@
                     <a asp-action="ManageCampaigns">Manage Campaigns</a>
                 </li>
                 <li>
-                    <a asp-action="Dashboard">Statistic Dashboard</a>
-                </li>
-                <li>
                     <a asp-action="PurchaseLog" >Customer purchase log</a>
-                </li>
-                <li>
-                    <a asp-action="Currency" >Currency</a>
                 </li>
             </ul>
 
@@ -52,17 +46,15 @@
                 <a asp-action="Create">Add New Product</a>
             </div>
 
-            <table class="table"">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.ImageUrl)
+                            Image
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Title)
                         </th>                    
-                        <th></th>
-                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -75,15 +67,11 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Title)
-                            </td>                                                    
+                            </td>  
                             <td>
-                                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square" style="color: #ebbd3d;"></i></a>                              
-                            </td>
-                            <td>
-                                        <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-eye" style="color: #3da3eb;"></i></a>
-                            </td>
-                            <td>
-                                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash" style="color: #eb3d3d;"></i></a>
+                                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square" style="color: #ebbd3d;"></i></a>
+                                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-eye" style="color: #3da3eb;"></i></a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash" style="color: #eb3d3d;"></i></a>
                             </td>
                         </tr>
                     }

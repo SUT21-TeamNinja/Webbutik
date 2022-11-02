@@ -8,10 +8,12 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3>Admin Page</h3>
+                    <hr/>
             </div>
+            <a id="manage" asp-area="Identity" asp-page="/Account/Manage/Index" style="color:white;"><i class="fa-solid fa-user-gear"></i> Manage Account</a>
+            <hr /> 
 
             <ul class="list-unstyled components">
-                <partial name="_LoginPartial" />
                 <li>
                     <a asp-action="ManageProducts">Manage Products</a> 
                 </li>
@@ -22,15 +24,19 @@
                     <a asp-action="ManageCampaigns">Manage Campaigns</a>
                 </li>
                 <li>
-                    <a asp-action="Dashboard">Statistic Dashboard</a>
-                </li>
-                <li>
-                    <a asp-action="PurchaseLog">Customer purchase log</a>
-                </li>
-                <li>
-                    <a asp-action="Currency" >Currency</a>
+                    <a asp-action="PurchaseLog" >Customer purchase log</a>
                 </li>
             </ul>
+
+            <div style="color: white;">
+                <hr />                
+
+                <form id="logoutForm" class="form-inline" asp-area="Identity"
+                    asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button id="logout" class="btn btn-outline-light" type="submit"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                </form>
+            </div>
+
         </nav>
         <div id="content-sidebar">
        
@@ -54,6 +60,12 @@
                         </th>
                         <th>
                             @Html.DisplayNameFor(order => order.OrderDate)
+                        </th>
+                        <th>
+                            
+                        </th>
+                        <th>
+                            
                         </th>
                     </tr>
                 </thead>
@@ -83,16 +95,14 @@
                     </td>
                     <td>
                         <a asp-controller="Order" asp-action="Distance" asp-route-id="@item.Id">
-                        <i class="fa-regular fa-map btn btn-dark"> Distance</i>
+                            <i class="fa-regular fa-map btn btn-dark"></i>Distance
                         </a>
                     </td>
                     <td>
                         <a asp-controller="Order" asp-action="ItemsInOrder" asp-route-id="@item.Id">
-                        <i class="fa-solid fa-film btn btn-dark"> Movies in this order</i>
+                            <i class="fa-solid fa-film btn btn-dark"></i>Movies in this order
                         </a>
                     </td>
-                            
-                    <td>
 
                 </tr>
             }
