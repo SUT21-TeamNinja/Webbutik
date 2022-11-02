@@ -4,7 +4,7 @@ using Webbutik.ViewModels;
 
 namespace Webbutik.ViewComponents
 {
-    public class CartTotal:ViewComponent
+    public class CartTotal : ViewComponent
     {
         private readonly Cart _cart;
 

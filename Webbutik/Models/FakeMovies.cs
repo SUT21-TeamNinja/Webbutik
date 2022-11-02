@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace Webbutik.Models
 {
@@ -26,7 +24,7 @@ namespace Webbutik.Models
                 foreach (var item in trimlist)
                 {
                     var tempmovie = new Movie();
-                    
+
 
                     tempmovie.Title = item["title"].ToString();
                     tempmovie.ImageUrl = item["image"].ToString();

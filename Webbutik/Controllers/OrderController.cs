@@ -2,13 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 using System.Net;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Webbutik.Models;
 
 namespace Webbutik.Controllers
 {
     public class OrderController : Controller
-    { 
+    {
         private readonly AppDbContext _context;
         private readonly Cart _cart;
         public OrderController(AppDbContext context, Cart cart)
@@ -27,7 +26,7 @@ namespace Webbutik.Controllers
         public async Task<IActionResult> CheckOutAsync(Order order)
         {
             _cart.CartItems = await _cart.GetCartItemsAsync();
-            
+
             if (ModelState.IsValid)
             {
                 order.OrderDate = DateTime.Now;
@@ -42,11 +41,11 @@ namespace Webbutik.Controllers
                         OrderId = order.Id,
                         MovieId = item.MovieId,
                         Quantity = item.Amount,
-                        Price = item.Movie.Price                        
+                        Price = item.Movie.Price
 
                     });
                 }
-                
+
 
                 _context.CartItems.RemoveRange(_context.CartItems.Where(c => c.CartId == _cart.CartSessionKey));
                 await _context.SaveChangesAsync();
@@ -75,7 +74,7 @@ namespace Webbutik.Controllers
             var trimlist = JObject.Parse(result)["distance"];
 
             var stringing = trimlist.ToString();
-            return View("Index",stringing);
+            return View("Index", stringing);
         }
 
         public IActionResult ItemsInOrder(int id)
@@ -85,15 +84,15 @@ namespace Webbutik.Controllers
 
         }
 
-        public IActionResult ChangeCurrency(int id) 
+        public IActionResult ChangeCurrency(int id)
         {
-            var order = _context.Orders.FirstOrDefault(i => i.Id==id);
+            var order = _context.Orders.FirstOrDefault(i => i.Id == id);
             if (order == null)
             {
                 return NotFound();
             }
             decimal? amount = order.OrderTotal;
-           
+
             string Currency = "USD";
             string url = "https://api.apilayer.com/exchangerates_data/convert?to=" + Currency + "&from=SEK&amount=" + amount;
 
@@ -127,9 +126,9 @@ namespace Webbutik.Controllers
             var orderDetails = _context.OrderDetails.Where(i => i.OrderId == id).Include(m => m.Movie).Include(o => o.Order);
             return View("ItemsInOrder", orderDetails);
 
-            
 
-            
+
+
 
         }
     }

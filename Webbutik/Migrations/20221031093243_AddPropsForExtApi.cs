@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -9,7 +8,7 @@ namespace Webbutik.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-           
+
 
             migrationBuilder.CreateTable(
                 name: "Categories",
@@ -77,7 +76,7 @@ namespace Webbutik.Migrations
                     table.PrimaryKey("PK_Orders", x => x.Id);
                 });
 
-           
+
 
             migrationBuilder.CreateTable(
                 name: "CartItems",

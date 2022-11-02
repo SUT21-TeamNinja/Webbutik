@@ -1,12 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Threading.Tasks;
 using Webbutik.Models;
 
 namespace Webbutik.ViewComponents
 {
-    public class MovieDetails:ViewComponent
+    public class MovieDetails : ViewComponent
     {
         private readonly AppDbContext _context;
 
@@ -14,7 +12,7 @@ namespace Webbutik.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {
-           var movie = await _context.Movies.FirstOrDefaultAsync(x => x.Id == id);
+            var movie = await _context.Movies.FirstOrDefaultAsync(x => x.Id == id);
             return View(movie);
         }
     }

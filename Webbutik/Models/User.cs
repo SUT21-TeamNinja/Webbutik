@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Webbutik.Models
 {
-    public class User  : IdentityUser
+    public class User : IdentityUser
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }

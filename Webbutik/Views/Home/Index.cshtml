@@ -7,7 +7,7 @@
     var miniList = new List<Movie>();
     for (int i = 1; i < 6; i++)
     {
-        var select = rnd.Next(1, 51);
+        var select = rnd.Next(1, 50);
         foreach (var item in Model.Movies)
         {
             if (item.Id == select && !carouselList.Any(x => x.Id == select))
@@ -18,7 +18,7 @@
     }
     for (int i = 1; i < 5; i++)
     {
-        var select = rnd.Next(1, 51);
+        var select = rnd.Next(1, 50);
         foreach (var item in Model.Movies)
         {
             if (item.Id == select &&

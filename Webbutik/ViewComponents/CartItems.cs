@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 using Webbutik.Models;
 using Webbutik.ViewModels;
 
@@ -8,7 +6,7 @@ namespace Webbutik.ViewComponents
 {
     public class CartItems : ViewComponent
     {
-        
+
         private readonly Cart _cart;
 
         public CartItems(Cart cart) => _cart = cart;

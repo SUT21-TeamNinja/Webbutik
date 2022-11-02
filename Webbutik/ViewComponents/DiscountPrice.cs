@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Webbutik.Models;
-using Webbutik.ViewModels;
 
 namespace Webbutik.ViewComponents
 {
@@ -24,7 +23,7 @@ namespace Webbutik.ViewComponents
                 {
                     movie.IsOnSale = true;
                 }
-                else if(movie.DiscountEnd < DateTime.Now)
+                else if (movie.DiscountEnd < DateTime.Now)
                 {
                     movie.IsOnSale = false;
                     movie.DiscountStart = null;

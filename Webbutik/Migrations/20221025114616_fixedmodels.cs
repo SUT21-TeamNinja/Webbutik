@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -9,7 +8,7 @@ namespace Webbutik.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            
+
 
             migrationBuilder.CreateTable(
                 name: "Categories",
@@ -72,7 +71,7 @@ namespace Webbutik.Migrations
                     table.PrimaryKey("PK_Orders", x => x.Id);
                 });
 
-            
+
 
 
 
@@ -269,7 +268,7 @@ namespace Webbutik.Migrations
                     { 100, "Description 100", "Directors 100", 25, "ImageUrl 100", 1, true, null, new DateTime(2022, 10, 25, 13, 46, 16, 397, DateTimeKind.Local).AddTicks(5392), "Stars 100", "Title 100", "Writers 100" }
                 });
 
-           
+
             migrationBuilder.CreateIndex(
                 name: "IX_CartItems_MovieId",
                 table: "CartItems",

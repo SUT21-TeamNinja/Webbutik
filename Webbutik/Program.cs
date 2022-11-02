@@ -1,9 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
 using Webbutik.Controllers;
 using Webbutik.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,7 +44,7 @@ app.UseStaticFiles();
 app.UseSession();
 
 app.UseRouting();
-app.UseAuthentication();;
+app.UseAuthentication(); ;
 
 app.UseAuthorization();
 

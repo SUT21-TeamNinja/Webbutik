@@ -5,15 +5,15 @@ namespace Webbutik.Models
 {
     public class AppDbContext : IdentityDbContext<User>
     {
-        public AppDbContext(DbContextOptions<AppDbContext> opt) : base(opt){}
+        public AppDbContext(DbContextOptions<AppDbContext> opt) : base(opt) { }
 
-        public DbSet<User> Users  { get; set; }
+        public DbSet<User> Users { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -39,7 +39,7 @@ namespace Webbutik.Models
                     Discount = 25,
                     InStock = 1
                 });
-            }            
+            }
         }
     }
 }
