@@ -16,11 +16,11 @@ namespace Webbutik.Controllers
 
         public async Task<IActionResult> Index()
         {
-            //var list = await FakeMovies.GetMoviesFromApi();
+            var list = await FakeMovies.GetMoviesFromApi();
 
             if (!IsUpdated)
             {
-                //await Populate(list);
+                await Populate(list);
                 IsUpdated = true;
             }
 
@@ -34,7 +34,7 @@ namespace Webbutik.Controllers
 
         public async Task Populate(List<Movie> list)
         {
-            for (int i = 1; i <= _context.Movies.Count(); i++)
+            for (int i = 1; i < _context.Movies.Count(); i++)
             {
                 var movie = await _context.Movies.FirstOrDefaultAsync(x => x.Id == i);
                 movie.Title = list[i].Title;
