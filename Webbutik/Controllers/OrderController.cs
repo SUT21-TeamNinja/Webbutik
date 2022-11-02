@@ -89,8 +89,11 @@ namespace Webbutik.Controllers
 
         }
 
-        public IActionResult ChangeCurrency(string Currency, string amount) 
+        public IActionResult ChangeCurrency(Movie movie) 
         {
+
+            decimal? amount = movie.DiscountPrice;
+            string Currency = "USD";
 
             string url = "https://api.apilayer.com/exchangerates_data/convert?to=" + Currency + "&from=SEK&amount=" + amount;
 
