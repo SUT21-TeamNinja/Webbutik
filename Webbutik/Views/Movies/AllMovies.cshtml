@@ -6,27 +6,66 @@
 }
 
 <div class="container">
-    <h3 class="header">Purchasable Movies</h3>
 
-    <div class="sortmenu" style="transform:translate(-4rem,4rem)">
-        <p> @Html.ActionLink("date", "AllMovies", new { sortOrder = ViewBag.NameSortParm })</p>
-        <p>
-            @Html.ActionLink("date_desc", "AllMovies", new { sortOrder = ViewBag.NameSortParm })
-        </p>
-        <p>
-            @Html.ActionLink("name_desc", "AllMovies", new { sortOrder = ViewBag.NameSortParm })
-        </p>
-        <p>
-            @Html.ActionLink("", "AllMovies", new { sortOrder = ViewBag.NameSortParm })
-        </p>
+    <h1 class="header" style="align-content:center">
+        Movies
+        <small class="text-muted"> on sale</small>
+    </h1>
+
+    <div class="w3-sidebar w3-bar-block" style="width:25%">
+        <div class="sortmenu" style="transform:translate(-4rem,4rem)">
+            <p>
+@*                <i class="fa-thin fa-down"></i>
+*@                @Html.ActionLink("Sort_Title_Down", "AllMovies", new { sortOrder = ViewBag.NameSortParm, style = "color: white" })
+
+            </p>
+            <p>
+
+                @Html.ActionLink("Sort_Title_Up", "AllMovies", new { sortOrder = ViewBag.NameSortParm, style = "color: white" })
+
+            </p>
+            <p>
+  
+                @Html.ActionLink("Sort_Date_Down", "AllMovies", new { sortOrder = ViewBag.NameSortParm, style = "color: white" })
+
+            </p>
+            <p>
+
+                @Html.ActionLink("Sort_Date_Up", "AllMovies", new { sortOrder = ViewBag.NameSortParm, style = "color: white" })
+
+            </p>
+        </div>
     </div>
 
-    <form asp-controller="Movies" asp-action="AllMovies" style="transform:translateX(4rem)">
-        <p>
-            Title: <input type="text" name="SearchString" />
-            <input type="submit" value="Search" />
-        </p>
-    </form>
+
+    @{
+        var searchedMovies = new List<string>();
+        foreach (var item in Model)
+        {
+            searchedMovies.Add(item.Title);
+        }
+    }
+
+    <div class="searchbox" style="transform:translateY(-2px)">
+        <form class="d-flex" role="search" style="width: 250px; transform:translate(5rem, 1.5rem)">
+
+            <ejs-autocomplete id="searchString" dataSource="searchedMovies" placeholder="Find a movie" index="2" popupheight="220px">
+                <e-autocomplete-fields value="Search" name="SearchString">
+                </e-autocomplete-fields>
+
+            </ejs-autocomplete>
+
+            <ejs-button id="submit" class="e-icons e-search fw-bold" style="color:white; background-color:black"></ejs-button>
+
+            <a asp-controller="Movies" asp-action="AllMovies" name="SearchString" type="submit" value="search"></a>
+        </form>
+
+        <div style="transform:translate(17rem,-2px)">
+            <a asp-controller="Movies" asp-action="AllMovies">
+                <i class="fa-solid fa-circle-xmark" style="color:lightgrey"></i>
+            </a>
+        </div>
+    </div>
 
     <div class="card-group row-cols-5" style="transform:translateX(5rem)">
         @foreach (var item in Model)
@@ -43,6 +82,7 @@
             </div>
         }
     </div>
+
 
     <p class="align-bottom" style="color:gold">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</p>
 

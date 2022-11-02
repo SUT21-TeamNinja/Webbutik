@@ -78,13 +78,16 @@ namespace Webbutik.Controllers
 
             switch (sortOrder)
             {
-                case "name_desc":
+                case "Sort_Movie_Down":  
+                    movies = movies.OrderBy(m => m.Title);
+                    break;
+                case "Sort_Movie_Up":
                     movies = movies.OrderByDescending(m => m.Title);
                     break;
-                case "date":
+                case "Sort_Date_Down":
                     movies = movies.OrderBy(m => m.ReleaseDate);
                     break;
-                case "date_desc":
+                case "Sort_Date_Up":
                     movies = movies.OrderByDescending(m => m.ReleaseDate);
                     break;
                 default:  // Name ascending 
