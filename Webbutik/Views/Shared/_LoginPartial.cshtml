@@ -7,6 +7,14 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
+    if (User.IsInRole("Admin"))
+    {
+        <div class="subnav">
+            <a id="manage" class="subnavbtn identity" asp-area="Identity"
+             asp-controller="Movies" asp-action="Admin">ADMIN</a>
+        </div>
+    }
+
     <div class="subnav">
         <a id="manage" class="subnavbtn identity" asp-area="Identity"
        asp-page="/Account/Manage/Index"><i class="fa-solid fa-user-gear"></i></a>
