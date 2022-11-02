@@ -24,7 +24,7 @@ namespace Webbutik.Controllers
             _context = context;
         }
         // GET: Movies
-       
+
 
         // GET: Movies/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -78,7 +78,7 @@ namespace Webbutik.Controllers
 
             switch (sortOrder)
             {
-                case "Sort_Movie_Down":  
+                case "Sort_Movie_Down":
                     movies = movies.OrderBy(m => m.Title);
                     break;
                 case "Sort_Movie_Up":
@@ -381,7 +381,7 @@ namespace Webbutik.Controllers
             var orders = movieOrders.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
             List<Movie> topMovies = new List<Movie>();
             int count = 0;
-                        
+
             foreach (var item in orders)
             {
                 topMovies.Add(item.Key);
@@ -400,5 +400,5 @@ namespace Webbutik.Controllers
         {
             return View(await _context.Orders.ToListAsync());
         }
-
+    }
 }
