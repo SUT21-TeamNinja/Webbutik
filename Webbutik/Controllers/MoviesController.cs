@@ -401,15 +401,4 @@ namespace Webbutik.Controllers
             return View(await _context.Orders.ToListAsync());
         }
 
-
-        public ViewResult Dashboard()
-        {
-            return View();
-        }
-
-        public ViewResult Currency()
-        {
-            return View();
-        }
-    }
 }
