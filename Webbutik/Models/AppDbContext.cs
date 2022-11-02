@@ -23,15 +23,15 @@ namespace Webbutik.Models
                 modelBuilder.Entity<Movie>().HasData(new Movie
                 {
                     Id = i,
-                    //ImdbId = i,
+                    ImdbId = $"ImDbId {i}",
                     Title = $"Title {i}",
                     Description = $"Description {i}",
                     ImageUrl = $"ImageUrl {i}",
-                    //ReleaseDate = DateTime.Now,
+                    ReleaseDate = $"ReleaseDate {i}",
                     Stars = $"Stars {i}",
                     ImDbRating = $"ImDbRating {i}",
                     ContentRating = $"ContentRating {i}",
-                    RunTimeStr = $"RunTimeStr  {i}",
+                    RunTimeStr = $"RunTimeStr {i}",
                     Genres = $"Genres {i}",
                     //Writers = $"Writers {i}",
                     Directors = $"Directors {i}",
