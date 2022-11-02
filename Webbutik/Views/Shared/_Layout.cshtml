@@ -52,28 +52,6 @@
                         </li>
                     </ul>
 
-                  @*  @{
-                        var searchedMovies = new List<string>();
-                        foreach (var item in Model)
-                        {
-                            searchedMovies.Add(item.Title);
-                        }
-                    }
-
-                    <form class="d-flex" role="search">
-
-                        <ejs-autocomplete id="searchString" dataSource="searchedMovies" placeholder="Find a movie" index="2" popupheight="220px">
-                            <e-autocomplete-fields value="Search" name="SearchString">
-
-                            </e-autocomplete-fields>
-
-                        </ejs-autocomplete>
-
-                        <ejs-button id="submit" content="Submit"></ejs-button>
-
-                        <a asp-controller="Movies" asp-action="AllMovies" name="SearchString" class="btn btn-outline-light" type="submit" value="search"><i class="fa-solid fa-magnifying-glass"></i></a>
-                    </form>*@
-
                     <a class="nav-link text-light" asp-controller="cart" asp-action="index">
                         <i class="fa-solid fa-cart-shopping"></i>
                         @await Component.InvokeAsync("CartItems")
