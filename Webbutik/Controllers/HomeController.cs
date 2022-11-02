@@ -46,7 +46,7 @@ namespace Webbutik.Controllers
                 movie.Description = list[i].Description;
                 movie.Stars = list[i].Stars;
                 movie.ImdbId = list[i].ImdbId;
-                movie.RunTimeStr = list[i].RunTimeStr;
+                movie.RunTimeStr = list[i].RunTimeStr; 
                 movie.ReleaseDate = list[i].ReleaseDate;
                 movie.Directors = list[i].Directors;
                 Console.WriteLine("updated");
