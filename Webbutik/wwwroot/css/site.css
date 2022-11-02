@@ -579,6 +579,10 @@ li a:hover {
     font-size: 25px;
 }
 
+.logout-form{
+    padding: 0;
+}
+
 /*NAVBAR END*/
 
 /*CART START*/

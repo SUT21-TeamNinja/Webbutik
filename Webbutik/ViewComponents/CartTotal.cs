@@ -1,17 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 using Webbutik.Models;
 using Webbutik.ViewModels;
 
 namespace Webbutik.ViewComponents
 {
-    public class CartItems : ViewComponent
+    public class CartTotal:ViewComponent
     {
-        
         private readonly Cart _cart;
 
-        public CartItems(Cart cart) => _cart = cart;
+        public CartTotal(Cart cart) => _cart = cart;
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
@@ -19,10 +16,8 @@ namespace Webbutik.ViewComponents
             return View(new CartViewModel
             {
                 Cart = _cart,
-                TotalItems = await _cart.GetTotalItemsInCartAsync()
+                CartTotal = await _cart.GetOrderTotalAsync()
             });
         }
-
-
     }
 }
