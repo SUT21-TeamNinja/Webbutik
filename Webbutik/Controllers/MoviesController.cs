@@ -97,7 +97,11 @@ namespace Webbutik.Controllers
 
             int pageSize = 18;
             int pageNumber = (page ?? 1);
-            return View(movies.ToPagedList(pageNumber, pageSize));
+            var pagedMovies = movies.ToPagedList(pageNumber, pageSize);
+            MovieListViewModel allMovies = new MovieListViewModel();
+            allMovies.Movies = movies;
+            allMovies.PagedMovies = pagedMovies;
+            return View(allMovies);
         }
 
         // POST: Movies/Create

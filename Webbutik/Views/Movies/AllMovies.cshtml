@@ -1,4 +1,4 @@
-﻿@model X.PagedList.IPagedList<Webbutik.Models.Movie>
+﻿@model MovieListViewModel
 @using X.PagedList.Mvc.Core
 
 @{
@@ -28,33 +28,10 @@
             </a>
         </div>
     </div>
-@*
-    <div class="w3-sidebar w3-bar-block" style="width:25%">
-        <div class="sortmenu" >
-            <p>
-                @*<i class="fa-thin fa-down"></i>
-            </p>
-            <p>
-
-                
-
-            </p>
-            <p>
-  
-                
-
-            </p>
-            <p>
-
-
-            </p>
-        </div>
-    </div>
-*@
 
     @{
         var searchedMovies = new List<string>();
-        foreach (var item in Model)
+        foreach (var item in Model.Movies)
         {
             searchedMovies.Add(item.Title);
         }
@@ -76,7 +53,7 @@
                 <a asp-controller="Movies" asp-action="AllMovies" name="SearchString" type="submit" value="search"></a>
             </form>
 
-            <div style="transform:translate(15.5rem, -1.1rem)">
+            <div style="transform:translate(17rem, -.2rem)">
                 <a asp-controller="Movies" asp-action="AllMovies">
                     <i class="fa-solid fa-circle-xmark" style="color:lightgrey"></i>
                 </a>
@@ -84,7 +61,7 @@
         </div>
 
         <div class="card-group row-cols-5" style="transform:translateX(5rem)">
-            @foreach (var item in Model)
+            @foreach (var item in Model.PagedMovies)
             {
                 <partial name="Components//_MovieCard" model="item" />
 
@@ -103,9 +80,9 @@
 
     <div style="transform:translate(42.5rem, -2rem); font-size:large">
         <p class="align-bottom" style="color:black; ">
-            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            Page @(Model.PagedMovies.PageCount < Model.PagedMovies.PageNumber ? 0 : Model.PagedMovies.PageNumber) of @Model.PagedMovies.PageCount
         </p>
-        @Html.PagedListPager(Model, page => Url.Action("AllMovies",
+        @Html.PagedListPager(Model.PagedMovies, page => Url.Action("AllMovies",
         new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
     </div>
     
