@@ -5,11 +5,13 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Admin Page </h3>
+                <h3>Admin Page
+                    <hr/>
             </div>
+            <a id="manage" asp-area="Identity" asp-page="/Account/Manage/Index" style="color:white;"><i class="fa-solid fa-user-gear"></i> Manage Account</a>
+            <hr /> 
 
             <ul class="list-unstyled components">
-                <partial name="_LoginPartial" />
                 <li>
                     <a asp-action="ManageProducts">Manage Products</a> 
                 </li>
@@ -29,6 +31,16 @@
                     <a asp-action="Currency" >Currency</a>
                 </li>
             </ul>
+
+            <div style="color: white;">
+                <hr />                
+
+                <form id="logoutForm" class="form-inline" asp-area="Identity"
+                    asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button id="logout" class="btn btn-outline-light" type="submit"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                </form>
+            </div>
+
         </nav>
         <div id="content-sidebar"> 
             
