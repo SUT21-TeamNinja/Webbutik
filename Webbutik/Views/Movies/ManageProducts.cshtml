@@ -40,7 +40,7 @@
                 <a asp-action="Create">Add New Product</a>
             </div>
 
-            <table class="table">
+            <table class="table"">
                 <thead>
                     <tr>
                         <th>
@@ -65,13 +65,13 @@
                                 @Html.DisplayFor(modelItem => item.Title)
                             </td>                                                    
                             <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square" style="color: darkorange"></i></a>                              
+                                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square" style="color: #ebbd3d;"></i></a>                              
                             </td>
                             <td>
-                                <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-eye"></i></a>
+                                        <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-eye" style="color: #3da3eb;"></i></a>
                             </td>
                             <td>
-                                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash" style="color: red"></i></a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash" style="color: #eb3d3d;"></i></a>
                             </td>
                         </tr>
                     }
