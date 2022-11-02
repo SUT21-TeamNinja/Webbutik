@@ -2,9 +2,9 @@
 
 
 <div class="col-sm-2">
-    <div class="card mb-2" style="width: 13rem; height: 19.5rem">
+    <div class="card mb-2" style="height:21rem">
 
-        <img class="card-img-top" src="@Model.ImageUrl" alt="<IMAGE MISSING>" style="width: 7rem; height: 10rem; transform:translateX(1rem)">
+        <img class="card-img-top" src="@Model.ImageUrl" alt="<IMAGE MISSING>" style="width: 7rem; height: 10rem; transform:translate(1.75rem, .3rem)">
 
         <div class="card-body">
             <h5 class="card-title" style="width: 10rem; font-size:small">@Model.Title</h5>
@@ -12,9 +12,9 @@
             <p class="card-text"> @await Component.InvokeAsync("DiscountPrice", new { id = Model.Id })</p>
         </div>
 
-        <div class="card-footer">
+        <div class="card-footer" >
             <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.Id">
-                <div class="btn btn-success">
+                <div class="btn btn-dark" id="btn-add" style="transform:translateX(.5rem)">
                     PURCHASE
                 </div>
             </a>
