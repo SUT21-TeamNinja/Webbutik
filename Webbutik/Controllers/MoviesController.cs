@@ -54,8 +54,8 @@ namespace Webbutik.Controllers
         {
 
             ViewBag.CurrentSort = sortOrder;
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.DateSortParm = sortOrder == "date" ? "date_desc" : "Date";
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Sort_Movie_Down" : "";
+            ViewBag.DateSortParm = sortOrder == "Sort_Movie_Up" ? "Sort_Date_Down" : "Sort_Date_Up";
 
             if (searchString != null)
             {
