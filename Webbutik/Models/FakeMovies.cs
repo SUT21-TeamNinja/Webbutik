@@ -34,11 +34,11 @@ namespace Webbutik.Models
                     tempmovie.Genres = item["genres"].ToString();
                     tempmovie.ContentRating = item["contentRating"].ToString();
                     tempmovie.Description = item["plot"].ToString();
-                    tempmovie.Stars = item["stars"].ToString();
                     tempmovie.RunTimeStr = item["runtimeStr"].ToString();
                     tempmovie.ReleaseDate = item["description"].ToString();
                     tempmovie.ImdbId = item["id"].ToString();
 
+                    tempmovie.Stars = item["stars"].ToString();
 
                     tempmovie.Directors = item["stars"].ToString();
                     int index = tempmovie.Directors.IndexOf(",");
