@@ -1,80 +1,95 @@
 ﻿@model Order
 
-<form asp-action="checkout" method="post">
-    <div class="container">
-        <div class="row text-center">
-            <h3>Delivery information:</h3>
-            <hr />
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <div class="form-floating">
-                    <input asp-for="Email" class="form-control" id="floatEmail">
-                    <label for="floatEmail">Email</label>
-                </div>
+
+<div class="card">
+    <div class="row justify-content-center align-content-center">
+        <div class="col-md-6 cart">
+            <div class="row">
+                <img class="img-fluid delivery" src="https://images.vexels.com/media/users/3/224179/isolated/preview/cfc075888ed8ccfefe27c5a2a5f194b0-delivery-man-on-motorbike-logo-by-vexels.png" />
+            </div>
+            <div class="row text-center text-uppercase">
+                <h6>Your delivery will be with you shortly!</h6>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <div class="form-floating">
-                    <input asp-for="FirstName" class="form-control" id="floatFirstName">
-                    <label for="floatFirstName">First name</label>
+        <div class="col-md-6 summary">
+            <form asp-action="checkout" method="post">
+                <div class="container">
+                    <div class="row text-center">
+                        <h3>Delivery information:</h3>
+                        <hr />
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input asp-for="Email" class="form-control" id="floatEmail">
+                                <label for="floatEmail">Email</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input asp-for="FirstName" class="form-control" id="floatFirstName">
+                                <label for="floatFirstName">First name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input asp-for="LastName" class="form-control" id="floatLastName">
+                                <label for="floatLastName">Last name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input asp-for="Address" class="form-control" id="floatAddress">
+                                <label for="floatAddress">Address</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input asp-for="ZipCode" class="form-control" id="floatZip">
+                                <label for="floatZip">Zip code</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input asp-for="City" class="form-control" id="floatCity">
+                                <label for="floatCity">City</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input asp-for="Country" class="form-control" id="floatCountry">
+                                <label for="floatCountry">Country</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input asp-for="Phone" class="form-control" id="floatPhone">
+                                <label for="floatPhone">Phone</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                            <input type="submit" class="btn btn-dark m-3" value="Checkout" />
+                        </div>
+                    </div>
+
                 </div>
-            </div>            
+            </form>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <div class="form-floating">
-                    <input asp-for="LastName" class="form-control" id="floatLastName">
-                    <label for="floatLastName">Last name</label>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <div class="form-floating">
-                    <input asp-for="Address" class="form-control" id="floatAddress">
-                    <label for="floatAddress">Address</label>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <div class="form-floating">
-                    <input asp-for="ZipCode" class="form-control" id="floatZip">
-                    <label for="floatZip">Zip code</label>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <div class="form-floating">
-                    <input asp-for="City" class="form-control" id="floatCity">
-                    <label for="floatCity">City</label>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <div class="form-floating">
-                    <input asp-for="Country" class="form-control" id="floatCountry">
-                    <label for="floatCountry">Country</label>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <div class="form-floating">
-                    <input asp-for="Phone" class="form-control" id="floatPhone">
-                    <label for="floatPhone">Phone</label>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-centero">
-            <div class="col-sm-4">
-                <input type="submit" class="btn btn-dark" value="Checkout" />
-            </div>
-        </div>
-        
     </div>
-</form>
+</div>

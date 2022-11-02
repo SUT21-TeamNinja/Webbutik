@@ -610,7 +610,7 @@ li a:hover {
 }
 
 .cart {
-    background-color: #fff;
+    background-color: #bdbdbd;
     padding: 4vh 5vh;
     border-bottom-left-radius: 1rem;
     border-top-left-radius: 1rem;
@@ -625,7 +625,7 @@ li a:hover {
 }
 
 .summary {
-    background-color: #ddd;
+    background-color: #969696;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     padding: 4vh;
@@ -729,4 +729,6 @@ a {
 }
 /*CART END*/
 
-
+.delivery{
+    transform:rotate(-15deg);
+}
