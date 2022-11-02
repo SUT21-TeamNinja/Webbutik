@@ -47,21 +47,25 @@
         <div class="col-md-4 summary">
             <div><h5><b>Summary</b></h5></div>
             <hr>
-            <div class="row">
-                <div class="col" style="padding-left:0;">ITEMS @await Component.InvokeAsync("CartItems")</div>
+            @*<div class="row">
+                <div class="col" style="padding-left:0;">@await Component.InvokeAsync("CartItems") items: </div>
                 <div class="col text-right">
-                    SUMMA PH
+                    @await Component.InvokeAsync("CartTotal") kr
                 </div>
-            </div>
+            </div>*@
             <form>
                 <p>SHIPPING</p>
-                <select><option class="text-muted">Standard delivery - 59kr</option></select>
+                <select>
+                    <option class="text-muted">Standard delivery - 59kr</option>
+                    <option class="text-muted">Express delivery - 159kr</option>
+                    </select>
+                <select></select>
                 <p>DISCOUNT CODE?</p>
                 <input id="code" placeholder="Enter your code">
             </form>
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                <div class="col">TOTAL PRICE</div>
-                <div class="col text-right">SUMMA+FRAKT PH</div>
+                <div class="col">TOTAL: </div>
+                <div class="col text-right">@await Component.InvokeAsync("CartTotal") kr</div>
             </div>
             <div class="text-center">
                 <a class="btn btn-dark" asp-controller="order"
