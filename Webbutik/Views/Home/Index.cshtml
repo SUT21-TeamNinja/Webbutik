@@ -61,7 +61,7 @@
             </div>
 
             <ejs-dialog id='dialog@(miniList.IndexOf(item))' isModal="true" width="760px" height="390px" overlayClick="onOverlayClick@(miniList.IndexOf(item))"
-                    target="#container" visible=false>
+                    target="#container" visible=false cssClass="e-fixed">
                 <e-content-template>
                     @await Component.InvokeAsync("MovieDetails", new{ id = item.Id})
                 </e-content-template>

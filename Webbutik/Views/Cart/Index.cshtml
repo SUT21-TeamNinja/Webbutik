@@ -3,31 +3,74 @@
     var currentPage = ViewContext.RouteData.Values["Controller"].ToString().ToLower();
 }
 
-<div class="container">
-    <table class="table table-striped">
-        <tbody>
+<div class="card">
+    <div class="row">
+        <div class="col-md-8 cart">
+            <div class="title border-bottom">
+                <div class="row">
+                    <div class="col"><h4><b>Shopping Cart</b></h4></div>
+                    <div class="col align-self-center text-right text-muted">
+                        Total items: @await Component.InvokeAsync("CartItems")
+                    </div>
+                </div>
+            </div>
             @foreach (var item in Model.Cart.CartItems)
-            {                
-                <tr>
-                    <td class="text-center">
-                        <a class="btn btn-dark" asp-controller="cart"
-                       asp-action="removefromcart" asp-route-id="@item.Movie.Id"><strong>-</strong></a>
-                        @item.Amount
-                        <a class="btn btn-dark" asp-controller="cart"
-                       asp-action="addtocart"
-                       asp-route-id=@item.Movie.Id asp-route-currentPage="@currentPage"><strong>+</strong></a>
-                    </td>
-                    <td>@item.Movie.Title</td>
-                </tr>
+            {
+                <div class="row border-bottom">
+                    <div class="row main align-items-center">
+                        <div class="col-2"><img class="img-fluid" src="@item.Movie.ImageUrl"></div>
+                        <div class="col">
+                            <div class="row">@item.Movie.Title</div>
+                            <div class="row text-muted">le director PH</div>
+                        </div>
+                        <div class="col">
+                            <a class="btn btn-dark" asp-controller="cart"
+                           asp-action="removefromcart" asp-route-id="@item.Movie.Id"><strong>-</strong></a>
+                            <a class="border">@item.Amount</a>
+                            <a class="btn btn-dark" asp-controller="cart"
+                           asp-action="addtocart"
+                           asp-route-id=@item.Movie.Id asp-route-currentPage="@currentPage"><strong>+</strong></a>
+                        </div>
+                        <div class="col">
+                            @item.Movie.Price kr
+                            <span class="close">&#10005;</span>
+                        </div>
+                    </div>
+                </div>
             }
-        </tbody>
-
-    </table>
-    <div class="text-center">
-        <a class="btn btn-dark" asp-controller="order"
-           asp-action="checkout">Checkout</a>
-        <a id="clearcart" class="btn btn-dark">Clear cart</a>
+            
+            <div class="back-to-shop">
+                <a asp-controller="home"
+                   asp-action="index">&leftarrow;</a><span class="text-muted">Back to shop</span>
+            </div>
+        </div>
+        <div class="col-md-4 summary">
+            <div><h5><b>Summary</b></h5></div>
+            <hr>
+            <div class="row">
+                <div class="col" style="padding-left:0;">ITEMS @await Component.InvokeAsync("CartItems")</div>
+                <div class="col text-right">
+                    SUMMA PH
+                </div>
+            </div>
+            <form>
+                <p>SHIPPING</p>
+                <select><option class="text-muted">Standard delivery - 59kr</option></select>
+                <p>DISCOUNT CODE?</p>
+                <input id="code" placeholder="Enter your code">
+            </form>
+            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                <div class="col">TOTAL PRICE</div>
+                <div class="col text-right">SUMMA+FRAKT PH</div>
+            </div>
+            <div class="text-center">
+                <a class="btn btn-dark" asp-controller="order"
+                   asp-action="checkout">Checkout</a>
+                <a id="clearcart" class="btn btn-dark">Clear cart</a>
+            </div>
+        </div>
     </div>
+
 </div>
 
 <style>
@@ -44,18 +87,18 @@
             okButton: { click: confirmOkAction },
             cancelButton: { click: confirmCancelAction },
             position: { X: "center", Y: "center" },
-            width : "400px",
+            width: "400px",
             height: "200px",
-            cssClass: "customClass"      
-            
+            cssClass: "customClass"
+
         });
     };
     function confirmOkAction() {
         this.hide();
-        window.location.href = "@Url.Action("clearcart", "cart")"        
+        window.location.href = "@Url.Action("clearcart", "cart")"
     }
     function confirmCancelAction() {
-        this.hide();       
+        this.hide();
     }
 </script>
 
