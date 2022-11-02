@@ -330,6 +330,14 @@ li a:hover {
         opacity: 0;
     }
 }
+/*Manage Stock*/
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top:2rem
+}
 
 .card {
     display: flex;
@@ -344,10 +352,10 @@ li a:hover {
     padding: 1rem;
 }
 
-    .group-inline div {
-        width: 30%;
-    }
-
+.group-inline div {
+    width: 30%;
+}
+/*Manage Stock*/
 
 /*  FOLLOW*/
 .Follow {

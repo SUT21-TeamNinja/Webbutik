@@ -61,12 +61,16 @@
             <td>
                 @item.Price 
             </td>
+            <td>
+                <a asp-controller="order" asp-action="ChangeCurrency" asp-route-id="@item.Order.Id"><i class="btn btn-dark">Change Currency to USD</i></a>
+            </td>
         </tr>     
         }
         
         </tbody>
 </table>
-            <h3 class="text-xxl-end">@Html.DisplayNameFor(o => o.Order.OrderTotal) @Model.First().Order.OrderTotal SEK</h3>    
+            <h3 class="text-xxl-start">@Html.DisplayNameFor(o => o.Order.OrderTotal) @Model.First().Order.OrderTotal</h3>    
+        
         </div>
     </div>
 
