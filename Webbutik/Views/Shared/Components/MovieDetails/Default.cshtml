@@ -1,0 +1,42 @@
+﻿@model Movie
+
+@{
+    var currentPage = ViewContext.RouteData.Values["Controller"].ToString().ToLower();
+}
+
+<div class="main_card">
+    <div class="card_left">
+        <div class="card_details">
+            <h1>@Model.Title</h1>
+            <hr />
+            <div class="card_cat">
+                <p class="PG">
+                    <img class="imdb-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/IMDb_logo.svg/150px-IMDb_logo.svg.png" />
+                    @Model.ImDbRating
+                </p>
+                <p class="year">@Model.ReleaseDate</p>
+                <p class="genre">@Model.Genres</p>
+                <p class="time">@Model.RunTimeStr</p>
+            </div>
+            <p class="description text-start">@Model.Description</p>           
+            <div class="social-btn text-center">
+                <a class="btn btn-dark" asp-controller="cart"
+                        asp-action="addtocart" asp-route-id="@Model.Id" asp-route-currentPage="@currentPage">
+                    Add to cart
+                </a>
+                <a class="btn btn-dark" href="https://www.imdb.com/title/@Model.ImdbId" target="_blank">
+                    More info                    
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <div class="card_right">
+        <div class="img_container">
+            <img src="@Model.ImageUrl" alt="">
+        </div>
+
+    </div>
+</div>
+
+

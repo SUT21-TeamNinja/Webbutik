@@ -1,0 +1,88 @@
+﻿@model MovieListViewModel
+
+@{
+    var currentPage = ViewContext.RouteData.Values["Controller"].ToString().ToLower();
+    var rnd = new Random();
+    var carouselList = new List<Movie>();
+    var miniList = new List<Movie>();
+    for (int i = 1; i < 6; i++)
+    {
+        var select = rnd.Next(1, 50);
+        foreach (var item in Model.Movies)
+        {
+            if (item.Id == select && !carouselList.Any(x => x.Id == select))
+            {
+                carouselList.Add(item);
+            }
+        }
+    }
+    for (int i = 1; i < 5; i++)
+    {
+        var select = rnd.Next(1, 50);
+        foreach (var item in Model.Movies)
+        {
+            if (item.Id == select &&
+                !carouselList.Any(x => x.Id == select) &&
+                !miniList.Any(x => x.Id == select))
+            {
+                miniList.Add(item);
+            }
+        }
+    }
+}
+
+<div class="container text-center">
+    <div class="row">
+        <div class="container">
+            <div class="control-container">
+                <ejs-carousel id="defaultCarousel"
+                              partialVisible=true
+                              pauseOnHover=true
+                              dataSource="@carouselList"
+                              showIndicators=false
+                              itemTemplate='<figure class="img-container">
+                                            <img src="${ImageUrl}"/>
+                                            </figure>'>
+                </ejs-carousel>
+            </div>
+        </div>
+    </div>
+    <hr />
+
+    <h4>This weeks top picks</h4>
+
+    <div class="row">
+        <div id='container'>
+        </div>
+        @foreach (var item in miniList)
+        {
+            <div class="col-3">
+                <img id="details@(miniList.IndexOf(item))" class="thumbnail" src="@item.ImageUrl" />
+            </div>
+
+            <ejs-dialog id='dialog@(miniList.IndexOf(item))' isModal="true" width="760px" height="390px" overlayClick="onOverlayClick@(miniList.IndexOf(item))"
+                    target="#container" visible=false cssClass="e-fixed">
+                <e-content-template>
+                    @await Component.InvokeAsync("MovieDetails", new{ id = item.Id})
+                </e-content-template>
+            </ejs-dialog>
+        }
+        @foreach (var item in miniList)
+        {
+            <div class="col-3">
+                <a class="btn btn-dark thumbnail-add" asp-controller="cart"
+               asp-action="addtocart" asp-route-id="@item.Id" asp-route-currentPage="@currentPage">Add to cart</a>
+            </div>
+        }
+
+        <style>
+            .e-dialog .e-dlg-content {
+                padding: 0;
+                margin: 0;
+                overflow:hidden;
+            }
+        </style>
+    </div>
+</div>
+
+<script src="./js/popup-homepage.js"></script>

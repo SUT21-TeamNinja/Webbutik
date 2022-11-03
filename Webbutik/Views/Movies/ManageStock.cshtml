@@ -1,0 +1,99 @@
+
+@model IEnumerable<Movie>
+@{
+    ViewData["Title"] = "ManageStock";
+}
+
+<div id="adm-container">
+    <div class="wrapper">
+  
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Page</h3>
+                    <hr/>
+            </div>
+            <a id="manage" asp-area="Identity" asp-page="/Account/Manage/Index" style="color:white;"><i class="fa-solid fa-user-gear"></i> Manage Account</a>
+            <hr /> 
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a asp-action="ManageProducts">Manage Products</a> 
+                </li>
+                <li>
+                    <a asp-action="ManageStock">Manage Stock</a>
+                </li>
+                <li>
+                    <a asp-action="ManageCampaigns">Manage Campaigns</a>
+                </li>
+                <li>
+                    <a asp-action="PurchaseLog" >Customer purchase log</a>
+                </li>
+            </ul>
+
+            <div style="color: white;">
+                <hr />                
+
+                <form id="logoutForm" class="form-inline" asp-area="Identity"
+                    asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button id="logout" class="btn btn-outline-light" type="submit"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                </form>
+            </div>
+
+        </nav>
+        <div id="content-sidebar"> 
+
+            <h1>Manage Stock</h1>
+
+            <table class="table table-responsive-sm">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ImageUrl)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InStock)
+                        </th>
+                        <th>
+                            Manage Stock
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td> 
+                                <img src="@item.ImageUrl" class="img-fluid rounded-start" alt="Movie Cover" style="height: 100px;">
+                            </td>
+                            <td>
+                                @item.Title
+                            </td>
+                            <td>
+                                @item.InStock
+                            </td>
+                            <td>
+                                <a asp-controller="Movies" asp-action="ManageStockIndividually" asp-route-id="@item.Id">
+                                    <i class="btn btn-dark">Manage Stock</i>
+                                </a>                              
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            </div>
+
+          
+            
+
+
+
+        </div>
+    </div>
+</div>
+

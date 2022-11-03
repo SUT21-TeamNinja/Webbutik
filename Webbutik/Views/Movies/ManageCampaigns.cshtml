@@ -1,0 +1,105 @@
+﻿@model DiscountViewModel
+
+@{
+    ViewData["Title"] = "Manage Campaigns";
+}
+<div id="adm-container">
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Page</h3>
+                    <hr/>
+            </div>
+            <a id="manage" asp-area="Identity" asp-page="/Account/Manage/Index" style="color:white;"><i class="fa-solid fa-user-gear"></i> Manage Account</a>
+            <hr /> 
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a asp-action="ManageProducts">Manage Products</a> 
+                </li>
+                <li>
+                    <a asp-action="ManageStock">Manage Stock</a>
+                </li>
+                <li>
+                    <a asp-action="ManageCampaigns">Manage Campaigns</a>
+                </li>
+                <li>
+                    <a asp-action="PurchaseLog" >Customer purchase log</a>
+                </li>
+            </ul>
+
+            <div style="color: white;">
+                <hr />                
+
+                <form id="logoutForm" class="form-inline" asp-area="Identity"
+                    asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button id="logout" class="btn btn-outline-light" type="submit"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                </form>
+            </div>
+
+        </nav>
+        <div id="content-sidebar"> 
+            <h1>Manage Campaigns</h1>
+
+            <div class="btn btn-primary" id="btn-add">
+                <a asp-action="NewCampaign">Add New Campaign</a>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Discount
+                        </th>
+                        <th>
+                            Discount Price
+                        </th>
+                        <th>
+                            Discount Start
+                        </th>
+                        <th>
+                            Discount End
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.MoviesOnSale)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                                <td>
+                                @Html.DisplayFor(modelItem => item.Price) kr <!-- TODO: Add currency-->
+                                </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Discount) %
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DiscountPrice) kr <!-- TODO: Add currency-->
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DiscountStart)
+                            </td>   
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DiscountEnd)
+                            </td>                              
+                            <td>
+                                @*<a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square" style="color: darkorange"></i></a> |*@
+                                            <a asp-action="DeleteCampaign" asp-route-id="@item.Id"><i class="fa-solid fa-trash" style="color: #eb3d3d;"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

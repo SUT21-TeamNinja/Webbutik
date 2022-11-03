@@ -1,0 +1,52 @@
+﻿@model List<Movie>
+
+@{
+    ViewData["Title"] = "Top 10";
+}
+
+<div class="container">
+	<h2 class="header">Top 10 Movies</h2>
+
+	<div id='container'>
+	</div>
+
+	@foreach (var item in Model)
+	{
+		<div class="row">
+			<div class="col-md-2">
+				<img src="@item.ImageUrl" class="img-fluid rounded-start" alt="<BILD SAKNAS>" style="height: 200px; width: 140px;" id="details@(Model.IndexOf(item))">
+			</div>
+
+			<ejs-dialog id='dialog@(Model.IndexOf(item))' isModal="true" width="760px" height="390px" overlayClick="onOverlayClick@(Model.IndexOf(item))"
+                target="#container" visible=false>
+				<e-content-template>
+				@await Component.InvokeAsync("MovieDetails", new{ id = item.Id})
+				</e-content-template>
+			</ejs-dialog>
+
+			<div class="col-md-8" style="position: relative; background-color: white; border-radius: 5px; padding: 1em;">
+				<h4>@item.Title</h4>
+				<p>@item.Description</p>			
+				
+				<div class="col-md-2" style="position: absolute; bottom: 0;">
+					@await Component.InvokeAsync("DiscountPrice", new { id = item.Id })
+					
+					<a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@item.Id">
+						<div class="btn btn-success" style="bottom: 0;left: 0; margin-top: 10px; margin-bottom: 15px;">PURCHASE</div>
+					</a>
+				</div>
+			</div>
+
+			<style>
+				.e-dialog .e-dlg-content {
+					padding: 0;
+					margin: 0;
+				}
+			</style>
+			
+		</div>
+		<hr />
+	}
+</div>
+
+

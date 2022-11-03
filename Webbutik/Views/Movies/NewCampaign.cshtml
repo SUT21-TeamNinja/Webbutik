@@ -1,0 +1,60 @@
+﻿@model DiscountViewModel
+@{
+    ViewData["Title"] = "NewCampaign";
+}
+
+<div class="container-adm">
+    <h3 style="color: white;">Add Campaign</h3>
+    <hr />
+    <div class="row" id="adm-edit">
+        <div class="col-md-4" id="adm-form-group">
+            <form asp-action="NewCampaign" class="adm-form">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="@Model.Movie.Title" class="control-label"></label>
+                    <select asp-for="@Model.Movie.Id" class="form-control" style="margin: 0;">
+                        <option selected disabled>Select Movie</option>
+                            @foreach (var movie in Model.AllMovies)
+                            {
+                                <option value="@movie.Id">@movie.Title</option>
+                            }
+                    </select>
+                    <span asp-validation-for="@Model.Movie.Id" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@Model.Movie.Discount" class="control-label"></label>
+                    <input asp-for="@Model.Movie.Discount" class="form-control" />
+                    <span asp-validation-for="@Model.Movie.Discount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Movie.DiscountStart" class="control-label"></label>
+                    <input asp-for="@Model.Movie.DiscountStart" class="form-control" />
+                    <span asp-validation-for="@Model.Movie.DiscountStart" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Movie.DiscountEnd" class="control-label"></label>
+                    <input asp-for="@Model.Movie.DiscountEnd" class="form-control" />
+                    <span asp-validation-for="@Model.Movie.DiscountEnd" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add" class="btn btn-primary" id="save-btn" asp-controller="Movies" asp-action="AddCampaign" asp-route-id="">
+                </div>
+            </form>
+            <div class="btn btn-dark" id="btn-add" style="margin-top: 1em;">
+                <a asp-action="ManageCampaigns">Back to List</a>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

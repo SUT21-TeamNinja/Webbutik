@@ -1,0 +1,133 @@
+﻿@model CartViewModel
+@{
+    var currentPage = ViewContext.RouteData.Values["Controller"].ToString().ToLower();
+}
+
+
+<div class="card">
+    <div class="row">
+        <div class="col-md-8 cart">
+            <div class="title border-bottom">
+                <div class="row">
+                    <div class="col"><h4><b>Shopping Cart</b></h4></div>
+                    <div class="col align-self-center text-right text-muted">
+                        Total items: @await Component.InvokeAsync("CartItems")
+                    </div>
+                </div>
+            </div>
+            @foreach (var item in Model.Cart.CartItems)
+            {
+                <div class="row border-bottom">
+                    <div class="row main align-items-center">
+                        <div class="col-2"><img class="img-fluid" src="@item.Movie.ImageUrl"></div>
+                        <div class="col">
+                            <div class="row">@item.Movie.Title</div>
+                            <div class="row text-muted">@item.Movie.Directors</div>
+                        </div>
+                        <div class="col">
+                            <a class="btn btn-dark" asp-controller="cart"
+                           asp-action="removefromcart" asp-route-id="@item.Movie.Id"><strong>-</strong></a>
+                            <a class="border">@item.Amount</a>
+                            <a class="btn btn-dark" asp-controller="cart"
+                           asp-action="addtocart"
+                           asp-route-id=@item.Movie.Id asp-route-currentPage="@currentPage"><strong>+</strong></a>
+                        </div>
+                        <div class="col">
+                            @item.Movie.Price kr
+                            <span class="close">&#10005;</span>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="back-to-shop">
+                <a asp-controller="home"
+                   asp-action="index">&leftarrow;</a><span class="text-muted">Back to shop</span>
+            </div>
+        </div>
+        <div class="col-md-4 summary">
+            <div><h5><b>Summary</b></h5></div>
+            <hr>
+            <form class="cart-form">
+                <p>SHIPPING</p>
+                <select class="cart-select">
+                    <option class="text-muted">Standard delivery - 59kr</option>
+                    <option class="text-muted">Express delivery - 159kr</option>
+                </select>
+                <p>DISCOUNT CODE?</p>
+                <input class="cart-input" id="code" placeholder="Enter your code">
+            </form>
+            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                <div class="col">TOTAL: </div>
+                <div class="col text-right">@await Component.InvokeAsync("CartTotal") kr</div>
+            </div>
+            <div class="text-center">
+                @if (Model.Cart.CartItems.Count > 0)
+                {
+                    <a class="btn btn-dark" asp-controller="order" asp-action="checkout">Checkout</a>
+                }
+                else
+                {
+                    <a class="btn btn-dark" id="checkout">Checkout</a>
+                }
+                <a id="clearcart" class="btn btn-dark">Clear cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .e-confirm-dialog.customClass {
+        max-width: 350px;
+        max-height: 200px !important;
+    }
+
+    .e-footer-content .e-btn.e-primary.e-flat:not([DISABLED]) {
+        background-color: black;
+        border-color: black;
+    }
+
+    .e-footer-content .e-btn:hover.e-primary.e-flat:not([DISABLED]) {
+        background-color: grey;
+        border-color: grey;
+    }
+</style>
+
+<script>
+    document.getElementById('clearcart').onclick = function () {
+        ej.popups.DialogUtility.confirm({
+            title: "Clear cart",
+            content: "Are you sure you want to clear the cart?",
+            okButton: { click: confirmOkAction },
+            cancelButton: { click: confirmCancelAction },
+            position: { X: "center", Y: "center" },
+            width: "400px",
+            height: "200px",
+            cssClass: "customClass"
+
+        });
+    };
+
+    document.getElementById('checkout').onclick = function () {
+        ej.popups.DialogUtility.alert({
+            title: "Empty cart",
+            content: "Your cart is empty.",
+            okButton: { text: 'OK', click: okClick },
+            position: { X: "center", Y: "center" },
+            width: "400px",
+            height: "200px",
+            cssClass: "customClass"
+
+        });
+    };
+    function confirmOkAction() {
+        this.hide();
+        window.location.href = "@Url.Action("clearcart", "cart")"
+    }
+    function confirmCancelAction() {
+        this.hide();
+    }
+    function okClick() {
+        this.hide()
+    }</script>
