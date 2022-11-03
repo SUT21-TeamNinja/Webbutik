@@ -38,6 +38,12 @@ namespace Webbutik.Models
 
                     tempmovie.Stars = item["stars"].ToString();
 
+                    int index1 = tempmovie.Stars.IndexOf(",");
+                    if (index1 >= 0)
+                    {
+                        tempmovie.Stars = tempmovie.Stars.Substring(index1 + 1);
+                    }
+
                     tempmovie.Directors = item["stars"].ToString();
                     int index = tempmovie.Directors.IndexOf(",");
                     if (index >= 0)
